@@ -69,11 +69,33 @@ func main() {
 	bt22.Right.Right.Right = &Node{Val: 8}
 	connect2(bt22)
 	println(bt2)
-
+	//[1,2,3,null,null,4,5]
+	//root = &TreeNode{
+	//	Val: 1,
+	//	Left: &TreeNode{
+	//		Val:   2,
+	//		Left:  nil,
+	//		Right: nil,
+	//	},
+	//	Right: &TreeNode{
+	//		Val: 3,
+	//		Left: &TreeNode{
+	//			Val:   4,
+	//			Left:  nil,
+	//			Right: nil,
+	//		},
+	//		Right: &TreeNode{
+	//			Val:   5,
+	//			Left:  nil,
+	//			Right: nil,
+	//		},
+	//	},
+	//}
 	obj := Constructor()
 	data := obj.serialize(root)
-	//* ans := obj.deserialize(data);
-	println(data)
+	//data2 := obj.serializeLoop2(root)
+	ans := obj.deserialize(data)
+	println(data, ans)
 }
 
 var result2 [][]string
