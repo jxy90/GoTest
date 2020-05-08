@@ -1,6 +1,9 @@
 package main
 
-import "strconv"
+import (
+	Codec2 "github.com/jxy90/GoTest/BinaryTree/Study/Codec"
+	"strconv"
+)
 
 type TreeNode struct {
 	Val   int
@@ -30,7 +33,14 @@ func main() {
 			print(vv)
 		}
 	}
-	println("")
+	println("level1")
+	arr2 := levelLpoop(root, 0)
+	for _, v := range arr2 {
+		for _, vv := range v {
+			print(vv)
+		}
+	}
+	println("level2")
 
 	println(TopDown(root, 0))
 	println(BottomUp(root))
@@ -69,33 +79,40 @@ func main() {
 	bt22.Right.Right.Right = &Node{Val: 8}
 	connect2(bt22)
 	println(bt2)
+
+	//obj := Constructor()
+	//data := obj.serialize(root)
+	////data2 := obj.serializeLoop2(root)
+	//ans := obj.deserialize(data)
+	//println(data, ans)
+	//////////////////
+
 	//[1,2,3,null,null,4,5]
-	//root = &TreeNode{
-	//	Val: 1,
-	//	Left: &TreeNode{
-	//		Val:   2,
-	//		Left:  nil,
-	//		Right: nil,
-	//	},
-	//	Right: &TreeNode{
-	//		Val: 3,
-	//		Left: &TreeNode{
-	//			Val:   4,
-	//			Left:  nil,
-	//			Right: nil,
-	//		},
-	//		Right: &TreeNode{
-	//			Val:   5,
-	//			Left:  nil,
-	//			Right: nil,
-	//		},
-	//	},
-	//}
-	obj := Constructor()
-	data := obj.serialize(root)
-	//data2 := obj.serializeLoop2(root)
-	ans := obj.deserialize(data)
-	println(data, ans)
+	root10 := &Codec2.TreeNode{
+		Val: 1,
+		Left: &Codec2.TreeNode{
+			Val:   2,
+			Left:  nil,
+			Right: nil,
+		},
+		Right: &Codec2.TreeNode{
+			Val: 3,
+			Left: &Codec2.TreeNode{
+				Val:   4,
+				Left:  nil,
+				Right: nil,
+			},
+			Right: &Codec2.TreeNode{
+				Val:   5,
+				Left:  nil,
+				Right: nil,
+			},
+		},
+	}
+	serializeStr := Codec2.Serialize(root10)
+	println(serializeStr)
+	deserializeObj := Codec2.Deserialize(serializeStr)
+	println(deserializeObj)
 }
 
 var result2 [][]string
