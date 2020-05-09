@@ -1,4 +1,4 @@
-package leetcode_test
+package easy_test
 
 import (
 	"strconv"

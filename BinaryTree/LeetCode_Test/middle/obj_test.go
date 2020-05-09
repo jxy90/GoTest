@@ -1,4 +1,4 @@
-package leetcode_test
+package middle_test
 
 type TreeNode struct {
 	Val   int

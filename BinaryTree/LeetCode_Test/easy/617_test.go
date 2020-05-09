@@ -1,4 +1,4 @@
-package leetcode_test
+package easy_test
 
 func mergeTrees(t1 *TreeNode, t2 *TreeNode) *TreeNode {
 	//if t1==nil {

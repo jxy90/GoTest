@@ -1,25 +1,31 @@
-package leetcode_test
+package easy_test
 
 import (
 	"testing"
 )
 
-var point = &TreeNode{0, nil, nil}
+var point *TreeNode
+var temp *TreeNode
 
 func convertBiNode(root *TreeNode) *TreeNode {
+	point = &TreeNode{0, nil, nil}
+	temp = point
 	convertBiNodeDFS(root)
 	return point.Right
 }
 func convertBiNodeDFS(root *TreeNode) {
 	if root != nil {
 		convertBiNodeDFS(root.Left)
-		convertBiNodeVist(root)
+		convertBiNodeVisit(root)
 		convertBiNodeDFS(root.Right)
 	}
 }
 
-func convertBiNodeVist(root *TreeNode) {
-	temp :=
+func convertBiNodeVisit(root *TreeNode) {
+	temp.Right = &TreeNode{
+		Val: root.Val,
+	}
+	temp = temp.Right
 }
 
 func convertBiNode2(root *TreeNode) *TreeNode {
