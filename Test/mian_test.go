@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"testing"
 )
 
@@ -18,21 +19,9 @@ func mySqrt(x int) int {
 		}
 	}
 	return ans
-	//if x==0 {
-	//	return 0
-	//}
-	//i:= 1
-	//for ;i<=x;i++{
-	//	if i*i==x{
-	//		return i
-	//	}else if i*i>x {
-	//		return i-1
-	//	}
-	//}
-	//return i
 }
 
-func TestSum(t *testing.T) {
+func Test_mySqrt(t *testing.T) {
 	var a = 3
 	var b = 4
 	res := sum(a, b)
@@ -42,4 +31,45 @@ func TestSum(t *testing.T) {
 	}
 
 	println(mySqrt(4))
+}
+
+/*func myPow(x float64, n int) float64 {
+	if n < 0 {
+		x = 1 / x
+		n = -n
+	}
+	ans := myPowHelper(x, n)
+	return ans
+}
+
+func myPowHelper(x float64, n int) float64 {
+	if n == 1 {
+		return x
+	}
+	return x * myPowHelper(x, n-1)
+}*/
+func myPow(x float64, n int) float64 {
+	if n < 0 {
+		x = 1 / x
+		n = -n
+	}
+	ans := myPowHelper(x, n)
+	return ans
+}
+
+func myPowHelper(x float64, n int) float64 {
+	if n == 1 {
+		return x
+	}
+	if n%2 == 0 {
+		half := myPowHelper(x, n/2)
+		return half * half
+	} else {
+		half := myPowHelper(x, n/2)
+		return half * half * x
+	}
+}
+func Test_myPow(t *testing.T) {
+	println(myPow(0.00001, 2147483647))
+	println(math.Pow(0.00001, 2147483647))
 }
