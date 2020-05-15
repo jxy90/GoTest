@@ -16,7 +16,7 @@ func inorderTraversal(root *TreeNode) []int {
 	return temp
 }
 
-func inorderTraversal2(root *TreeNode) []int {
+func inorderTraversalNew(root *TreeNode) []int {
 	var result []int
 	if root == nil {
 		return result

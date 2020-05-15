@@ -7,7 +7,6 @@ func (bt *TreeNode) preorderTraversal() []int {
 		return temp
 	}
 	temp = append(temp, bt.Val)
-
 	if bt.Left != nil {
 		temp = append(temp, bt.Left.preorderTraversal()...)
 	}
@@ -17,12 +16,13 @@ func (bt *TreeNode) preorderTraversal() []int {
 	return temp
 }
 
-func (root *TreeNode) preorderTraversal3() []int {
-	var stack []*TreeNode
-	var result []int
+//非递归
+func (root *TreeNode) preorderTraversalNew() []int {
 	if root == nil {
 		return nil
 	}
+	var stack []*TreeNode
+	var result []int
 	temp := root
 	//中-》左-》右
 	for temp != nil || len(stack) != 0 {
@@ -35,29 +35,5 @@ func (root *TreeNode) preorderTraversal3() []int {
 			stack = stack[:len(stack)-1]
 		}
 	}
-
 	return result
-}
-
-// 先序遍历-非递归
-func (root *TreeNode) preorderTraversal2() []int {
-	if root == nil {
-		return nil
-	}
-	var rootTemp = root
-	var stack []*TreeNode
-	var ret []int
-	for rootTemp != nil || len(stack) != 0 {
-		if rootTemp != nil {
-			ret = append(ret, rootTemp.Val)
-			stack = append(stack, rootTemp)
-			rootTemp = rootTemp.Left
-		} else {
-			rootTemp = stack[len(stack)-1]
-			stack = stack[:len(stack)-1]
-			//ret = append(ret, rootTemp.Val)
-			rootTemp = rootTemp.Right
-		}
-	}
-	return ret
 }
