@@ -17,12 +17,12 @@ func buildMaxHeap(arr []int) {
 }
 
 func heapify(arr []int, i int) {
-	left, right, largest := i*2+1, i*2+2, i
-	if left < length && arr[left] > arr[largest] {
-		largest = left
+	Left, Right, largest := i*2+1, i*2+2, i
+	if Left < length && arr[Left] > arr[largest] {
+		largest = Left
 	}
-	if right < length && arr[right] > arr[largest] {
-		largest = right
+	if Right < length && arr[Right] > arr[largest] {
+		largest = Right
 	}
 	if largest != i {
 		arr[i], arr[largest] = arr[largest], arr[i]

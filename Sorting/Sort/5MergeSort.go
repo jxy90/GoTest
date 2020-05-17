@@ -15,23 +15,23 @@ func MergeSort(arr []int) []int {
 		return arr
 	}
 	middle := length / 2
-	left := MergeSort(arr[:middle])
-	right := MergeSort(arr[middle:])
-	return merge(left, right)
+	Left := MergeSort(arr[:middle])
+	Right := MergeSort(arr[middle:])
+	return merge(Left, Right)
 }
 
-func merge(left, right []int) (result []int) {
+func merge(Left, Right []int) (result []int) {
 	l, r := 0, 0
-	for l < len(left) && r < len(right) {
-		if left[l] > right[r] {
-			result = append(result, right[r])
+	for l < len(Left) && r < len(Right) {
+		if Left[l] > Right[r] {
+			result = append(result, Right[r])
 			r++
 		} else {
-			result = append(result, left[l])
+			result = append(result, Left[l])
 			l++
 		}
 	}
-	result = append(result, left[l:]...)
-	result = append(result, right[r:]...)
+	result = append(result, Left[l:]...)
+	result = append(result, Right[r:]...)
 	return result
 }

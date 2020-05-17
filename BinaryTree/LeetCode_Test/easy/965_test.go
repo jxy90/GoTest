@@ -2,24 +2,24 @@ package easy_test
 
 import "testing"
 
-func isUnivalTree(root *TreeNode) bool {
+func isUniValTree(root *TreeNode) bool {
 	if root == nil {
 		return true
 	}
-	return isUnivalTreeDFS(root, root.Val)
+	return isUniValTreeDFS(root, root.Val)
 }
 
-func isUnivalTreeDFS(root *TreeNode, value int) bool {
+func isUniValTreeDFS(root *TreeNode, Value int) bool {
 	if root == nil {
 		return true
 	}
-	if value != root.Val {
+	if Value != root.Val {
 		return false
 	}
-	return isUnivalTreeDFS(root.Left, value) && isUnivalTreeDFS(root.Right, value)
+	return isUniValTreeDFS(root.Left, Value) && isUniValTreeDFS(root.Right, Value)
 }
 
-func Test_isUnivalTree(t *testing.T) {
+func Test_isUniValTree(t *testing.T) {
 	root := &TreeNode{
 		Val:  2,
 		Left: nil,
@@ -27,5 +27,5 @@ func Test_isUnivalTree(t *testing.T) {
 			Val: 1,
 		},
 	}
-	println(isUnivalTree(root))
+	println(isUniValTree(root))
 }

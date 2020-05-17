@@ -18,13 +18,13 @@ func Serialize(root *TreeNode) string {
 		//sb.WriteString(" ")
 		return "#"
 	} else {
-		//value := strconv.Itoa(root.Val)
-		//sb.WriteString(value)
+		//Value := strconv.Itoa(root.Val)
+		//sb.WriteString(Value)
 		//sb.WriteString(" ")
-		//leftValue := Serialize(root.Left)
-		//rightValue := Serialize(root.Right)
-		//sb.WriteString(leftValue)
-		//sb.WriteString(rightValue)
+		//LeftValue := Serialize(root.Left)
+		//RightValue := Serialize(root.Right)
+		//sb.WriteString(LeftValue)
+		//sb.WriteString(RightValue)
 
 	}
 	//return sb.String()

@@ -22,9 +22,9 @@ func toHex(num int) string {
 	var res = make([]byte, 8)
 	var nonZeroIndex = 7
 	for i := 7; i >= 0; i-- {
-		val := num & mask
-		res[i] = hexStr[val]
-		if val > 0 {
+		Val := num & mask
+		res[i] = hexStr[Val]
+		if Val > 0 {
 			nonZeroIndex = i
 		}
 		num >>= 4

@@ -33,7 +33,7 @@ func postOrderNew(root *TreeNode) []int {
 		for currentNode != nil {
 			currentTagNode = &TagNode{
 				Node: currentNode,
-				Tag:  "left",
+				Tag:  "Left",
 			}
 			stack = append(stack, currentTagNode)
 			currentNode = currentNode.Left
@@ -41,11 +41,11 @@ func postOrderNew(root *TreeNode) []int {
 
 		currentTagNode = stack[len(stack)-1]
 		//stack = stack[:len(stack)-1]
-		if currentTagNode.Tag == "left" { // 只有左子树被访问过
+		if currentTagNode.Tag == "Left" { // 只有左子树被访问过
 			currentNode = currentTagNode.Node.Right
-			currentTagNode.Tag = "right"
+			currentTagNode.Tag = "Right"
 			//stack = append(stack, currentTagNode)
-		} else { // 否则则为right 则代表右子树也被访问了，则可以访问本结点了
+		} else { // 否则则为Right 则代表右子树也被访问了，则可以访问本结点了
 			stack = stack[:len(stack)-1]
 			currentNode = currentTagNode.Node
 			result = append(result, currentNode.Val)

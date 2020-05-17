@@ -29,7 +29,7 @@ func ButtomUp104(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
-	left := ButtomUp104(root.Left) + 1
-	right := ButtomUp104(root.Right) + 1
-	return int(math.Max(float64(left), float64(right)))
+	Left := ButtomUp104(root.Left) + 1
+	Right := ButtomUp104(root.Right) + 1
+	return int(math.Max(float64(Left), float64(Right)))
 }

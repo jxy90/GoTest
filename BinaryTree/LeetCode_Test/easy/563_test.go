@@ -17,10 +17,10 @@ func findTiltDFS(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
-	left := findTiltDFS(root.Left)
-	right := findTiltDFS(root.Right)
-	tilt += int(math.Abs(float64(left) - float64(right)))
-	return left + right + root.Val
+	Left := findTiltDFS(root.Left)
+	Right := findTiltDFS(root.Right)
+	tilt += int(math.Abs(float64(Left) - float64(Right)))
+	return Left + Right + root.Val
 }
 
 //func findTiltDFSVisit(root *TreeNode) {

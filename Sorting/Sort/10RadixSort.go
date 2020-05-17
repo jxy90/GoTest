@@ -55,8 +55,8 @@ func RadixSort(theArray []int) []int {
 			}
 		}
 
-		for key, value := range slice {
-			theArray[key] = value
+		for key, Value := range slice {
+			theArray[key] = Value
 		}
 	}
 	return theArray

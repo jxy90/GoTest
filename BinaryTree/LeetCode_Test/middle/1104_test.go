@@ -27,9 +27,9 @@ func CalNum(level int) int {
 	if level == 0 {
 		return 1
 	}
-	leftNum := int(math.Pow(2, float64(level)))
-	rightNum := leftNum + int(math.Pow(2, float64(level))) - 1
-	return leftNum + rightNum
+	LeftNum := int(math.Pow(2, float64(level)))
+	RightNum := LeftNum + int(math.Pow(2, float64(level))) - 1
+	return LeftNum + RightNum
 }
 
 func Test_pathInZigZagTree(t *testing.T) {

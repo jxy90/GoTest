@@ -35,7 +35,7 @@ func isSubtreeCheck(s *TreeNode, t *TreeNode) bool {
 //O(s+t) O(s+t)
 func isSubtreeLoop(root *TreeNode, T string) string {
 	if root == nil {
-		return T + "null"
+		return T + "nil"
 	}
 	return "," + strconv.Itoa(root.Val) + "," + isSubtreeLoop(root.Left, "L") + "," + isSubtreeLoop(root.Right, "R")
 }

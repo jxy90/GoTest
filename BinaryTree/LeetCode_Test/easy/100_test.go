@@ -8,7 +8,7 @@ func isSameTree(p *TreeNode, q *TreeNode) bool {
 
 func isSameTreeDFS(root *TreeNode) string {
 	if root == nil {
-		return ",null"
+		return ",nil"
 	}
 	isSameTreeDFS(root.Left)
 	isSameTreeDFS(root.Right)

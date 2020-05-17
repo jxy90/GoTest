@@ -8,15 +8,15 @@ func isSymmetric(root *TreeNode) bool {
 	return compare(root.Left, root.Right)
 }
 
-func compare(left, right *TreeNode) bool {
-	if left == nil {
-		return right == nil
+func compare(Left, Right *TreeNode) bool {
+	if Left == nil {
+		return Right == nil
 	}
-	if right == nil {
+	if Right == nil {
 		return false
 	}
-	if left.Val != right.Val {
+	if Left.Val != Right.Val {
 		return false
 	}
-	return compare(left.Left, right.Right) && compare(left.Right, right.Left)
+	return compare(Left.Left, Right.Right) && compare(Left.Right, Right.Left)
 }

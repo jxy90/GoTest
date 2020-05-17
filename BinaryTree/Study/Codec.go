@@ -25,13 +25,13 @@ func (this *Codec) serialize(root *TreeNode) string {
 	str := ""
 	for _, v := range this.serializeString {
 		if v == "" {
-			str += "null,"
+			str += "nil,"
 		} else {
 			str += v + ","
 		}
 	}
 	if str == "" {
-		str += "null,"
+		str += "nil,"
 	}
 	str = str[:len(str)-1]
 	return "[" + str + "]"
@@ -53,7 +53,7 @@ func (this *Codec) deserialize(data string) *TreeNode {
 	this.deserializeList = []string{}
 	data = data[1 : len(data)-1]
 	this.deserializeList = strings.Split(data, ",")
-	if this.deserializeList[0] == "null" {
+	if this.deserializeList[0] == "nil" {
 		return root
 	}
 	root = this.deserializeLoop(0)
@@ -70,15 +70,15 @@ func (this *Codec) deserializeLoop(index int) *TreeNode {
 	if index > len(this.deserializeList)-1 {
 		return nil
 	}
-	if this.deserializeList[index] == "null" {
+	if this.deserializeList[index] == "nil" {
 		return nil
 	}
-	value, err := strconv.Atoi(this.deserializeList[index])
+	Value, err := strconv.Atoi(this.deserializeList[index])
 	if err != nil {
 		panic(err)
 	}
 	root = &TreeNode{
-		Val:   value,
+		Val:   Value,
 		Left:  this.deserializeLoop(2*index + 1),
 		Right: this.deserializeLoop(2*index + 2),
 	}

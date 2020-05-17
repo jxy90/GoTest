@@ -14,14 +14,14 @@ func isValidBSTDFS(root *TreeNode) bool {
 	if root == nil {
 		return true
 	}
-	_left := isValidBSTDFS(root.Left)
+	_Left := isValidBSTDFS(root.Left)
 	_temp = append(_temp, root.Val)
 	if len(_temp) > 1 && _temp[len(_temp)-2] >= _temp[len(_temp)-1] {
 		return false
 	}
-	_right := isValidBSTDFS(root.Right)
+	_Right := isValidBSTDFS(root.Right)
 
-	return _left && _right
+	return _Left && _Right
 }
 
 func Test_isValidBSTDFS(t *testing.T) {

@@ -14,8 +14,8 @@ func diameterOfBinaryTreeHelper(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
-	leftDepth := diameterOfBinaryTreeHelper(root.Left) + 1
-	rightDepth := diameterOfBinaryTreeHelper(root.Right) + 1
-	ans = int(math.Max(float64(ans), float64(leftDepth+rightDepth)))
-	return int(math.Max(float64(leftDepth), float64(rightDepth)))
+	LeftDepth := diameterOfBinaryTreeHelper(root.Left) + 1
+	RightDepth := diameterOfBinaryTreeHelper(root.Right) + 1
+	ans = int(math.Max(float64(ans), float64(LeftDepth+RightDepth)))
+	return int(math.Max(float64(LeftDepth), float64(RightDepth)))
 }

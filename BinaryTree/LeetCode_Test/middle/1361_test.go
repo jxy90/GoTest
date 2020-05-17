@@ -4,28 +4,28 @@ import "testing"
 
 var his map[int]int
 
-func validateBinaryTreeNodes(n int, leftChild []int, rightChild []int) bool {
+func ValidateBinaryTreeNodes(n int, LeftChild []int, RightChild []int) bool {
 	his = map[int]int{}
-	return validateBinaryTreeNodesHelper(n, leftChild, rightChild)
+	return ValidateBinaryTreeNodesHelper(n, LeftChild, RightChild)
 }
-func validateBinaryTreeNodesHelper(n int, leftChild []int, rightChild []int) bool {
+func ValidateBinaryTreeNodesHelper(n int, LeftChild []int, RightChild []int) bool {
 	_count := n - 1
-	for _, value := range leftChild {
-		if value != -1 {
-			if his[value] == 0 {
+	for _, Value := range LeftChild {
+		if Value != -1 {
+			if his[Value] == 0 {
 				his[0] = 1
-				his[value] = 1
+				his[Value] = 1
 			} else {
 				return false
 			}
 			_count--
 		}
 	}
-	for _, value := range rightChild {
-		if value != -1 {
-			if his[value] == 0 {
+	for _, Value := range RightChild {
+		if Value != -1 {
+			if his[Value] == 0 {
 				his[0] = 1
-				his[value] = 1
+				his[Value] = 1
 			} else {
 				return false
 			}
@@ -35,8 +35,8 @@ func validateBinaryTreeNodesHelper(n int, leftChild []int, rightChild []int) boo
 	return _count == 0
 }
 
-func Test_validateBinaryTreeNodes(t *testing.T) {
-	left := []int{1, 2, 0, -1}
-	right := []int{-1, -1, -1, -1}
-	validateBinaryTreeNodes(4, left, right)
+func Test_ValidateBinaryTreeNodes(t *testing.T) {
+	Left := []int{1, 2, 0, -1}
+	Right := []int{-1, -1, -1, -1}
+	ValidateBinaryTreeNodes(4, Left, Right)
 }

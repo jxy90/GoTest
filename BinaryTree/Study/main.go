@@ -87,7 +87,7 @@ func main() {
 	//println(data, ans)
 	//////////////////
 
-	//[1,2,3,null,null,4,5]
+	//[1,2,3,nil,nil,4,5]
 	root10 := &Codec2.TreeNode{
 		Val: 1,
 		Left: &Codec2.TreeNode{

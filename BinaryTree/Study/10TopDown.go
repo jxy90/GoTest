@@ -6,11 +6,11 @@ func TopDown(root *TreeNode, level int) int {
 	if root == nil {
 		return level
 	}
-	leftDepth := TopDown(root.Left, level+1)
-	rightDepth := TopDown(root.Right, level+1)
-	if leftDepth > rightDepth {
-		return leftDepth
+	LeftDepth := TopDown(root.Left, level+1)
+	RightDepth := TopDown(root.Right, level+1)
+	if LeftDepth > RightDepth {
+		return LeftDepth
 	} else {
-		return rightDepth
+		return RightDepth
 	}
 }

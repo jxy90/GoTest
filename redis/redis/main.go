@@ -29,21 +29,21 @@ func ExampleClient() {
 	//	fmt.Println(err)
 	//}
 
-	val, err := client.Get("k1").Result()
+	Val, err := client.Get("k1").Result()
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println("key", val)
+	fmt.Println("key", Val)
 
-	val2, err := client.Get("key2").Result()
+	Val2, err := client.Get("key2").Result()
 	if err == redis.Nil {
 		fmt.Println("key2 does not exist")
 	} else if err != nil {
 		panic(err)
 	} else {
-		fmt.Println("key2", val2)
+		fmt.Println("key2", Val2)
 	}
-	// Output: key value
+	// Output: key Value
 	// key2 does not exist
 }
 
@@ -88,14 +88,14 @@ func HyperLogLog(rdb *redis.Client) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	val, err := rdb.PFCount("PF1").Result()
+	Val, err := rdb.PFCount("PF1").Result()
 	if err != redis.Nil {
 		fmt.Println(err)
 	} else if err != nil {
 		fmt.Println(err)
 	}
 
-	fmt.Printf("HyperLogLog:%v \r\n", val)
+	fmt.Printf("HyperLogLog:%v \r\n", Val)
 }
 
 func ZSet(rdb *redis.Client) {
@@ -118,20 +118,20 @@ func ZSet(rdb *redis.Client) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	val, err := rdb.Get("zset:k1").Result()
+	Val, err := rdb.Get("zset:k1").Result()
 	if err != redis.Nil {
 		fmt.Println(err)
 	} else if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Printf("zset set:k1:%v \r\n", val)
-	val, err = rdb.Get("zset:not exit").Result()
+	fmt.Printf("zset set:k1:%v \r\n", Val)
+	Val, err = rdb.Get("zset:not exit").Result()
 	if err != redis.Nil {
 		fmt.Println(err)
 	} else if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Printf("zset set:not exit:%v \r\n", val)
+	fmt.Printf("zset set:not exit:%v \r\n", Val)
 }
 
 func Set(rdb *redis.Client) {
@@ -139,20 +139,20 @@ func Set(rdb *redis.Client) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	val, err := rdb.SPop("set:ABC").Result()
+	Val, err := rdb.SPop("set:ABC").Result()
 	if err != redis.Nil {
 		fmt.Println(err)
 	} else if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Printf("set set:k1:%v \r\n", val)
-	val, err = rdb.SPop("set:not exit").Result()
+	fmt.Printf("set set:k1:%v \r\n", Val)
+	Val, err = rdb.SPop("set:not exit").Result()
 	if err != redis.Nil {
 		fmt.Println(err)
 	} else if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Printf("pop set:not exit:%v \r\n", val)
+	fmt.Printf("pop set:not exit:%v \r\n", Val)
 }
 
 func String(rdb *redis.Client) {
@@ -160,20 +160,20 @@ func String(rdb *redis.Client) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	val, err := rdb.Get("string:k1").Result()
+	Val, err := rdb.Get("string:k1").Result()
 	if err != redis.Nil {
 		fmt.Println(err)
 	} else if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Printf("get string:k1:%v \r\n", val)
-	val, err = rdb.Get("string:not exit").Result()
+	fmt.Printf("get string:k1:%v \r\n", Val)
+	Val, err = rdb.Get("string:not exit").Result()
 	if err != redis.Nil {
 		fmt.Println(err)
 	} else if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Printf("set string:not exit:%v \r\n", val)
+	fmt.Printf("set string:not exit:%v \r\n", Val)
 }
 
 func PipeLine(rdb *redis.Client) {

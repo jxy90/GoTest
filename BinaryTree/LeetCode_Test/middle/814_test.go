@@ -35,15 +35,15 @@ func containsOne(root *TreeNode) bool {
 	if root == nil {
 		return false
 	}
-	left := containsOne(root.Left)
-	right := containsOne(root.Right)
-	if !left {
+	Left := containsOne(root.Left)
+	Right := containsOne(root.Right)
+	if !Left {
 		root.Left = nil
 	}
-	if !right {
+	if !Right {
 		root.Right = nil
 	}
-	return root.Val == 1 || left || right
+	return root.Val == 1 || Left || Right
 
 }
 
