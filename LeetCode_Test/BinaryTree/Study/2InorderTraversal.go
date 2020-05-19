@@ -30,12 +30,36 @@ func inorderTraversalNew(root *TreeNode) []int {
 			stack = append(stack, temp)
 			temp = temp.Left
 		}
-		if len(stack) > 0 {
-			temp = stack[len(stack)-1]
-			result = append(result, temp.Val)
-			stack = stack[:len(stack)-1]
-			temp = temp.Right
+		temp = stack[len(stack)-1]
+		result = append(result, temp.Val)
+		stack = stack[:len(stack)-1]
+		temp = temp.Right
+	}
+	return result
+}
+
+func inorderTraversalMorris(root *TreeNode) []int {
+	var result []int
+	if root == nil {
+		return result
+	}
+	var current *TreeNode
+	for root != nil {
+		current = root.Left
+		if current != nil {
+			for current.Right != nil && current.Right != root {
+				current = current.Right
+			}
+			if current.Right == nil {
+				current.Right = root
+				root = root.Left
+				continue
+			} else {
+				current.Right = nil
+			}
 		}
+		result = append(result, root.Val)
+		root = root.Right
 	}
 	return result
 }

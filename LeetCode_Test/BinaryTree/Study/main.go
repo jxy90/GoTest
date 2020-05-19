@@ -1,7 +1,7 @@
 package main
 
 import (
-	Codec2 "github.com/jxy90/GoTest/BinaryTree/Study/Codec"
+	Codec3 "github.com/jxy90/GoTest/LeetCode_Test/BinaryTree/Study/Codec"
 	"strconv"
 )
 
@@ -88,30 +88,30 @@ func main() {
 	//////////////////
 
 	//[1,2,3,nil,nil,4,5]
-	root10 := &Codec2.TreeNode{
+	root10 := &Codec3.TreeNode{
 		Val: 1,
-		Left: &Codec2.TreeNode{
+		Left: &Codec3.TreeNode{
 			Val:   2,
 			Left:  nil,
 			Right: nil,
 		},
-		Right: &Codec2.TreeNode{
+		Right: &Codec3.TreeNode{
 			Val: 3,
-			Left: &Codec2.TreeNode{
+			Left: &Codec3.TreeNode{
 				Val:   4,
 				Left:  nil,
 				Right: nil,
 			},
-			Right: &Codec2.TreeNode{
+			Right: &Codec3.TreeNode{
 				Val:   5,
 				Left:  nil,
 				Right: nil,
 			},
 		},
 	}
-	serializeStr := Codec2.Serialize(root10)
+	serializeStr := Codec3.Serialize(root10)
 	println(serializeStr)
-	deserializeObj := Codec2.Deserialize(serializeStr)
+	deserializeObj := Codec3.Deserialize(serializeStr)
 	println(deserializeObj)
 }
 

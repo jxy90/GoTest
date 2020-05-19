@@ -86,41 +86,28 @@ func recoverTree3Findxy(root *TreeNode) {
 func recoverTree4(root *TreeNode) {
 	var x, y, pred, predecessor *TreeNode
 	x, y, pred, predecessor = nil, nil, nil, nil
-
 	for root != nil {
-		if root.Left != nil {
-			predecessor = root.Left
+		predecessor = root.Left
+		if predecessor != nil {
 			for predecessor.Right != nil && predecessor.Right != root {
 				predecessor = predecessor.Right
-
-				if predecessor.Right == nil {
-					predecessor.Right = root
-					root = root.Left
-				} else {
-					// check for the swapped nodes
-					if pred != nil && root.Val < pred.Val {
-						y = root
-						if x == nil {
-							x = pred
-						}
-					}
-					pred = root
-
-					predecessor.Right = nil
-					root = root.Right
-				}
 			}
-		} else {
-			if pred != nil && root.Val < pred.Val {
-				y = root
-				if x == nil {
-					x = pred
-				}
+			if predecessor.Right == nil {
+				predecessor.Right = root
+				root = root.Left
+				continue
+			} else {
+				predecessor.Right = nil
 			}
-			pred = root
-
-			root = root.Right
 		}
+		if pred != nil && root.Val < pred.Val {
+			y = root
+			if x == nil {
+				x = pred
+			}
+		}
+		pred = root
+		root = root.Right
 	}
 	x.Val, y.Val = y.Val, x.Val
 }
@@ -138,5 +125,5 @@ func Test_recoverTree(t *testing.T) {
 			},
 		},
 	}
-	recoverTree2(root)
+	recoverTree4(root)
 }
