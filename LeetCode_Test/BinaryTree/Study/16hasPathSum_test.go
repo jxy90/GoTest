@@ -1,4 +1,6 @@
-package main
+package main_test
+
+import "testing"
 
 func hasPathSum(root *TreeNode, sum int) bool {
 	if root == nil {
@@ -20,4 +22,35 @@ func hasPathSum2(root *TreeNode, sum int) bool {
 		return temp == 0
 	}
 	return hasPathSum(root.Left, temp) || hasPathSum(root.Right, temp)
+}
+
+
+func maxPath(root *TreeNode) int {
+	if root==nil {
+		return 0
+	}
+	left := maxPath(root.Left)
+	right:= maxPath(root.Right)
+
+	return root.Val+max(left,right)
+}
+
+func max(a,b int) int {
+	if a>b {
+		return a
+	}
+	return b
+}
+
+func Test_maxPath(t *testing.T) {
+	root:=&TreeNode{
+		Val:   5,
+		Left:  &TreeNode{
+			Val: 4,
+		},
+		Right: &TreeNode{
+			Val: 8,
+		},
+	}
+	 println(maxPath(root))
 }

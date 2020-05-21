@@ -1,4 +1,4 @@
-package main
+package main_test
 
 func inorderTraversal(root *TreeNode) []int {
 	//左-》中-》右

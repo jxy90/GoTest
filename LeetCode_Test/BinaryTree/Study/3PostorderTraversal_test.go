@@ -1,4 +1,4 @@
-package main
+package main_test
 
 //左-》右-》中
 func postorderTraversal(root *TreeNode) []int {

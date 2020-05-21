@@ -1,4 +1,4 @@
-package main
+package main_test
 
 //对称二叉树
 func isSymmetric(root *TreeNode) bool {

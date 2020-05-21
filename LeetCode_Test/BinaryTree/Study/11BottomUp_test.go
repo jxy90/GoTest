@@ -1,4 +1,4 @@
-package main
+package main_test
 
 func BottomUp(root *TreeNode) int {
 	if root == nil {

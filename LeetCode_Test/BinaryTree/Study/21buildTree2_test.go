@@ -1,4 +1,4 @@
-package main
+package main_test
 
 func buildTree2(preorder []int, inorder []int) *TreeNode {
 	if len(preorder) == 0 {

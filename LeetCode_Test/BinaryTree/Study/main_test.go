@@ -1,4 +1,4 @@
-package main
+package main_test
 
 import (
 	Codec3 "github.com/jxy90/GoTest/LeetCode_Test/BinaryTree/Study/Codec"

@@ -1,4 +1,4 @@
-package main
+package main_test
 
 func (bt *TreeNode) preorderTraversal() []int {
 	//中-》左-》右
