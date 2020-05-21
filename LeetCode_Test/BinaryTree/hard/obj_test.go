@@ -1,4 +1,4 @@
-package diffcult_test
+package hard_test
 
 type TreeNode struct {
 	Val   int

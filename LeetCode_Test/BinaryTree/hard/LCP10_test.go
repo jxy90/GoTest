@@ -1,4 +1,4 @@
-package diffcult_test
+package hard_test
 
 func minimalExecTime(root *TreeNode) float64 {
 	abc := []float64{}
