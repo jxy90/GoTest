@@ -1,43 +1,66 @@
 package Chapter0_test
 
+import "testing"
+
 func openLock(deadends []string, target string) int {
-	queue := []string
+	queue := []string{}
 	queue = append(queue, "0000")
 	depth := 0
 	for len(queue) > 0 {
 		length := len(queue)
-		for j := 0; j < length; j++ {
-			if queue[j] == target {
+		for i := 0; i < length; i++ {
+			if queue[i] == target {
 				return depth
-			} else if queue[j] in deadends{
+			} else if openLockContains(deadends, queue[i]) {
 				continue
 			}
-			for i := 0; i < len(v); i++ {
-				queue = append(queue, openLockUp(queue[j], i))
-				queue = append(queue, openLockDown(queue[j], i))
+			for j := 0; j < len(queue[i]); j++ {
+				queue = append(queue, openLockUp(queue[i], j))
+				queue = append(queue, openLockDown(queue[i], j))
 			}
-			depth++
 		}
+		queue = queue[length:]
+		depth++
 	}
 	return depth
 }
 
-func openLockUp(str string, index int) string {
-	temp := string(str[index])
-	if temp == "9" {
-		str[index] = "0"
-	} else {
-		str[index] -= 1
+func openLockContains(deadends []string, target string) bool {
+	for _, b := range deadends {
+		if b == target {
+			return true
+		}
 	}
-	return str
+	return false
+}
+
+func openLockUp(str string, index int) string {
+	ab := make([]int32, 0)
+	for _, v := range str {
+		ab = append(ab, v)
+	}
+	if ab[index] == '9' {
+		ab[index] = '0'
+	} else {
+		ab[index] += 1
+	}
+	return string(ab)
 }
 
 func openLockDown(str string, index int) string {
-	temp := string(str[index])
-	if temp == "0" {
-		str[index] = '9'
-	} else {
-		str[index] += 1
+	ab := make([]int32, 0)
+	for _, v := range str {
+		ab = append(ab, v)
 	}
-	return str
+	if ab[index] == '0' {
+		ab[index] = '9'
+	} else {
+		ab[index] -= 1
+	}
+	return string(ab)
+}
+
+func Test_openLock(t *testing.T) {
+	println(openLockUp("0000", 2))
+	println(openLockDown("0000", 2))
 }
