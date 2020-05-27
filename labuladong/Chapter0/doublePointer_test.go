@@ -1,5 +1,7 @@
 package Chapter0_test
 
+import "testing"
+
 type ListNode struct {
 	Val  int
 	Next *ListNode
@@ -37,4 +39,13 @@ func detectCycle(head *ListNode) *ListNode {
 		slow = slow.Next
 	}
 	return slow
+}
+
+func Test_doublePointer(t *testing.T) {
+	head := &ListNode{
+		Val:  0,
+		Next: nil,
+	}
+	hasCycle(head)
+	detectCycle(head)
 }

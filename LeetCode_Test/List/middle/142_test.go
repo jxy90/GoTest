@@ -1,5 +1,7 @@
 package middle_test
 
+import "testing"
+
 func detectCycle(head *ListNode) *ListNode {
 	fast, slow := head, head
 	hasCycle := false
@@ -20,4 +22,12 @@ func detectCycle(head *ListNode) *ListNode {
 		slow = slow.Next
 	}
 	return slow
+}
+
+func Test_detectCycle(t *testing.T) {
+	head := &ListNode{
+		Val:  0,
+		Next: nil,
+	}
+	detectCycle(head)
 }

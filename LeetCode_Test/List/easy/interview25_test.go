@@ -1,5 +1,7 @@
 package easy_test
 
+import "testing"
+
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	head := &ListNode{
 		Val:  0,
@@ -23,4 +25,14 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 		cur.Next = l2
 	}
 	return head.Next
+}
+
+func Test_mergeTwoLists(t *testing.T) {
+	l1 := &ListNode{
+		Val: 0,
+	}
+	l2 := &ListNode{
+		Val: 0,
+	}
+	mergeTwoLists(l1, l2)
 }

@@ -1,5 +1,7 @@
 package easy_test
 
+import "testing"
+
 func twoSum(nums []int, target int) []int {
 	set := map[int]int{}
 	for i := 0; i < len(nums); i++ {
@@ -10,4 +12,9 @@ func twoSum(nums []int, target int) []int {
 		set[nums[i]] = i
 	}
 	return []int{-1, -1}
+}
+func Test_twoSum(t *testing.T) {
+	nums := []int{1, 2, 3}
+	target := 3
+	println(twoSum(nums, target))
 }

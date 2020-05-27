@@ -5,6 +5,8 @@ import (
 	"testing"
 )
 
+var str1, str2 string
+
 func leafSimilar(root1 *TreeNode, root2 *TreeNode) bool {
 	str1, str2 = "", ""
 	leafSimilarDFS(root1, "1")

@@ -1,5 +1,7 @@
 package easy_test
 
+import "testing"
+
 func twoSum167(numbers []int, target int) []int {
 	left, right := 0, len(numbers)-1
 	for left < right {
@@ -12,4 +14,10 @@ func twoSum167(numbers []int, target int) []int {
 		}
 	}
 	return []int{-1, -1}
+}
+
+func Test_twoSum167(t *testing.T) {
+	nums := []int{1, 2, 3}
+	target := 3
+	println(twoSum167(nums, target))
 }
