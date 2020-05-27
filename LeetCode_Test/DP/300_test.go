@@ -1,8 +1,6 @@
-package Chapter1_test
+package DP_test
 
-import (
-	"testing"
-)
+import "testing"
 
 func LISDP(nums []int) int {
 	dp := map[int]int{}
@@ -24,4 +22,23 @@ func LISDP(nums []int) int {
 func Test_LIS(t *testing.T) {
 	nums := []int{10, 9, 2, 5, 3, 7, 101, 18}
 	println(LISDP(nums))
+}
+
+func min(args ...int) int {
+	min := args[0]
+	for _, item := range args {
+		if item < min {
+			min = item
+		}
+	}
+	return min
+}
+func max(args ...int) int {
+	max := args[0]
+	for _, item := range args {
+		if item > max {
+			max = item
+		}
+	}
+	return max
 }
