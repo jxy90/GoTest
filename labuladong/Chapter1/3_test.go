@@ -4,7 +4,8 @@ import (
 	"testing"
 )
 
-func BB(wt, val []int, N, W int) int {
+//经典背包
+func BeiBao(wt, val []int, N, W int) int {
 	dp := make([][]int, N+1)
 	for index := range dp {
 		dp[index] = make([]int, W+1)
@@ -26,6 +27,6 @@ func Test_BB(t *testing.T) {
 	N, W := 3, 4
 	wt := []int{2, 1, 3}
 	val := []int{4, 2, 3}
-	data := BB(wt, val, N, W)
+	data := BeiBao(wt, val, N, W)
 	println(data)
 }
