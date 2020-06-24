@@ -1,6 +1,7 @@
 package Chapter1_test
 
 import (
+	"github.com/jxy90/GoTest/Utils/CommonUtil"
 	"math"
 	"testing"
 )
@@ -54,16 +55,6 @@ func Test_fib(t *testing.T) {
 	println(fibDP(5))
 	println(fibHis(5))
 	println(fibDP2(5))
-}
-
-func CommonUtil.Min(args ...int) int {
-	CommonUtil.Min := args[0]
-	for _, item := range args {
-		if item < CommonUtil.Min {
-			CommonUtil.Min = item
-		}
-	}
-	return CommonUtil.Min
 }
 
 func coinChange(coins []int, amount int) int {

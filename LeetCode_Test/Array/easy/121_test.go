@@ -1,6 +1,7 @@
 package easy_test
 
 import (
+	"github.com/jxy90/GoTest/Utils/CommonUtil"
 	"math"
 	"testing"
 )

@@ -1,6 +1,9 @@
 package DP_test
 
-import "testing"
+import (
+	"github.com/jxy90/GoTest/Utils/CommonUtil"
+	"testing"
+)
 
 func maxSubArray(nums []int) int {
 	if len(nums) == 0 {
