@@ -56,23 +56,14 @@ func Test_fib(t *testing.T) {
 	println(fibDP2(5))
 }
 
-func min(args ...int) int {
-	min := args[0]
+func CommonUtil.Min(args ...int) int {
+	CommonUtil.Min := args[0]
 	for _, item := range args {
-		if item < min {
-			min = item
+		if item < CommonUtil.Min {
+			CommonUtil.Min = item
 		}
 	}
-	return min
-}
-func max(args ...int) int {
-	max := args[0]
-	for _, item := range args {
-		if item > max {
-			max = item
-		}
-	}
-	return max
+	return CommonUtil.Min
 }
 
 func coinChange(coins []int, amount int) int {
@@ -87,7 +78,7 @@ func coinChange(coins []int, amount int) int {
 		if sub < 0 {
 			continue
 		}
-		res = min(res, sub+1)
+		res = CommonUtil.Min(res, sub+1)
 	}
 
 	if res == math.MaxInt32 {
@@ -113,7 +104,7 @@ func coinChangeMemo(coins []int, amount int) int {
 		if sub < 0 {
 			continue
 		}
-		res = min(res, sub+1)
+		res = CommonUtil.Min(res, sub+1)
 	}
 	if res == math.MaxInt32 {
 		return -1
@@ -130,7 +121,7 @@ func coinChangeDP(coins []int, amount int) int {
 			if amount-coin < 0 {
 				continue
 			}
-			dp[i] = min(dp[i], dp[i-coin]+1)
+			dp[i] = CommonUtil.Min(dp[i], dp[i-coin]+1)
 		}
 	}
 	if dp[amount] == math.MaxInt32 {

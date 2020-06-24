@@ -10,13 +10,13 @@ func LISDP(nums []int) int {
 		dp[i] = 1
 		for j := 0; j < i; j++ {
 			if nums[i] > nums[j] {
-				dp[i] = max(dp[i], dp[j]+1)
+				dp[i] = CommonUtil.Max(dp[i], dp[j]+1)
 			}
 		}
 	}
 	maxLength := 0
 	for _, v := range dp {
-		maxLength = max(maxLength, v)
+		maxLength = CommonUtil.Max(maxLength, v)
 	}
 	return maxLength
 }

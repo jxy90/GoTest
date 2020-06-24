@@ -1,12 +1,15 @@
 package easy_test
 
-import "testing"
+import (
+	"github.com/jxy90/GoTest/Utils/CommonUtil"
+	"testing"
+)
 
 func reverseStr(s string, k int) string {
 	sSlice := []byte(s)
 	for i := 0; i < len(s); i = i + 2*k {
 		left := i
-		right := min(i+k-1, len(s)-1)
+		right := CommonUtil.Min(i+k-1, len(s)-1)
 		for left < right {
 			sSlice[left], sSlice[right] = sSlice[right], sSlice[left]
 			left++
@@ -14,13 +17,6 @@ func reverseStr(s string, k int) string {
 		}
 	}
 	return string(sSlice)
-}
-
-func min(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
 }
 
 func Test_reverseStr(t *testing.T) {

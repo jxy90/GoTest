@@ -14,7 +14,7 @@ func BeiBao(wt, val []int, N, W int) int {
 		for w := 1; w <= W; w++ {
 			//println("N:", strconv.Itoa(i), " W:", strconv.Itoa(w))
 			if w-wt[i-1] > 0 {
-				dp[i][w] = max(dp[i-1][w], dp[i-1][w-wt[i-1]]+val[i-1])
+				dp[i][w] = CommonUtil.Max(dp[i-1][w], dp[i-1][w-wt[i-1]]+val[i-1])
 			} else {
 				dp[i][w] = dp[i-1][w]
 			}

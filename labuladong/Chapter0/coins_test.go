@@ -1,6 +1,7 @@
 package Chapter0_test
 
 import (
+	"github.com/jxy90/GoTest/Utils/CommonUtil"
 	"math"
 	"testing"
 )
@@ -19,7 +20,7 @@ func coinChange(coins []int, amount int) int {
 		if subProblem < 0 {
 			continue
 		}
-		ans = min(ans, subProblem+1)
+		ans = CommonUtil.Min(ans, subProblem+1)
 	}
 	if ans == math.MaxInt64 {
 		return -1
@@ -49,7 +50,7 @@ func coinChangeMemo(coins []int, amount int) int {
 		if subProblem < 0 {
 			continue
 		}
-		ans = min(ans, subProblem+1)
+		ans = CommonUtil.Min(ans, subProblem+1)
 	}
 	if ans == math.MaxInt64 {
 		return -1
@@ -69,7 +70,7 @@ func coinChangeDP(coins []int, n int) int {
 			if i-coin < 0 {
 				continue
 			}
-			memo[i] = min(memo[i], 1+memo[i-coin])
+			memo[i] = CommonUtil.Min(memo[i], 1+memo[i-coin])
 		}
 	}
 	return memo[n]
@@ -81,11 +82,4 @@ func Test_coinsChange(t *testing.T) {
 	println(coinChange(coins, amount))
 	println(coinChangeMemo(coins, amount))
 	println(coinChangeDP(coins, amount))
-}
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
 }

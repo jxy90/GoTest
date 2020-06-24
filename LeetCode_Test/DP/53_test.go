@@ -8,11 +8,11 @@ func maxSubArray(nums []int) int {
 	}
 	dp := map[int]int{}
 	for i := 0; i < len(nums); i++ {
-		dp[i] = max(nums[i], dp[i-1]+nums[i])
+		dp[i] = CommonUtil.Max(nums[i], dp[i-1]+nums[i])
 	}
 	res := nums[0]
 	for _, v := range dp {
-		res = max(res, v)
+		res = CommonUtil.Max(res, v)
 	}
 	return res
 }

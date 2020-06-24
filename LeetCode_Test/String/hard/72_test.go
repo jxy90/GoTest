@@ -1,6 +1,9 @@
 package hard_test
 
-import "testing"
+import (
+	"github.com/jxy90/GoTest/Utils/CommonUtil"
+	"testing"
+)
 
 func minDistance(word1 string, word2 string) int {
 	_word1, _word2 = word1, word2
@@ -33,24 +36,14 @@ func minDistanceDP(i, j int) int {
 	if _word1[i] == _word2[j] {
 		minDp = minDistanceDP(i-1, j-1)
 	} else {
-		minDp = min(
+		minDp = CommonUtil.Min(
 			minDistanceDP(i, j-1)+1,   //insert
 			minDistanceDP(i-1, j)+1,   //delete
 			minDistanceDP(i-1, j-1)+1, //replace
 		)
 	}
-	_memo[i][j]=minDp
+	_memo[i][j] = minDp
 	return minDp
-}
-
-func min(args ...int) int {
-	min := args[0]
-	for k := range args {
-		if min > args[k] {
-			min = args[k]
-		}
-	}
-	return min
 }
 
 func Test_minDistance(t *testing.T) {
