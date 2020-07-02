@@ -14,7 +14,6 @@ func minCameraCover(root *TreeNode) int {
 	return ans
 }
 
-
 var set map[*TreeNode]int
 var ans int
 
@@ -39,7 +38,7 @@ func minCameraCoverDFS(root, parent *TreeNode) {
 
 func minCameraCover2(root *TreeNode) int {
 	ans := minCameraCoverSolve(root)
-	return int(math.Min(ans[1],ans[2]))
+	return int(math.Min(ans[1], ans[2]))
 }
 
 func minCameraCoverSolve(root *TreeNode) []float64 {

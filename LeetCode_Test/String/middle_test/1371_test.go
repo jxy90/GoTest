@@ -14,13 +14,13 @@ func findTheLongestSubstring(s string) int {
 	var i, j int
 	for i = 0; i < length; i++ {
 		for j = i + 1; j <= length; j++ {
-			if j-i>ans {
+			if j-i > ans {
 				findTheLongestSubstringInitSet(set)
 				if findTheLongestSubstringCheck(s[i:j], set) {
-						ans = j - i
+					ans = j - i
 				}
-			}else {
-				j = i+ans
+			} else {
+				j = i + ans
 			}
 		}
 	}
@@ -53,8 +53,7 @@ func Test_findTheLongestSubstring(t *testing.T) {
 	str := "id"
 	findTheLongestSubstring(str)
 
-
-	pos := make([]int, 1 << 4)
+	pos := make([]int, 1<<4)
 	println(pos)
 
 }

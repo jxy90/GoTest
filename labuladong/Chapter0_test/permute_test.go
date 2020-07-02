@@ -14,7 +14,7 @@ var res [][]int
 
 func permuteBackTrack(nums, track []int) {
 	if len(nums) == len(track) {
-		temp := make([]int,len(nums))
+		temp := make([]int, len(nums))
 		copy(temp, track)
 		res = append(res, temp)
 		return

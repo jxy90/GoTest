@@ -41,12 +41,12 @@ func fibdp(n int) int {
 }
 
 //4.dp优化不使用数组进行保存，降低空间复杂度
-func fibdp2(n int ) int {
-	pre,cur :=1,1
-	for i:=3;i<=n;i++ {
-		sum :=pre+cur
-		pre=cur
-		cur=sum
+func fibdp2(n int) int {
+	pre, cur := 1, 1
+	for i := 3; i <= n; i++ {
+		sum := pre + cur
+		pre = cur
+		cur = sum
 	}
 	return cur
 }
