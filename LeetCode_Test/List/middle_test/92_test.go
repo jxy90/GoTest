@@ -9,13 +9,26 @@ func reverseBetween(head *ListNode, m int, n int) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
 	}
-	p := reverseBetween(head, m, n)
-	if index > m && index < n {
+	index++
+	p := reverseBetween(head.Next, m, n)
+	if index >= m && index < n {
 		head.Next.Next = head
 		head.Next = nil
 	}
-	index++
+	index--
 	return p
+}
+
+func reverseBetween2(head *ListNode, m int, n int) *ListNode {
+	var ans *ListNode
+	cur := head
+	if cur != nil {
+		temp := cur.Next
+		cur.Next = ans
+		ans = cur
+		cur = temp
+	}
+	return ans
 }
 
 func Test_reverseBetween(t *testing.T) {
