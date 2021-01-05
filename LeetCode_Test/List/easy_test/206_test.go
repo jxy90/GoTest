@@ -1,5 +1,7 @@
 package easy_test
 
+import "testing"
+
 func reverseList(head *ListNode) *ListNode {
 	var pre *ListNode
 	cur := head
@@ -20,4 +22,41 @@ func reverseListNew(head *ListNode) *ListNode {
 	head.Next.Next = head
 	head.Next = nil
 	return p
+}
+
+var temp *ListNode
+
+func reverseListN(head *ListNode, N int) *ListNode {
+	if N == 1 {
+		temp = head.Next
+		return head
+	}
+	p := reverseListN(head.Next, N-1)
+	head.Next.Next = head
+	head.Next = temp
+	return p
+}
+
+func Test_reverseList(t *testing.T) {
+	node := &ListNode{
+		Val: 1,
+		Next: &ListNode{
+			Val: 2,
+			Next: &ListNode{
+				Val: 3,
+				Next: &ListNode{
+					Val: 4,
+					//Next: &ListNode{
+					//	Val: 5,
+					//	Next: &ListNode{
+					//		Val:  6,
+					//		Next: nil,
+					//	},
+					//},
+				},
+			},
+		},
+	}
+	last := reverseListN(node, 3)
+	print(last)
 }
