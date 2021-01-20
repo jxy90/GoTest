@@ -60,3 +60,33 @@ func Test_reverseList(t *testing.T) {
 	last := reverseListN(node, 3)
 	print(last)
 }
+
+func reverseBetween(head *ListNode, m int, n int) *ListNode {
+	if m == 1 {
+		return reverseListN(head, n)
+	}
+	head.Next = reverseBetween(head.Next, m-1, n-1)
+	return head
+}
+
+func Test_reverseBetween(t *testing.T) {
+	nums := &ListNode{
+		Val: 1,
+		Next: &ListNode{
+			Val: 2,
+			Next: &ListNode{
+				Val: 3,
+				Next: &ListNode{
+					Val: 4,
+					Next: &ListNode{
+						Val:  5,
+						Next: nil,
+					},
+				},
+			},
+		},
+	}
+	n, m := 2, 4
+	ans := reverseBetween(nums, n, m)
+	println(ans)
+}
