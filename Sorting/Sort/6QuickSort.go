@@ -32,3 +32,29 @@ func QuickSort(arr []int) []int {
 	QuickSort(arr[head+1:])
 	return arr
 }
+
+func QuickSort2(arr []int, start, end int) {
+	if start < end {
+		left, right := start, end
+		mid := arr[(left+right)/2]
+		for left <= right {
+			for arr[left] < mid {
+				left++
+			}
+			for arr[right] > mid {
+				right--
+			}
+			if left <= right {
+				arr[left], arr[right] = arr[right], arr[left]
+				left++
+				right--
+			}
+		}
+		if right > start {
+			QuickSort2(arr, start, right)
+		}
+		if left < end {
+			QuickSort2(arr, left, end)
+		}
+	}
+}

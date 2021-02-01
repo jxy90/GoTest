@@ -55,10 +55,17 @@ func solveNQueensValidate(board []string, row, col int) bool {
 			return false
 		}
 	}
+	//
 	return true
 }
 
 func Test_solveNQueens(t *testing.T) {
 	data := solveNQueens(8)
 	println(len(data))
+	//for i := range data {
+	//	for j := range data[i] {
+	//		println(data[i][j])
+	//	}
+	//	println("")
+	//}
 }

@@ -21,9 +21,25 @@ func main() {
 	arr := []int{99, 23, 21, 6, 7, 54, 2, 84, 51, 12, 8, 71, 48, 1, 29}
 	fmt.Println(len(arr))
 	fmt.Println(arr)
-	Sort.RadixSort(arr)
+	//Sort.RadixSort(arr)
 	//Sort.CountingSort(arr,99)
 	//Sort.BucketSort(arr,5)
+	Sort.QuickSort3(arr, 0, len(arr)-1)
+	fmt.Println(arr)
+	arr = []int{1, 3, 4, 2}
+	Sort.QuickSort3(arr, 0, len(arr)-1)
+	fmt.Println(arr)
+	arr = []int{9, 3, 2, 4, 8}
+	Sort.QuickSort3(arr, 0, len(arr)-1)
+	fmt.Println(arr)
+	arr = []int{9, 3, 2, 4, 8}
 	//fmt.Println(arr)
 	fmt.Println(Sort.MergeSort(arr))
+}
+
+func printAll(nums []int) {
+	for i := range nums {
+		fmt.Print(nums[i])
+	}
+	fmt.Println("---")
 }
