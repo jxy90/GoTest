@@ -8,6 +8,7 @@ import (
 //
 func Test(t *testing.T) {
 	fmt.Println("hello test")
+	fmt.Println(6 % 2)
 	//153,370,371,407
 	//	getNarcissisticNumbers(1)
 	//a := []int{1, 3, 1, 4, 4, 2}
