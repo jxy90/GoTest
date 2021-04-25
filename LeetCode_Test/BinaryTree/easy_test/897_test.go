@@ -6,21 +6,20 @@ var ans897 *TreeNode
 var point897 *TreeNode
 
 func increasingBST(root *TreeNode) *TreeNode {
-	ans897 = &TreeNode{
+	point897 = &TreeNode{
 		Val: 0,
 	}
-	point897 = ans897
-	increasingBSTDFS(root)
+	ans897 = point897
+	increasingBSTMid(root)
 	return ans897.Right
 }
-func increasingBSTDFS(root *TreeNode) {
+func increasingBSTMid(root *TreeNode) {
 	if root == nil {
 		return
 	}
-	increasingBSTDFS(root.Left)
+	increasingBSTMid(root.Left)
 	increasingBSTVisit(root)
-	increasingBSTDFS(root.Right)
-	return
+	increasingBSTMid(root.Right)
 }
 func increasingBSTVisit(root *TreeNode) {
 	point897.Right = &TreeNode{
