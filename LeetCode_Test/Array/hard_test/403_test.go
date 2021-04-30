@@ -7,25 +7,6 @@ func Test_canCross(t *testing.T) {
 	println(canCross2([]int{0, 1, 2, 3, 4, 8, 9, 11}))
 }
 
-//dp[i][j]代表：第i个为止，通过j到达
-//func canCross2(stones []int) bool {
-//	if len(stones) < 2 || stones[1]-stones[0] != 1 {
-//		return false
-//	}
-//
-//	has := map[int]bool{}
-//	for i := range stones {
-//		has[stones[i]] = true
-//	}
-//
-//	n := len(stones)
-//	dp := make([][]int, n+1)
-//	for i := range dp {
-//		dp[i] = make([]int, n+1)
-//	}
-//	dp[1][1] = 1
-//
-//}
 //BFS
 func canCross2(stones []int) bool {
 	if len(stones) < 2 || stones[1]-stones[0] != 1 {
