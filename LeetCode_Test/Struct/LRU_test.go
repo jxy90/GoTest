@@ -1,4 +1,4 @@
-package middle_test
+package Struct_test
 
 import "testing"
 
@@ -6,7 +6,7 @@ func Test_LRUCache(t *testing.T) {
 	methods := []string{"LRUCache", "put", "put", "get", "put", "get", "put", "get", "get", "get"}
 	params := [][]int{{2}, {1, 1}, {2, 2}, {1}, {3, 3}, {2}, {4, 4}, {1}, {3}, {4}}
 
-	obj := Constructor(params[0][0])
+	obj := ConstructorLRU(params[0][0])
 	for i := 1; i < len(methods); i++ {
 		if methods[i] == "put" {
 			obj.Put(params[i][0], params[i][1])
@@ -35,7 +35,7 @@ func initDLinkedNode(key, value int) *DLinkedNode {
 	}
 }
 
-func Constructor(capacity int) LRUCache {
+func ConstructorLRU(capacity int) LRUCache {
 	lru := LRUCache{
 		cache:    map[int]*DLinkedNode{},
 		capacity: capacity,
@@ -96,10 +96,3 @@ func (this *LRUCache) addToHead(node *DLinkedNode) {
 	this.head.next.pre = node
 	this.head.next = node
 }
-
-///**
-// * Your LRUCache object will be instantiated and called as such:
-// * obj := Constructor(capacity);
-// * param_1 := obj.Get(key);
-// * obj.Put(key,value);
-// */
