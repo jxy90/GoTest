@@ -12,16 +12,16 @@ func findRedundantConnection(edges [][]int) []int {
 		f[i] = i
 	}
 	for i := range edges {
-		if find(&f, edges[i][0]) == find(&f, edges[i][1]) {
+		if find684(&f, edges[i][0]) == find684(&f, edges[i][1]) {
 			return edges[i]
 		} else {
-			join(&f, edges[i][0], edges[i][1])
+			join684(&f, edges[i][0], edges[i][1])
 		}
 	}
 	return nil
 }
 
-func find(f *[]int, value int) int {
+func find684(f *[]int, value int) int {
 	root := (*f)[value]
 	for root != (*f)[root] {
 		root = (*f)[root]
@@ -36,9 +36,9 @@ func find(f *[]int, value int) int {
 	return root
 }
 
-func join(f *[]int, x, y int) {
-	xp := find(f, x)
-	yp := find(f, y)
+func join684(f *[]int, x, y int) {
+	xp := find684(f, x)
+	yp := find684(f, y)
 	if xp != yp {
 		(*f)[xp] = yp
 	}
