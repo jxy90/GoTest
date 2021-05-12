@@ -20,7 +20,7 @@ func Test_numIslands(t *testing.T) {
 func numIslands(grid [][]byte) int {
 	optionX := []int{0, 1, 0, -1}
 	optionY := []int{1, 0, -1, 0}
-	union := ConstructorUnionFind(grid)
+	union := ConstructorUnionFind200(grid)
 	m := len(grid)
 	n := len(grid[0])
 	for i := 0; i < m; i++ {
@@ -40,7 +40,7 @@ func numIslands(grid [][]byte) int {
 	return union.count
 }
 
-type UnionFind struct {
+type UnionFind200 struct {
 	count  int
 	parent []int
 	rank   []int
@@ -49,7 +49,7 @@ type UnionFind struct {
 	//此方式和路径压缩按情况,取其一.
 }
 
-func ConstructorUnionFind(grid [][]byte) UnionFind {
+func ConstructorUnionFind200(grid [][]byte) UnionFind200 {
 	//m := len(grid)
 	n := len(grid[0])
 	count := 0
@@ -66,14 +66,14 @@ func ConstructorUnionFind(grid [][]byte) UnionFind {
 			rank = append(rank, 0)
 		}
 	}
-	return UnionFind{
+	return UnionFind200{
 		count:  count,
 		parent: parent,
 		rank:   rank,
 	}
 }
 
-func (u *UnionFind) Find(index int) int {
+func (u *UnionFind200) Find(index int) int {
 	if u.parent[index] == -1 {
 		return -1
 	}
@@ -93,7 +93,7 @@ func (u *UnionFind) Find(index int) int {
 	return root
 }
 
-func (u *UnionFind) Union(x, y int) {
+func (u *UnionFind200) Union(x, y int) {
 	xp := u.Find(x)
 	yp := u.Find(y)
 	if xp == yp {
@@ -110,7 +110,7 @@ func (u *UnionFind) Union(x, y int) {
 	u.count--
 }
 
-func (u *UnionFind) Same(x, y int) bool {
+func (u *UnionFind200) Same(x, y int) bool {
 	xp := u.Find(x)
 	yp := u.Find(y)
 	return xp == yp

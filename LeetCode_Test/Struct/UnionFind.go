@@ -1,32 +1,17 @@
 package Struct
 
 type UnionFind struct {
-	count  int
 	parent []int
 	rank   []int
 }
 
-func ConstructorUnionFind(grid [][]byte) UnionFind {
-	//m := len(grid)
-	n := len(grid[0])
-	count := 0
+func ConstructorUnionFind(total int) UnionFind {
 	parent := make([]int, 0)
-	rank := make([]int, 0)
-	for i := range grid {
-		for j := range grid[i] {
-			if grid[i][j] == '1' {
-				parent = append(parent, i*n+j)
-				count++
-			} else {
-				parent = append(parent, -1)
-			}
-			rank = append(rank, 0)
-		}
+	for i := 0; i < total; i++ {
+		parent = append(parent, i)
 	}
 	return UnionFind{
-		count:  count,
 		parent: parent,
-		rank:   rank,
 	}
 }
 
@@ -54,7 +39,7 @@ func (u *UnionFind) Union(x, y int) {
 	if xp == yp {
 		return
 	}
-	u.parent[xp] = yp
+	u.parent[yp] = xp
 }
 
 func (u *UnionFind) Same(x, y int) bool {
