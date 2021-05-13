@@ -2,7 +2,6 @@ package Struct
 
 type UnionFind struct {
 	parent []int
-	rank   []int
 }
 
 func ConstructorUnionFind(total int) UnionFind {
