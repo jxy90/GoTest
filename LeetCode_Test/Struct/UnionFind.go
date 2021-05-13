@@ -1,7 +1,7 @@
 package Struct
 
 type UnionFind struct {
-	parent []int
+	Parent []int
 }
 
 func ConstructorUnionFind(total int) UnionFind {
@@ -10,23 +10,23 @@ func ConstructorUnionFind(total int) UnionFind {
 		parent = append(parent, i)
 	}
 	return UnionFind{
-		parent: parent,
+		Parent: parent,
 	}
 }
 
 func (u *UnionFind) Find(index int) int {
-	if u.parent[index] == -1 {
+	if u.Parent[index] == -1 {
 		return -1
 	}
 	root := index
-	for root != u.parent[root] {
-		root = u.parent[root]
+	for root != u.Parent[root] {
+		root = u.Parent[root]
 	}
 	//路径压缩
 	i, j := index, 0
-	for root != u.parent[i] {
-		j = u.parent[i]
-		u.parent[i] = root
+	for root != u.Parent[i] {
+		j = u.Parent[i]
+		u.Parent[i] = root
 		i = j
 	}
 	return root
@@ -38,7 +38,7 @@ func (u *UnionFind) Union(x, y int) {
 	if xp == yp {
 		return
 	}
-	u.parent[yp] = xp
+	u.Parent[yp] = xp
 }
 
 func (u *UnionFind) Same(x, y int) bool {
