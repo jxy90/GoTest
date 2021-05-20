@@ -1,38 +1,55 @@
 package unionFindDisjointSets
 
 import (
+	"github.com/jxy90/GoTest/Utils/CommonUtil"
 	"testing"
 )
 
 func Test_hitBricks(t *testing.T) {
-	println(hitBricks([][]int{{1, 0, 0, 0}, {1, 1, 1, 0}}, [][]int{{1, 0}}))
+	//println(hitBricks([][]int{{1, 0, 0, 0}, {1, 1, 1, 0}}, [][]int{{1, 0}}))
+	//println(hitBricks([][]int{{1, 0, 0, 0}, {1, 1, 0, 0}}, [][]int{{1, 1}, {1, 0}}))
+	//println(hitBricks([][]int{{1}, {1}, {1}, {1}, {1}}, [][]int{{3, 0}, {4, 0}, {1, 0}, {2, 0}, {0, 0}}))
+	//println(hitBricks([][]int{{1, 0, 1}, {1, 1, 1}}, [][]int{{0, 0}, {0, 2}, {1, 1}}))
+	println(hitBricks([][]int{{0, 1, 1, 1, 1}, {1, 1, 1, 1, 0}, {1, 1, 1, 1, 0}, {0, 0, 1, 1, 0}, {0, 0, 1, 0, 0}, {0, 0, 1, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}},
+		[][]int{{6, 0}, {1, 0}}))
 }
 
 func hitBricks(grid [][]int, hits [][]int) []int {
-	//1.去除被打击块
-	copy := grid
-	for i := range hits {
-		copy[hits[i][0]][hits[i][1]] = 0
-	}
-	//2. 建立union
 	m := len(grid)
 	n := len(grid[0])
+	//1.去除被打击块
+	c := make([][]int, len(grid))
+	for i := range c {
+		c[i] = make([]int, len(grid[0]))
+		for j := range grid[i] {
+			c[i][j] = grid[i][j]
+		}
+	}
+	for i := range hits {
+		hitX := hits[i][0]
+		hitY := hits[i][1]
+		c[hitX][hitY] = 0
+	}
+	//2. 建立union
 	//设置根节点
 	root := m * n
 	u := ConstructorUnionFind803(root + 1)
 	//顶部链接根节点
 	for i := 0; i < n; i++ {
-		if copy[0][i] == 1 {
+		if c[0][i] == 1 {
 			u.union(i, root)
 		}
 	}
 	for i := 1; i < m; i++ {
 		for j := 0; j < n; j++ {
-			if copy[i][j] == 1 {
-				if copy[i-1][j] == 1 {
+			if c[i][j] == 1 {
+				if i == 2 && j == 4 {
+					println(0)
+				}
+				if c[i-1][j] == 1 {
 					//上
-					u.union((i-i)*n+j, i*n+j)
-				} else if j-1 >= 0 && copy[i][j-1] == 1 {
+					u.union((i-1)*n+j, i*n+j)
+				} else if j-1 >= 0 && c[i][j-1] == 1 {
 					//左
 					u.union(i*n+j-1, i*n+j)
 				}
@@ -40,8 +57,34 @@ func hitBricks(grid [][]int, hits [][]int) []int {
 		}
 	}
 	//3. 反向添加hits
+	ans := make([]int, 0)
+	hitslen := len(hits)
+	for i := hitslen - 1; i >= 0; i-- {
+		hitX := hits[i][0]
+		hitY := hits[i][1]
+		if grid[hitX][hitY] == 0 {
+			ans = append([]int{0}, ans...)
+			continue
+		}
+		before := u.count[u.find(root)]
+		if hitX == 0 {
+			u.union(hitY, root)
+		}
+		for j := 0; j < 4; j++ {
+			newX := hitX + optionsX[j]
+			newY := hitY + optionsY[j]
+			if newX < 0 || newX >= m || newY < 0 || newY >= n || c[newX][newY] == 0 {
+				continue
+			}
+			u.union(hitX*n+hitY, newX*n+newY)
+		}
+		after := u.count[u.find(root)]
+		ans = append([]int{CommonUtil.Max(0, after-before-1)}, ans...)
 
-	return nil
+		c[hitX][hitY] = 1
+	}
+
+	return ans
 }
 
 type UnionFind803 struct {
@@ -56,6 +99,7 @@ func ConstructorUnionFind803(total int) *UnionFind803 {
 		p[i] = i
 		c[i] = 1
 	}
+	c[total-1] = 0
 	return &UnionFind803{
 		parent: p,
 		count:  c,
@@ -68,8 +112,13 @@ func (u *UnionFind803) union(x, y int) {
 	if xp == yp {
 		return
 	}
-	u.parent[xp] = yp
-	u.count[yp] += u.count[xp]
+	if u.count[yp] > u.count[xp] {
+		u.parent[xp] = yp
+		u.count[yp] += u.count[xp]
+	} else {
+		u.parent[yp] = xp
+		u.count[xp] += u.count[yp]
+	}
 }
 func (u *UnionFind803) find(x int) int {
 	root := x
