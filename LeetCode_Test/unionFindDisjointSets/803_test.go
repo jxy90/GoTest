@@ -10,8 +10,10 @@ func Test_hitBricks(t *testing.T) {
 	//println(hitBricks([][]int{{1, 0, 0, 0}, {1, 1, 0, 0}}, [][]int{{1, 1}, {1, 0}}))
 	//println(hitBricks([][]int{{1}, {1}, {1}, {1}, {1}}, [][]int{{3, 0}, {4, 0}, {1, 0}, {2, 0}, {0, 0}}))
 	//println(hitBricks([][]int{{1, 0, 1}, {1, 1, 1}}, [][]int{{0, 0}, {0, 2}, {1, 1}}))
-	println(hitBricks([][]int{{0, 1, 1, 1, 1}, {1, 1, 1, 1, 0}, {1, 1, 1, 1, 0}, {0, 0, 1, 1, 0}, {0, 0, 1, 0, 0}, {0, 0, 1, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}},
-		[][]int{{6, 0}, {1, 0}}))
+	//println(hitBricks([][]int{{0, 1, 1, 1, 1}, {1, 1, 1, 1, 0}, {1, 1, 1, 1, 0}, {0, 0, 1, 1, 0}, {0, 0, 1, 0, 0}, {0, 0, 1, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}},
+	//	[][]int{{6, 0}, {1, 0}}))
+	println(hitBricks([][]int{{1, 1, 1, 0, 1, 1, 1, 1}, {1, 0, 0, 0, 0, 1, 1, 1}, {1, 1, 1, 0, 0, 0, 1, 1}, {1, 1, 0, 0, 0, 0, 0, 0}, {1, 0, 0, 0, 0, 0, 0, 0}, {1, 0, 0, 0, 0, 0, 0, 0}},
+		[][]int{{4, 6}, {3, 0}}))
 }
 
 func hitBricks(grid [][]int, hits [][]int) []int {
@@ -43,13 +45,14 @@ func hitBricks(grid [][]int, hits [][]int) []int {
 	for i := 1; i < m; i++ {
 		for j := 0; j < n; j++ {
 			if c[i][j] == 1 {
-				if i == 2 && j == 4 {
-					println(0)
+				if i == 2 {
+					println(1)
 				}
 				if c[i-1][j] == 1 {
 					//上
 					u.union((i-1)*n+j, i*n+j)
-				} else if j-1 >= 0 && c[i][j-1] == 1 {
+				}
+				if j-1 >= 0 && c[i][j-1] == 1 {
 					//左
 					u.union(i*n+j-1, i*n+j)
 				}
@@ -57,13 +60,13 @@ func hitBricks(grid [][]int, hits [][]int) []int {
 		}
 	}
 	//3. 反向添加hits
-	ans := make([]int, 0)
 	hitslen := len(hits)
+	ans := make([]int, hitslen)
 	for i := hitslen - 1; i >= 0; i-- {
 		hitX := hits[i][0]
 		hitY := hits[i][1]
 		if grid[hitX][hitY] == 0 {
-			ans = append([]int{0}, ans...)
+			ans[i] = 0
 			continue
 		}
 		before := u.count[u.find(root)]
@@ -79,7 +82,7 @@ func hitBricks(grid [][]int, hits [][]int) []int {
 			u.union(hitX*n+hitY, newX*n+newY)
 		}
 		after := u.count[u.find(root)]
-		ans = append([]int{CommonUtil.Max(0, after-before-1)}, ans...)
+		ans[i] = CommonUtil.Max(0, after-before-1)
 
 		c[hitX][hitY] = 1
 	}
