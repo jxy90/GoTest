@@ -1,4 +1,4 @@
-package Bit
+package easy_test
 
 import "testing"
 
