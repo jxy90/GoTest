@@ -1,4 +1,4 @@
-package hard_test
+package middle_test_test
 
 import "testing"
 
