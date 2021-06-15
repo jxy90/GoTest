@@ -1,0 +1,24 @@
+package easy_test
+
+import (
+	"testing"
+)
+
+func Test_peakIndexInMountainArray(t *testing.T) {
+	println(peakIndexInMountainArray([]int{3, 5, 3, 2, 0}))
+	println(peakIndexInMountainArray([]int{0, 1, 0}))
+}
+func peakIndexInMountainArray(arr []int) int {
+	m, n := 1, len(arr)-2
+	for m <= n {
+		mid := (m + n) / 2
+		if arr[mid] > arr[mid-1] && arr[mid] > arr[mid+1] {
+			return mid
+		} else if arr[mid] < arr[mid-1] {
+			n = mid - 1
+		} else {
+			m = mid + 1
+		}
+	}
+	return m
+}
