@@ -1,4 +1,4 @@
-package BFS
+package middle_test
 
 import "testing"
 
