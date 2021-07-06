@@ -14,6 +14,7 @@ import (
 //完全背包
 func Test_backPackIII(t *testing.T) {
 	println(backPackIII(10, []int{2, 3, 5, 7}, []int{1, 5, 2, 4}))
+	println(backPackIII(100, []int{}, []int{}))
 }
 
 func backPackIII(m int, A, V []int) int {
