@@ -17,10 +17,11 @@ func Test_backPackIII(t *testing.T) {
 	println(backPackIII(100, []int{}, []int{}))
 }
 
-func backPackIII(m int, A, V []int) int {
+func backPackIII0(m int, A, V []int) int {
 	n := len(A)
 	f := make([]int, m+1)
 	for i := 0; i < n; i++ {
+		//完全背包,正序遍历,物品可复用
 		for j := A[i]; j <= m; j++ {
 			f[j] = CommonUtil.Max(f[j], f[j-A[i]]+V[i])
 		}
@@ -28,7 +29,7 @@ func backPackIII(m int, A, V []int) int {
 	return f[m]
 }
 
-func backPackIII0(m int, A, V []int) int {
+func backPackIII(m int, A, V []int) int {
 	n := len(A)
 	f := make([][]int, n+1)
 	for i := range f {
@@ -36,8 +37,10 @@ func backPackIII0(m int, A, V []int) int {
 	}
 	for i := 0; i < n; i++ {
 		for j := 0; j <= m; j++ {
+			//count表示第i件物品能用的最大数量
 			count := m / A[i]
-			for k := 1; k <= count; k++ {
+			//循环count,代表每次放入k*A[i]大小的物品
+			for k := 0; k <= count; k++ {
 				if j-k*A[i] >= 0 {
 					f[i+1][j] = CommonUtil.Max(f[i][j], f[i][j-k*A[i]]+k*V[i])
 				} else {
