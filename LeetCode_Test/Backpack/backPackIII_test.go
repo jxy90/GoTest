@@ -19,6 +19,7 @@ func Test_backPackIII(t *testing.T) {
 
 func backPackIII0(m int, A, V []int) int {
 	n := len(A)
+	//f[i]表示容量i时,能放入的最大值
 	f := make([]int, m+1)
 	for i := 0; i < n; i++ {
 		//完全背包,正序遍历,物品可复用

@@ -16,6 +16,7 @@ func Test_backPack(t *testing.T) {
 
 func backPack(m int, A []int) int {
 	n := len(A)
+	//f[i]表示容量i时,能放入的最大值
 	f := make([]int, m+1)
 	for i := 0; i < n; i++ {
 		//从大到小,反向循环,保证一个物品只用一次

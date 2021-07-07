@@ -17,6 +17,7 @@ func Test_backPackIV(t *testing.T) {
 
 func backPackIV(nums []int, target int) int {
 	n := len(nums)
+	//f[i]表示容量i时,装满的方案数
 	f := make([]int, target+1)
 	f[0] = 1
 	for i := 0; i < n; i++ {
