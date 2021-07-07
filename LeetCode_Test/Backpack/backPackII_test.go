@@ -18,7 +18,7 @@ func Test_backPackII(t *testing.T) {
 
 func backPackII(m int, A []int, V []int) int {
 	n := len(A)
-	//f[i]表示容量i时,能放入的最大值
+	//f[i]表示背包容量i时,最多能装的值
 	f := make([]int, m+1)
 	for i := 0; i < n; i++ {
 		//从大到小,反向循环,保证一个物品只用一次
@@ -31,7 +31,7 @@ func backPackII(m int, A []int, V []int) int {
 
 func backPackII0(m int, A []int, V []int) int {
 	n := len(A)
-	//前i个物品在大小为j的背包下,最大量
+	//f[i][j]表示前i个物品,背包容量为j,最多能装的值
 	dp := make([][]int, n+1)
 	for i := range dp {
 		dp[i] = make([]int, m+1)
