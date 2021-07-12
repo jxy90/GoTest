@@ -1,16 +1,14 @@
 package middle_test
 
 import (
-	"sort"
 	"testing"
 )
 
-func Test_hIndex(t *testing.T) {
-	println(hIndex([]int{1}))
-	println(hIndex([]int{3, 0, 6, 1, 5}))
+func Test_hIndexII(t *testing.T) {
+	println(hIndexII([]int{0, 1, 3, 5, 6}))
 }
 
-func hIndex(citations []int) int {
+func hIndexII(citations []int) int {
 	n := len(citations)
 	left, right := 0, n-1
 	validate := func(mid int) bool {
@@ -35,8 +33,7 @@ func hIndex(citations []int) int {
 	}
 	return right
 }
-
-func hIndex1(citations []int) int {
+func hIndexII1(citations []int) int {
 	n := len(citations)
 	count := make([]int, n+1)
 	for _, citation := range citations {
@@ -46,21 +43,21 @@ func hIndex1(citations []int) int {
 			count[citation]++
 		}
 	}
-	for i, tot := n, 0; i >= 0; i-- {
-		tot += count[i]
-		if tot >= i {
+	total := 0
+	for i := n; i > 0; i-- {
+		total += count[i]
+		if total >= i {
 			return i
 		}
 	}
 	return 0
 }
 
-func hIndex0(citations []int) int {
-	sort.Ints(citations)
+func hIndexII0(citations []int) int {
 	n := len(citations)
-	h := 0
 	index := n - 1
-	for index >= 0 && citations[index] > h {
+	h := 0
+	for index >= 0 && citations[index] >= h {
 		h++
 		index--
 	}
