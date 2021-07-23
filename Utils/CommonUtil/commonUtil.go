@@ -10,6 +10,16 @@ func Min(args ...int) int {
 	return min
 }
 
+func MinFloat64(args ...float64) float64 {
+	min := args[0]
+	for _, item := range args {
+		if item < min {
+			min = item
+		}
+	}
+	return min
+}
+
 func Max(args ...int) int {
 	max := args[0]
 	for _, item := range args {
