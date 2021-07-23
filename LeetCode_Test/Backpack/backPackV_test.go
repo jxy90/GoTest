@@ -9,7 +9,7 @@ import (
 每一个物品只能使用一次
 */
 
-//完全背包
+//01背包
 func Test_backPackV(t *testing.T) {
 	println(backPackV([]int{1, 2, 3, 3, 7}, 7))
 }
