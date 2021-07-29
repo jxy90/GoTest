@@ -5,6 +5,15 @@ import (
 	"testing"
 )
 
+func Test_pathInZigZagTree(t *testing.T) {
+	println(CalNum(0)) //1
+	println(CalNum(1)) //5
+	println(CalNum(2)) //11
+	println(CalNum(3)) //23
+	println(CalNum(4))
+	println(int(math.Log2(1)))
+}
+
 func pathInZigZagTree(label int) []int {
 	var ls []int
 	level := int(math.Log2(float64(label)))
@@ -30,13 +39,4 @@ func CalNum(level int) int {
 	LeftNum := int(math.Pow(2, float64(level)))
 	RightNum := LeftNum + int(math.Pow(2, float64(level))) - 1
 	return LeftNum + RightNum
-}
-
-func Test_pathInZigZagTree(t *testing.T) {
-	println(CalNum(0)) //1
-	println(CalNum(1)) //5
-	println(CalNum(2)) //11
-	println(CalNum(3)) //23
-	println(CalNum(4))
-	println(int(math.Log2(1)))
 }
