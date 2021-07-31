@@ -5,6 +5,26 @@ import (
 	"testing"
 )
 
+func Test_minCameraCover(t *testing.T) {
+	set = map[*TreeNode]int{}
+	root := &TreeNode{
+		Val: 0,
+	}
+	if set[root] == 0 {
+		println(0)
+	}
+	println(2)
+
+	if set[nil] == 0 {
+		println(0)
+	}
+	set[nil] = 1
+	if set[nil] == 1 {
+		println(1)
+	}
+
+}
+
 func minCameraCover(root *TreeNode) int {
 	set = map[*TreeNode]int{}
 	//把nil加入set中，这样末尾检点就不会设置监视器
@@ -55,24 +75,4 @@ func minCameraCoverSolve(root *TreeNode) []float64 {
 	d1 := math.Min(left[2]+minRight12, right[2]+minLeft12)
 	d2 := 1 + math.Min(left[0], minLeft12) + math.Min(right[0], minRight12)
 	return []float64{d0, d1, d2}
-}
-
-func Test_minCameraCover(t *testing.T) {
-	set = map[*TreeNode]int{}
-	root := &TreeNode{
-		Val: 0,
-	}
-	if set[root] == 0 {
-		println(0)
-	}
-	println(2)
-
-	if set[nil] == 0 {
-		println(0)
-	}
-	set[nil] = 1
-	if set[nil] == 1 {
-		println(1)
-	}
-
 }
