@@ -4,6 +4,11 @@ import (
 	"testing"
 )
 
+func Test_climbStairs(t *testing.T) {
+	data := climbStairs(3)
+	println(data)
+}
+
 func climbStairs(n int) int {
 	if n == 1 {
 		return 1
@@ -26,9 +31,4 @@ func climbStairs_DP(n int) int {
 		pre, cur = cur, pre+cur
 	}
 	return cur
-}
-
-func Test_climbStairs(t *testing.T) {
-	data := climbStairs(3)
-	println(data)
 }
