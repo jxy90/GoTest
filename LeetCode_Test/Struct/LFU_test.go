@@ -19,6 +19,7 @@ func Test_LFUCache(t *testing.T) {
 
 type NodeList []*Node
 type Node struct {
+	prev, next      *Node
 	key, val, level int
 }
 
