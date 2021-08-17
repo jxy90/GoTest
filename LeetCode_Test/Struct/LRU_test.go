@@ -1,6 +1,8 @@
 package Struct_test
 
-import "testing"
+import (
+	"testing"
+)
 
 func Test_LRUCache(t *testing.T) {
 	methods := []string{"LRUCache", "put", "put", "get", "put", "get", "put", "get", "get", "get"}
@@ -17,30 +19,23 @@ func Test_LRUCache(t *testing.T) {
 	println(obj.tail.value)
 }
 
-type DLinkedNode struct {
+type DLinkNode struct {
 	key, value int
-	pre, next  *DLinkedNode
+	pre, next  *DLinkNode
 }
 
 type LRUCache struct {
-	cache      map[int]*DLinkedNode
-	capacity   int
-	head, tail *DLinkedNode
-}
-
-func initDLinkedNode(key, value int) *DLinkedNode {
-	return &DLinkedNode{
-		key:   key,
-		value: value,
-	}
+	cache      map[int]*DLinkNode
+	cap        int
+	head, tail *DLinkNode
 }
 
 func ConstructorLRU(capacity int) LRUCache {
 	lru := LRUCache{
-		cache:    map[int]*DLinkedNode{},
-		capacity: capacity,
-		head:     initDLinkedNode(0, 0),
-		tail:     initDLinkedNode(0, 0),
+		cache: map[int]*DLinkNode{},
+		cap:   capacity,
+		head:  &DLinkNode{},
+		tail:  &DLinkNode{},
 	}
 	lru.head.next = lru.tail
 	lru.tail.pre = lru.head
@@ -49,50 +44,45 @@ func ConstructorLRU(capacity int) LRUCache {
 
 func (this *LRUCache) Get(key int) int {
 	node := this.cache[key]
-	//不存在返回-1
 	if node == nil {
 		return -1
 	}
-	//存在 移动到头部
 	this.moveToHead(node)
 	return node.value
 }
 
 func (this *LRUCache) Put(key int, value int) {
 	node := this.cache[key]
-	//存在 更新val,移动到头部
 	if node != nil {
 		node.value = value
 		this.moveToHead(node)
 		return
 	}
-	//不存在
-	newNode := initDLinkedNode(key, value)
+	newNode := &DLinkNode{key: key, value: value}
 	this.addToHead(newNode)
-	this.cache[key] = newNode
-	//缓存满了 删除
-	if len(this.cache) > this.capacity {
-		remove := this.removeTail()
-		delete(this.cache, remove.key)
+	if len(this.cache) > this.cap {
+		this.removeTail()
 	}
 }
 
-func (this *LRUCache) removeTail() *DLinkedNode {
-	node := this.tail.pre
-	this.removeNode(node)
-	return node
-}
-func (this *LRUCache) moveToHead(node *DLinkedNode) {
+func (this *LRUCache) moveToHead(node *DLinkNode) {
 	this.removeNode(node)
 	this.addToHead(node)
 }
-func (this *LRUCache) removeNode(node *DLinkedNode) {
-	node.pre.next = node.next
+func (this *LRUCache) removeNode(node *DLinkNode) {
 	node.next.pre = node.pre
+	node.pre.next = node.next
+	delete(this.cache, node.key)
 }
-func (this *LRUCache) addToHead(node *DLinkedNode) {
-	node.pre = this.head
+func (this *LRUCache) addToHead(node *DLinkNode) {
 	node.next = this.head.next
+	node.pre = this.head
 	this.head.next.pre = node
 	this.head.next = node
+	this.cache[node.key] = node
+}
+func (this *LRUCache) removeTail() *DLinkNode {
+	node := this.tail.pre
+	this.removeNode(node)
+	return node
 }
