@@ -17,90 +17,115 @@ func Test_LFUCache(t *testing.T) {
 	println(1)
 }
 
-type NodeList []*Node
-type Node struct {
-	prev, next      *Node
+type DoubleLinkNodeList struct {
+	head, tail *DoubleLinkNode
+}
+type DoubleLinkNode struct {
 	key, val, level int
+	pre, next       *DoubleLinkNode
 }
 
 type LFUCache struct {
-	minLevel, capacity int
-	cache              map[int]*Node
-	levelCache         map[int]NodeList
+	cap, minLevel, size int
+	cache               map[int]*DoubleLinkNode
+	cacheLevelNodes     map[int]*DoubleLinkNodeList
 }
 
 func ConstructorLFU(capacity int) LFUCache {
 	lfu := LFUCache{
-		minLevel:   0,
-		capacity:   capacity,
-		cache:      map[int]*Node{},
-		levelCache: map[int]NodeList{},
+		cap:             capacity,
+		minLevel:        0,
+		size:            0,
+		cache:           map[int]*DoubleLinkNode{},
+		cacheLevelNodes: map[int]*DoubleLinkNodeList{},
 	}
 	return lfu
 }
 
 func (this *LFUCache) Get(key int) int {
-	if node, ok := this.cache[key]; ok {
-		this.removeNode(node)
-		if len(this.levelCache[node.level]) == 0 && node.level == this.minLevel {
-			this.minLevel++
-		}
-		node.level++
-		this.addNode(node)
-		return node.val
+	//检查存在
+	node := this.cache[key]
+	if node == nil {
+		return -1
 	}
-	return -1
+	//存在节点升级
+	this.IncNodeLevel(node)
+	return node.val
 }
 
 func (this *LFUCache) Put(key int, value int) {
-	if node, ok := this.cache[key]; ok {
+	//检查存在
+	node := this.cache[key]
+	if node == nil {
+		this.AddNewNode(key, value)
+	} else {
 		node.val = value
 		this.Get(key)
-	} else {
-		node := &Node{
-			key:   key,
-			val:   value,
-			level: 0,
-		}
-		this.addNode(node)
-		if len(this.cache) > this.capacity {
-			//容量超了删除尾部
-			this.removeTail()
-		}
-		//一定要最后更新
-		this.minLevel = 0
+	}
+}
+
+func (this *LFUCache) IncNodeLevel(node *DoubleLinkNode) {
+	//移除老的
+	this.removeNode(node)
+	//升级
+	node.level++
+	//添加新的
+	this.addNode(node)
+}
+
+func (this *LFUCache) AddNewNode(key int, value int) {
+	node := &DoubleLinkNode{
+		key:   key,
+		val:   value,
+		level: 0,
+		pre:   nil,
+		next:  nil,
+	}
+	//添加新的
+	this.addNode(node)
+	//重置minLevel
+	this.minLevel = 0
+}
+
+func (this *LFUCache) removeNode(node *DoubleLinkNode) {
+	node.next.pre = node.pre
+	node.pre.next = node.next
+	delete(this.cache, node.key)
+	//节点总数减一
+	this.size--
+	//判断减去的节点是不是最小一行的最后一个
+	if this.cacheLevelNodes[node.level].head.next.next == nil && node.level == this.minLevel {
+		this.minLevel++
+	}
+}
+func (this *LFUCache) addNode(node *DoubleLinkNode) {
+	//放入cacheLevelNodes
+	if this.cacheLevelNodes[node.level] == nil {
+		this.initLevelNode(node)
+	}
+	levelNodes := this.cacheLevelNodes[node.level]
+	node.next = levelNodes.head.next
+	node.pre = levelNodes.head
+	levelNodes.head.next.pre = node
+	levelNodes.head.next = node
+	this.size++
+	//放入cache
+	this.cache[node.key] = node
+	if this.size > this.cap {
+		this.removeTail()
 	}
 }
 
 func (this *LFUCache) removeTail() {
-	list := this.levelCache[this.minLevel]
-	n := len(list)
-	removeNode := list[n-1]
-	//缓存中移除
-	delete(this.cache, removeNode.key)
-	//移除尾部
-	list = list[:len(list)-1]
-	this.levelCache[this.minLevel] = list
-}
-func (this *LFUCache) addNode(node *Node) {
-	this.cache[node.key] = node
-	nodeList := this.levelCache[node.level].addNode(node)
-	this.levelCache[node.level] = nodeList
+	node := this.cacheLevelNodes[this.minLevel].tail.pre
+	this.removeNode(node)
 }
 
-func (nodeList NodeList) addNode(node *Node) NodeList {
-	newList := make(NodeList, 0)
-	newList = append(newList, node)
-	newList = append(newList, nodeList...)
-	return newList
-}
-func (this *LFUCache) removeNode(node *Node) {
-	delete(this.cache, node.key)
-	list := this.levelCache[node.level]
-	for i, n := range list {
-		if node == n {
-			list = append((list)[:i], (list)[i+1:]...)
-		}
+func (this *LFUCache) initLevelNode(node *DoubleLinkNode) {
+	this.cacheLevelNodes[node.level] = &DoubleLinkNodeList{
+		head: &DoubleLinkNode{},
+		tail: &DoubleLinkNode{},
 	}
-	this.levelCache[node.level] = list
+	this.cacheLevelNodes[node.level].head.next = this.cacheLevelNodes[node.level].tail
+	this.cacheLevelNodes[node.level].tail.pre = this.cacheLevelNodes[node.level].head
 }
