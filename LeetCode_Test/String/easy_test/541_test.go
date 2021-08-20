@@ -5,20 +5,20 @@ import (
 	"testing"
 )
 
-func reverseStr(s string, k int) string {
-	sSlice := []byte(s)
-	for i := 0; i < len(s); i = i + 2*k {
-		left := i
-		right := CommonUtil.Min(i+k-1, len(s)-1)
-		for left < right {
-			sSlice[left], sSlice[right] = sSlice[right], sSlice[left]
-			left++
-			right--
-		}
-	}
-	return string(sSlice)
+func Test_reverseStr(t *testing.T) {
+	println(reverseStr("abcdef", 2))
 }
 
-func Test_reverseStr(t *testing.T) {
-	println(reverseStr("abcdef", 3))
+func reverseStr(s string, k int) string {
+	sBytes := []byte(s)
+	n := len(s)
+	for i := 0; i < n; i = i + 2*k {
+		l, r := i, CommonUtil.Min(i+k-1, n-1)
+		for l < r {
+			sBytes[l], sBytes[r] = sBytes[r], sBytes[l]
+			l++
+			r--
+		}
+	}
+	return string(sBytes)
 }
