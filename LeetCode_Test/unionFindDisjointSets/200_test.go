@@ -116,7 +116,7 @@ func (u *UnionFind200) Same(x, y int) bool {
 	return xp == yp
 }
 
-//BFS
+//BFSDFS
 func numIslands0(grid [][]byte) int {
 	optionX := []int{0, 1, 0, -1}
 	optionY := []int{1, 0, -1, 0}

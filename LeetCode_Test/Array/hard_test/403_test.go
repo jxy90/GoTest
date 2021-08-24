@@ -7,7 +7,7 @@ func Test_canCross(t *testing.T) {
 	println(canCross2([]int{0, 1, 2, 3, 4, 8, 9, 11}))
 }
 
-//BFS
+//BFSDFS
 func canCross2(stones []int) bool {
 	if len(stones) < 2 || stones[1]-stones[0] != 1 {
 		return false
