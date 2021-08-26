@@ -9,6 +9,12 @@ func sum(a int, b int) int {
 	return a + b
 }
 
+type A struct {
+	nums []int
+	num  int
+	str  string
+}
+
 func main() {
 	//data := []int{10, 25, 11, 24, 17, 26}
 	//i := sort.Search(len(data), func(i int) bool {
@@ -24,4 +30,8 @@ func main() {
 	fmt.Println("最终的结果为", rec)
 	fmt.Println("最终的结果为", rec2)
 	fmt.Println("hello test")
+
+	a := new(A)
+	b := A{}
+	fmt.Printf("a:%v b:%v", a, b)
 }
