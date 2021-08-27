@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"net"
 	"net/http"
 )
 
@@ -16,7 +17,7 @@ func Start(ctx context.Context, serviceName, host, port string, registerHandlers
 func startService(ctx context.Context, serviceName, host, port string) context.Context {
 	ctx, cancel := context.WithCancel(ctx)
 	var srv http.Server
-	srv.Addr = ":" + port
+	srv.Addr = net.JoinHostPort(host, port)
 
 	go func() {
 		log.Println(srv.ListenAndServe())
