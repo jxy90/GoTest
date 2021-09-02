@@ -3,6 +3,7 @@ package Fast
 import (
 	"encoding/json"
 	"fmt"
+	"strings"
 	"testing"
 )
 
@@ -31,8 +32,47 @@ func Test21(t *testing.T) {
 	fmt.Println(string(bytes))
 }
 
-func Test22(t *testing.T) {
+type talker interface {
+	talk() string
+}
+
+type laser int
+
+func (l laser) talk() string {
+	return strings.Repeat("pew", int(l))
+}
+
+func shout(t talker) {
+	louder := strings.ToUpper(t.talk())
+	fmt.Println(louder)
+}
+
+type starship struct {
+	laser
+}
+
+func Test23(t *testing.T) {
+	//组合和嵌入
+	type A struct {
+		a int
+	}
+	type B struct {
+		b int
+	}
+	type C struct {
+		A A
+		B B
+	}
+	type D struct {
+		A
+		B
+	}
+	fmt.Printf("%v \n", new(C).A.a)
+	fmt.Printf("%v \n", new(D).a)
 	fmt.Println("----------")
+	s := starship{laser(3)}
+	fmt.Println(s.talk())
+	shout(s)
 	fmt.Println("----------")
 	fmt.Println("----------")
 }
