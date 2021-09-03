@@ -24,13 +24,13 @@ func main() {
 	//Sort.RadixSort(arr)
 	//Sort.CountingSort(arr,99)
 	//Sort.BucketSort(arr,5)
-	Sort.QuickSort3(arr, 0, len(arr)-1)
+	Sort.QuickSort2(arr, 0, len(arr)-1)
 	fmt.Println(arr)
 	arr = []int{1, 3, 4, 2}
-	Sort.QuickSort3(arr, 0, len(arr)-1)
+	Sort.QuickSort2(arr, 0, len(arr)-1)
 	fmt.Println(arr)
 	arr = []int{9, 3, 2, 4, 8}
-	Sort.QuickSort3(arr, 0, len(arr)-1)
+	Sort.QuickSort2(arr, 0, len(arr)-1)
 	fmt.Println(arr)
 	arr = []int{9, 3, 2, 4, 8}
 	//fmt.Println(arr)
