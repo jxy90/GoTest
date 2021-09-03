@@ -5,7 +5,7 @@ import (
 )
 
 func Test_runningSum(t *testing.T) {
-	println(runningSum([]int{1, 1, 0, 0, 0}))
+	fmt.Println(runningSum([]int{1, 1, 0, 0, 0}))
 }
 
 func runningSum(nums []int) []int {

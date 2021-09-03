@@ -31,11 +31,11 @@ leetcode265. 粉刷房子 II
 func Test_minCostII(t *testing.T) {
 	//2 + 5 + 3 = 10
 	costs := [][]int{{17, 2, 17}, {16, 16, 5}, {14, 3, 19}}
-	println(minCostII(costs))
+	fmt.Println(minCostII(costs))
 	//1 + 4 = 5
 	//3 + 2 = 5
 	costs = [][]int{{1, 5, 3}, {2, 9, 4}}
-	println(minCostII(costs))
+	fmt.Println(minCostII(costs))
 }
 
 func minCostII(costs [][]int) int {

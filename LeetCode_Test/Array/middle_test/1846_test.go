@@ -7,8 +7,8 @@ import (
 )
 
 func Test_maximumElementAfterDecrementingAndRearranging(t *testing.T) {
-	println(maximumElementAfterDecrementingAndRearranging([]int{2, 2, 1, 2, 1}))
-	println(maximumElementAfterDecrementingAndRearranging([]int{100, 1, 1000}))
+	fmt.Println(maximumElementAfterDecrementingAndRearranging([]int{2, 2, 1, 2, 1}))
+	fmt.Println(maximumElementAfterDecrementingAndRearranging([]int{100, 1, 1000}))
 }
 
 func maximumElementAfterDecrementingAndRearranging(arr []int) int {

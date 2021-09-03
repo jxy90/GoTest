@@ -3,7 +3,7 @@ package easy_test
 import "testing"
 
 func Test_add(t *testing.T) {
-	println(add(1, 2))
+	fmt.Println(add(1, 2))
 }
 
 func add(a int, b int) int {

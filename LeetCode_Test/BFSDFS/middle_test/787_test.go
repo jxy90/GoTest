@@ -8,8 +8,8 @@ import (
 
 func Test_findCheapestPrice(t *testing.T) {
 
-	println(findCheapestPrice(5, [][]int{{4, 1, 1}, {1, 2, 3}, {0, 3, 2}, {0, 4, 10}, {3, 1, 1}, {1, 4, 3}}, 2, 1, 1))
-	//println(findCheapestPrice(3, [][]int{{0, 1, 100}, {1, 2, 100}, {0, 2, 500}}, 0, 2, 1))
+	fmt.Println(findCheapestPrice(5, [][]int{{4, 1, 1}, {1, 2, 3}, {0, 3, 2}, {0, 4, 10}, {3, 1, 1}, {1, 4, 3}}, 2, 1, 1))
+	//fmt.Println(findCheapestPrice(3, [][]int{{0, 1, 100}, {1, 2, 100}, {0, 2, 500}}, 0, 2, 1))
 }
 
 func findCheapestPrice(n int, flights [][]int, src int, dst int, k int) int {

@@ -6,7 +6,7 @@ import (
 )
 
 func Test_longestPalindromeSubseq(t *testing.T) {
-	println(longestPalindromeSubseq("bbbab"))
+	fmt.Println(longestPalindromeSubseq("bbbab"))
 }
 func longestPalindromeSubseq(s string) int {
 	n := len(s)

@@ -1,16 +1,17 @@
 package middle_test
 
 import (
+	"fmt"
 	"math"
 	"testing"
 )
 
 func Test_pathInZigZagTree0(t *testing.T) {
-	//println(int(math.Log2(1)))
-	//println(int(math.Log2(3)))
-	//println(int(math.Log2(4)))
-	//println(int(math.Log2(14)))
-	println(pathInZigZagTree_0(14))
+	//fmt.Println(int(math.Log2(1)))
+	//fmt.Println(int(math.Log2(3)))
+	//fmt.Println(int(math.Log2(4)))
+	//fmt.Println(int(math.Log2(14)))
+	fmt.Println(pathInZigZagTree_0(14))
 }
 
 func pathInZigZagTree_0(label int) []int {

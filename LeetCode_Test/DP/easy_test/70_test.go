@@ -6,7 +6,7 @@ import (
 
 func Test_climbStairs(t *testing.T) {
 	data := climbStairs(3)
-	println(data)
+	fmt.Println(data)
 }
 
 func climbStairs(n int) int {

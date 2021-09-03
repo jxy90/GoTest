@@ -6,9 +6,9 @@ import (
 )
 
 func Test_reverseParentheses(t *testing.T) {
-	println(reverseParentheses("(abcd)"))
-	println(reverseParentheses("(u(love)i)"))
-	println(reverseParentheses("(ed(et(oc))el)"))
+	fmt.Println(reverseParentheses("(abcd)"))
+	fmt.Println(reverseParentheses("(u(love)i)"))
+	fmt.Println(reverseParentheses("(ed(et(oc))el)"))
 }
 
 func reverseParentheses(s string) string {

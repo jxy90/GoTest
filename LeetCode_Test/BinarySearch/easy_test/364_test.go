@@ -5,9 +5,9 @@ import (
 )
 
 func Test_isPerfectSquare(t *testing.T) {
-	println(isPerfectSquare(9))
-	println(isPerfectSquare(16))
-	println(isPerfectSquare(14))
+	fmt.Println(isPerfectSquare(9))
+	fmt.Println(isPerfectSquare(16))
+	fmt.Println(isPerfectSquare(14))
 }
 
 func isPerfectSquare(num int) bool {

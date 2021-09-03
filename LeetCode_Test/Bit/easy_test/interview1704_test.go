@@ -3,7 +3,7 @@ package easy_test
 import "testing"
 
 func Test_missingNumber2(t *testing.T) {
-	println(missingNumber([]int{3, 0, 1}))
+	fmt.Println(missingNumber([]int{3, 0, 1}))
 }
 
 func missingNumber2(nums []int) int {

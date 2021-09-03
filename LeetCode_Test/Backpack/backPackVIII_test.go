@@ -32,7 +32,7 @@ import (
 //
 
 func Test_backPackVIII(t *testing.T) {
-	println(backPackVIII(5, []int{1, 4}, []int{2, 1}))
+	fmt.Println(backPackVIII(5, []int{1, 4}, []int{2, 1}))
 }
 
 func backPackVIII(n int, value []int, amount []int) int {

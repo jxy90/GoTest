@@ -3,7 +3,7 @@ package easy_test
 import "testing"
 
 func Test_maximum(t *testing.T) {
-	println(maximum(1, 2))
+	fmt.Println(maximum(1, 2))
 }
 
 func maximum(a int, b int) int {

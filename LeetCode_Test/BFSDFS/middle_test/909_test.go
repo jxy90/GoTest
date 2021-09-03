@@ -10,7 +10,7 @@ func Test_snakesAndLadders(t *testing.T) {
 		{-1, 35, -1, -1, 13, -1},
 		{-1, -1, -1, -1, -1, -1},
 		{-1, 15, -1, -1, -1, -1}}
-	println(snakesAndLadders(board))
+	fmt.Println(snakesAndLadders(board))
 }
 
 func snakesAndLadders(board [][]int) int {

@@ -65,8 +65,8 @@ func Test_canPartition(t *testing.T) {
 	//dp[i][j]代表 前i个数中集合结果等于j的情况是true/false。
 	nums := []int{1, 5, 11, 5}
 	data := canPartition2(nums)
-	println(data)
+	fmt.Println(data)
 	nums = []int{1, 2, 3, 5}
 	data = canPartition2(nums)
-	println(data)
+	fmt.Println(data)
 }

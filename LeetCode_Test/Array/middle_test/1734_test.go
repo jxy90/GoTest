@@ -5,8 +5,8 @@ import (
 )
 
 func Test_decode(t *testing.T) {
-	println(decode([]int{3, 1}))
-	println(decode([]int{6, 5, 4, 6}))
+	fmt.Println(decode([]int{3, 1}))
+	fmt.Println(decode([]int{6, 5, 4, 6}))
 }
 
 func decode(encoded []int) []int {

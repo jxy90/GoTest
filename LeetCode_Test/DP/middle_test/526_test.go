@@ -8,7 +8,7 @@ func Test_countArrangement(t *testing.T) {
 	//1,1
 	//2,2
 	//3,
-	println(countArrangement(1))
+	fmt.Println(countArrangement(1))
 }
 
 func countArrangement(n int) int {

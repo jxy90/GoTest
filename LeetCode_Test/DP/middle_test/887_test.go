@@ -57,9 +57,9 @@ var memo [][]int
 
 func Test_superEggDrop(t *testing.T) {
 	res := superEggDrop(2, 6)
-	println("结果：" + strconv.Itoa(res))
+	fmt.Println("结果：" + strconv.Itoa(res))
 	res2 := superEggDropDp2(2, 6)
-	println("结果：" + strconv.Itoa(res2))
+	fmt.Println("结果：" + strconv.Itoa(res2))
 }
 
 func superEggDrop(k, n int) int {

@@ -19,7 +19,7 @@ func Test_getImportance(t *testing.T) {
 		Id:         2,
 		Importance: 3,
 	})
-	println(getImportance(employees, 1))
+	fmt.Println(getImportance(employees, 1))
 }
 
 func getImportance(employees []*Employee, id int) int {

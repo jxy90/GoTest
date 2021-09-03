@@ -46,5 +46,5 @@ func Test_findTilt(t *testing.T) {
 		//},
 	}
 	data := findTilt(root)
-	println(data)
+	fmt.Println(data)
 }

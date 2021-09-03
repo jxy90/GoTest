@@ -3,7 +3,7 @@ package easy_test
 import "testing"
 
 func Test_insertBits(t *testing.T) {
-	println(insertBits(1024, 19, 2, 6))
+	fmt.Println(insertBits(1024, 19, 2, 6))
 }
 
 func insertBits(N int, M int, i int, j int) int {

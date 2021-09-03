@@ -6,12 +6,12 @@ import (
 )
 
 func Test_reverse(t *testing.T) {
-	println(reverse(123))
-	println(reverse(-123))
-	println(reverse(120))
-	println(reverse(0))
-	println(reverse(10))
-	println(reverse(1534236469))
+	fmt.Println(reverse(123))
+	fmt.Println(reverse(-123))
+	fmt.Println(reverse(120))
+	fmt.Println(reverse(0))
+	fmt.Println(reverse(10))
+	fmt.Println(reverse(1534236469))
 }
 
 func reverse(x int) int {

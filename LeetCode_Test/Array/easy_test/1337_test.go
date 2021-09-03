@@ -6,7 +6,7 @@ import (
 )
 
 func Test_kWeakestRows(t *testing.T) {
-	println(kWeakestRows([][]int{
+	fmt.Println(kWeakestRows([][]int{
 		{1, 1, 0, 0, 0},
 		{1, 1, 1, 1, 0},
 		{1, 0, 0, 0, 0},

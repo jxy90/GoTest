@@ -19,7 +19,7 @@ func Test_leafSimilar(t *testing.T) {
 		},
 	}
 	data := leafSimilar(root1, root2)
-	println(data)
+	fmt.Println(data)
 }
 
 func leafSimilar(root1 *TreeNode, root2 *TreeNode) bool {

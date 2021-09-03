@@ -37,10 +37,10 @@ func Test_minDistance(t *testing.T) {
 		memo[i] = make([]int, len(_s2)+1)
 	}
 	data := minDistance(_s1, _s2)
-	println(data)
+	fmt.Println(data)
 
 	data = minDistanceDP(_s1, _s2)
-	println(data)
+	fmt.Println(data)
 }
 
 //DP

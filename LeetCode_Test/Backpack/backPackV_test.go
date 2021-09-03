@@ -11,7 +11,7 @@ import (
 
 //01背包
 func Test_backPackV(t *testing.T) {
-	println(backPackV([]int{1, 2, 3, 3, 7}, 7))
+	fmt.Println(backPackV([]int{1, 2, 3, 3, 7}, 7))
 }
 
 func backPackV(nums []int, target int) int {

@@ -5,9 +5,9 @@ import (
 )
 
 func Test_arrangeCoins(t *testing.T) {
-	println(arrangeCoins(1))
-	println(arrangeCoins(5))
-	println(arrangeCoins(8))
+	fmt.Println(arrangeCoins(1))
+	fmt.Println(arrangeCoins(5))
+	fmt.Println(arrangeCoins(8))
 }
 
 //数学法 高中数学等比数列 n*(n+1)/2 此时的n是行数,方程式的结果是硬币数

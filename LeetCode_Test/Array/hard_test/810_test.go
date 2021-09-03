@@ -3,7 +3,7 @@ package hard_test
 import "testing"
 
 func Test_xorGame(t *testing.T) {
-	println(xorGame([]int{1, 1, 2}))
+	fmt.Println(xorGame([]int{1, 1, 2}))
 }
 
 func xorGame(nums []int) bool {

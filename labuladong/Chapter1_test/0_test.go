@@ -1,6 +1,7 @@
 package Chapter1_test
 
 import (
+	"fmt"
 	"github.com/jxy90/GoTest/Utils/CommonUtil"
 	"math"
 	"testing"
@@ -51,10 +52,10 @@ func fibDP2(N int) int {
 }
 
 func Test_fib(t *testing.T) {
-	println(fib(5))
-	println(fibDP(5))
-	println(fibHis(5))
-	println(fibDP2(5))
+	fmt.Println(fib(5))
+	fmt.Println(fibDP(5))
+	fmt.Println(fibHis(5))
+	fmt.Println(fibDP2(5))
 }
 
 func coinChange(coins []int, amount int) int {
@@ -124,7 +125,7 @@ func coinChangeDP(coins []int, amount int) int {
 func Test_coinChange(t *testing.T) {
 	coins := []int{1, 2, 5}
 	amount := 11
-	println(coinChange(coins, amount))
-	println(coinChangeMemo(coins, amount))
-	println(coinChangeDP(coins, amount))
+	fmt.Println(coinChange(coins, amount))
+	fmt.Println(coinChangeMemo(coins, amount))
+	fmt.Println(coinChangeDP(coins, amount))
 }

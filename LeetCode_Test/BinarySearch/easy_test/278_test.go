@@ -6,7 +6,7 @@ import (
 
 func Test_firstBadVersion(t *testing.T) {
 	data := firstBadVersion(3)
-	println(data)
+	fmt.Println(data)
 }
 
 func isBadVersion(version int) bool {

@@ -3,7 +3,7 @@ package middle_test_test
 import "testing"
 
 func Test_eventualSafeNodes(t *testing.T) {
-	println(eventualSafeNodes([][]int{{1, 2}, {2, 3}, {5}, {0}, {5}, {}, {}}))
+	fmt.Println(eventualSafeNodes([][]int{{1, 2}, {2, 3}, {5}, {0}, {5}, {}, {}}))
 }
 
 func eventualSafeNodes(graph [][]int) []int {

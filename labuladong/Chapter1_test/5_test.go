@@ -46,7 +46,7 @@ func Test_change(t *testing.T) {
 	amount := 5
 	coins := []int{1, 2, 5}
 	data := change(amount, coins)
-	println(data)
+	fmt.Println(data)
 	data = change2(amount, coins)
-	println(data)
+	fmt.Println(data)
 }

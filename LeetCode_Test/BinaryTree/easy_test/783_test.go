@@ -93,5 +93,5 @@ func Test_minDiffInBST(t *testing.T) {
 		},
 	}
 	data := minDiffInBST(root1)
-	println(data)
+	fmt.Println(data)
 }

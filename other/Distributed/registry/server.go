@@ -39,14 +39,14 @@ func (rs RegistryService) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		var r Registration
 		err := dec.Decode(&r)
 		if err != nil {
-			log.Println(err)
+			log.fmt.Println(err)
 			w.WriteHeader(http.StatusBadRequest)
 			return
 		}
 		log.Printf("Adding service %v with URL: %s \n", r.ServiceName, r.ServiceURL)
 		err = reg.add(r)
 		if err != nil {
-			log.Println(err)
+			log.fmt.Println(err)
 			w.WriteHeader(http.StatusBadRequest)
 			return
 		}

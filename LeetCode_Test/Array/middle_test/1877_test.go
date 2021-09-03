@@ -7,8 +7,8 @@ import (
 )
 
 func Test_minPairSum(t *testing.T) {
-	println(minPairSum([]int{3, 5, 2, 3}))
-	println(minPairSum([]int{3, 5, 4, 2, 4, 6}))
+	fmt.Println(minPairSum([]int{3, 5, 2, 3}))
+	fmt.Println(minPairSum([]int{3, 5, 4, 2, 4, 6}))
 }
 
 func minPairSum(nums []int) int {

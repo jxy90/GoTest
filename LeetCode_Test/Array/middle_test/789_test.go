@@ -6,7 +6,7 @@ import (
 )
 
 func Test_escapeGhosts(t *testing.T) {
-	println(escapeGhosts([][]int{{1, 0}, {0, 3}}, []int{0, 1}))
+	fmt.Println(escapeGhosts([][]int{{1, 0}, {0, 3}}, []int{0, 1}))
 }
 
 func escapeGhosts(ghosts [][]int, target []int) bool {

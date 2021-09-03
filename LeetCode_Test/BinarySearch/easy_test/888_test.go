@@ -6,7 +6,7 @@ import (
 )
 
 func Test_fairCandySwap(t *testing.T) {
-	println(fairCandySwap([]int{35, 17, 4, 24, 10}, []int{63, 21}))
+	fmt.Println(fairCandySwap([]int{35, 17, 4, 24, 10}, []int{63, 21}))
 }
 
 func fairCandySwap(aliceSizes []int, bobSizes []int) []int {

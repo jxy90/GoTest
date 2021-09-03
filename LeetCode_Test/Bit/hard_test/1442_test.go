@@ -5,11 +5,11 @@ import (
 )
 
 func Test_countTriplets(t *testing.T) {
-	println(countTriplets([]int{2, 3, 1, 6, 7}))
-	println(countTriplets([]int{1, 1, 1, 1, 1}))
-	println(countTriplets([]int{2, 3}))
-	println(countTriplets([]int{1, 3, 5, 7, 9}))
-	println(countTriplets([]int{7, 11, 12, 9, 5, 2, 7, 17, 22}))
+	fmt.Println(countTriplets([]int{2, 3, 1, 6, 7}))
+	fmt.Println(countTriplets([]int{1, 1, 1, 1, 1}))
+	fmt.Println(countTriplets([]int{2, 3}))
+	fmt.Println(countTriplets([]int{1, 3, 5, 7, 9}))
+	fmt.Println(countTriplets([]int{7, 11, 12, 9, 5, 2, 7, 17, 22}))
 }
 
 func countTriplets(arr []int) int {

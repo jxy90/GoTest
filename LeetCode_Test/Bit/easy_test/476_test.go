@@ -3,9 +3,9 @@ package easy_test
 import "testing"
 
 func Test_findComplement(t *testing.T) {
-	println(findComplement(2))
-	println(findComplement(1))
-	println(findComplement(5))
+	fmt.Println(findComplement(2))
+	fmt.Println(findComplement(1))
+	fmt.Println(findComplement(5))
 }
 
 func findComplement(num int) int {

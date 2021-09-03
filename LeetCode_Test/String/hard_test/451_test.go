@@ -6,7 +6,7 @@ import (
 )
 
 func Test_frequencySort(t *testing.T) {
-	println(frequencySort("tree"))
+	fmt.Println(frequencySort("tree"))
 }
 
 type ByteNode struct {

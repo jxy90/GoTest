@@ -13,8 +13,8 @@ func isSubtree(s *TreeNode, t *TreeNode) bool {
 	//return isSubtreeCheck(s, t) || isSubtree(s.Left, t) || isSubtree(s.Right, t)
 	tempS := isSubtreeLoop(s, "")
 	tempT := isSubtreeLoop(t, "")
-	println(tempS)
-	println(tempT)
+	fmt.Println(tempS)
+	fmt.Println(tempT)
 	return strings.Contains(tempS, tempT)
 }
 

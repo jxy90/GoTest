@@ -5,7 +5,7 @@ import (
 )
 
 func Test_nextGreatestLetter(t *testing.T) {
-	println(nextGreatestLetter([]byte{'c', 'f', 'j'}, 'j'))
+	fmt.Println(nextGreatestLetter([]byte{'c', 'f', 'j'}, 'j'))
 }
 
 func nextGreatestLetter(letters []byte, target byte) byte {

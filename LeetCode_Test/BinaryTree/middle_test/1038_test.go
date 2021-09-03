@@ -1,6 +1,9 @@
 package middle_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 var sum int
 
@@ -50,5 +53,5 @@ func Test_bstToGst(t *testing.T) {
 		},
 	}
 	data := bstToGst(root)
-	println(data)
+	fmt.Println(data)
 }

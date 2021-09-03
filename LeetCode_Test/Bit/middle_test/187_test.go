@@ -3,8 +3,8 @@ package middle_test_test
 import "testing"
 
 func Test_findRepeatedDnaSequences(t *testing.T) {
-	//println(findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"))
-	println(findRepeatedDnaSequences("AAAAAAAAAAA"))
+	//fmt.Println(findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"))
+	fmt.Println(findRepeatedDnaSequences("AAAAAAAAAAA"))
 }
 
 //func findRepeatedDnaSequences(s string) []string {

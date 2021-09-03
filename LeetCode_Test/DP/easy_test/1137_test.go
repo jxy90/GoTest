@@ -5,7 +5,7 @@ import (
 )
 
 func Test_tribonacci(t *testing.T) {
-	println(tribonacci(4))
+	fmt.Println(tribonacci(4))
 }
 
 var f [38]int

@@ -17,12 +17,12 @@ type User struct {
 func Test_Index(t *testing.T) {
 	engine, err := xorm.NewEngine("mysql", "root:123456@tcp(localhost:3308)/test?charset=utf8&parseTime=True&loc=UTC&multiStatements=true")
 	if err != nil {
-		println(err)
+		fmt.Println(err)
 		return
 	}
 	err = engine.Sync(User{})
 	if err != nil {
-		println(err)
+		fmt.Println(err)
 		return
 	}
 	abcs := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -38,10 +38,10 @@ func Test_Index(t *testing.T) {
 			}
 			count, err := engine.Insert(users)
 			if err != nil {
-				println(fmt.Sprintf("插入失败%v", err))
+				fmt.Println(fmt.Sprintf("插入失败%v", err))
 				return
 			}
-			println(fmt.Sprintf("插入 : %v", count))
+			fmt.Println(fmt.Sprintf("插入 : %v", count))
 		}
 	}
 }

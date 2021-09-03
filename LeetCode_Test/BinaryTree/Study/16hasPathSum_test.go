@@ -36,5 +36,5 @@ func Test_maxPath(t *testing.T) {
 			Val: 8,
 		},
 	}
-	println(maxPath(root))
+	fmt.Println(maxPath(root))
 }

@@ -5,7 +5,7 @@ import (
 )
 
 func Test_hIndexII(t *testing.T) {
-	println(hIndexII([]int{0, 1, 3, 5, 6}))
+	fmt.Println(hIndexII([]int{0, 1, 3, 5, 6}))
 }
 
 func hIndexII(citations []int) int {

@@ -20,7 +20,7 @@ func startService(ctx context.Context, serviceName, host, port string) context.C
 	srv.Addr = net.JoinHostPort(host, port)
 
 	go func() {
-		log.Println(srv.ListenAndServe())
+		log.fmt.Println(srv.ListenAndServe())
 		cancel()
 	}()
 

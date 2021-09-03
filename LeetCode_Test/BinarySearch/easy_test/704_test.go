@@ -5,7 +5,7 @@ import (
 )
 
 func Test_search(t *testing.T) {
-	println(search([]int{-1, 0, 3, 5, 9, 12}, 9))
+	fmt.Println(search([]int{-1, 0, 3, 5, 9, 12}, 9))
 }
 func search(nums []int, target int) int {
 	l, r := 0, len(nums)

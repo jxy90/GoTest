@@ -146,5 +146,5 @@ func lengthOfLongestSubstring(s string) int {
 }
 
 func Test_lengthOfLongestSubstring(t *testing.T) {
-	println(lengthOfLongestSubstring(" "))
+	fmt.Println(lengthOfLongestSubstring(" "))
 }

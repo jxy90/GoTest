@@ -7,7 +7,7 @@ import (
 )
 
 func Test_reverseVowels(t *testing.T) {
-	println(reverseVowels("hello"))
+	fmt.Println(reverseVowels("hello"))
 }
 
 func reverseVowels(s string) string {

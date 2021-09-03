@@ -30,7 +30,7 @@ func Test_mySqrt(t *testing.T) {
 		t.Error("error")
 	}
 
-	println(mySqrt(4))
+	fmt.Println(mySqrt(4))
 }
 
 /*func myPow(x float64, n int) float64 {
@@ -70,6 +70,6 @@ func myPowHelper(x float64, n int) float64 {
 	}
 }
 func Test_myPow(t *testing.T) {
-	println(myPow(0.00001, 2147483647))
-	println(math.Pow(0.00001, 2147483647))
+	fmt.Println(myPow(0.00001, 2147483647))
+	fmt.Println(math.Pow(0.00001, 2147483647))
 }

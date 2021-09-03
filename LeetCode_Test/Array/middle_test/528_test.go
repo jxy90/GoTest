@@ -7,7 +7,7 @@ import (
 )
 
 func Test_PickIndex(t *testing.T) {
-	//println(compress([]byte{'a', 'a', 'b', 'b', 'c', 'c', 'c'}))
+	//fmt.Println(compress([]byte{'a', 'a', 'b', 'b', 'c', 'c', 'c'}))
 }
 
 /**

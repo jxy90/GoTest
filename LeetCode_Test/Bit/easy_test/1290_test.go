@@ -3,7 +3,7 @@ package easy_test
 import "testing"
 
 func Test_getDecimalValue(t *testing.T) {
-	println(getDecimalValue(&ListNode{
+	fmt.Println(getDecimalValue(&ListNode{
 		Val:  0,
 		Next: nil,
 	}))

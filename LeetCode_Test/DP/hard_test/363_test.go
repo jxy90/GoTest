@@ -34,6 +34,6 @@ func maxSumSubmatrix(matrix [][]int, k int) int {
 }
 
 func TestName(t *testing.T) {
-	//println(maxSumSubmatrix([][]int{{1, 0, 1}, {0, -2, 3}}, 2))
-	println(maxSumSubmatrix([][]int{{2, 2, -1}}, 3))
+	//fmt.Println(maxSumSubmatrix([][]int{{1, 0, 1}, {0, -2, 3}}, 2))
+	fmt.Println(maxSumSubmatrix([][]int{{2, 2, -1}}, 3))
 }

@@ -3,8 +3,8 @@ package DP_test
 import "testing"
 
 func Test_numberOfArithmeticSlices(t *testing.T) {
-	//println(maxSumSubmatrix([][]int{{1, 0, 1}, {0, -2, 3}}, 2))
-	println(numberOfArithmeticSlices([]int{2, 4, 6, 8, 10}))
+	//fmt.Println(maxSumSubmatrix([][]int{{1, 0, 1}, {0, -2, 3}}, 2))
+	fmt.Println(numberOfArithmeticSlices([]int{2, 4, 6, 8, 10}))
 }
 
 func numberOfArithmeticSlices(nums []int) int {

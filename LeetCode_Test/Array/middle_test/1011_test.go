@@ -42,5 +42,5 @@ func shipWithinDaysValidate(weights []int, D, size int) bool {
 func Test_shipWithinDays(t *testing.T) {
 	day := 4
 	array := []int{1, 2, 3, 1, 1}
-	println(shipWithinDays(array, day))
+	fmt.Println(shipWithinDays(array, day))
 }

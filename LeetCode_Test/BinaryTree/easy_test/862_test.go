@@ -23,7 +23,7 @@ func Test_distanceK(t *testing.T) {
 			Right: &TreeNode{Val: 8},
 		},
 	}
-	println(distanceK(root1, root5, 2))
+	fmt.Println(distanceK(root1, root5, 2))
 }
 
 func distanceK(root *TreeNode, target *TreeNode, k int) []int {

@@ -5,7 +5,7 @@ import (
 )
 
 func Test_minSwapsCouples(t *testing.T) {
-	println(minSwapsCouples([]int{0, 2, 1, 3}))
+	fmt.Println(minSwapsCouples([]int{0, 2, 1, 3}))
 }
 
 func minSwapsCouples(row []int) int {

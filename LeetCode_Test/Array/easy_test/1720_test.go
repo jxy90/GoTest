@@ -3,7 +3,7 @@ package easy_test
 import "testing"
 
 func Test_decode(t *testing.T) {
-	println(decode([]int{1, 2, 3}, 1))
+	fmt.Println(decode([]int{1, 2, 3}, 1))
 }
 
 func decode(encoded []int, first int) []int {

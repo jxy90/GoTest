@@ -27,5 +27,5 @@ func Test_isUniValTree(t *testing.T) {
 			Val: 1,
 		},
 	}
-	println(isUniValTree(root))
+	fmt.Println(isUniValTree(root))
 }

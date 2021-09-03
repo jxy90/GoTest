@@ -8,9 +8,9 @@ import (
 )
 
 func Test_maximizeXor(t *testing.T) {
-	//println(minimumTimeRequired([]int{3, 2, 3}, 3))
-	println(maximizeXor([]int{0, 1, 2, 3, 4}, [][]int{{3, 1}, {1, 3}, {5, 6}}))
-	println(maximizeXor([]int{5, 2, 4, 6, 6, 3}, [][]int{{12, 4}, {8, 1}, {6, 3}}))
+	//fmt.Println(minimumTimeRequired([]int{3, 2, 3}, 3))
+	fmt.Println(maximizeXor([]int{0, 1, 2, 3, 4}, [][]int{{3, 1}, {1, 3}, {5, 6}}))
+	fmt.Println(maximizeXor([]int{5, 2, 4, 6, 6, 3}, [][]int{{12, 4}, {8, 1}, {6, 3}}))
 }
 
 func maximizeXor(nums []int, queries [][]int) []int {

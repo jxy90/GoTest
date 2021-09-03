@@ -5,7 +5,7 @@ import (
 )
 
 func Test_findRedundantDirectedConnection(t *testing.T) {
-	println(findRedundantDirectedConnection([][]int{{1, 2}, {1, 3}, {2, 3}}))
+	fmt.Println(findRedundantDirectedConnection([][]int{{1, 2}, {1, 3}, {2, 3}}))
 }
 
 func findRedundantDirectedConnection(edges [][]int) []int {

@@ -1,12 +1,13 @@
 package easy_test
 
 import (
+	"fmt"
 	"testing"
 )
 
 func Test_search(t *testing.T) {
-	println(search([]int{3, 1}, 1))
-	println(search([]int{4, 5, 6, 7, 0, 1, 2}, 0))
+	fmt.Println(search([]int{3, 1}, 1))
+	fmt.Println(search([]int{4, 5, 6, 7, 0, 1, 2}, 0))
 }
 
 func search(nums []int, target int) int {

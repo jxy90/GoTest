@@ -7,14 +7,14 @@ import (
 
 func Test_reverseBits(t *testing.T) {
 	//4
-	println(reverseBits2(-1))
-	println(reverseBits2(7))
+	fmt.Println(reverseBits2(-1))
+	fmt.Println(reverseBits2(7))
 	//8
-	println(reverseBits2(1775))
+	fmt.Println(reverseBits2(1775))
 	//31
-	println(reverseBits2(2147483647))
+	fmt.Println(reverseBits2(2147483647))
 	//32
-	println(reverseBits2(2147483646))
+	fmt.Println(reverseBits2(2147483646))
 }
 
 func reverseBits2(num int) int {

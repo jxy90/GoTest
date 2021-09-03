@@ -119,11 +119,11 @@ func openLockBFSD(deadends []string, target string) int {
 }
 
 func Test_openLock(t *testing.T) {
-	//println(openLockUp("0000", 2))
-	//println(openLockDown("0000", 2))
+	//fmt.Println(openLockUp("0000", 2))
+	//fmt.Println(openLockDown("0000", 2))
 
 	deadlines := []string{"0201", "0101", "0102", "1212", "2002"}
 	target := "0000"
-	println(openLock(deadlines, target))
-	println(openLockBFSD(deadlines, target))
+	fmt.Println(openLock(deadlines, target))
+	fmt.Println(openLockBFSD(deadlines, target))
 }

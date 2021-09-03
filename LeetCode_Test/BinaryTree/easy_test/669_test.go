@@ -15,7 +15,7 @@ func Test_trimBST(t *testing.T) {
 	L := 1
 	R := 2
 	root = trimBST(root, L, R)
-	println(root)
+	fmt.Println(root)
 }
 
 func trimBST(root *TreeNode, L int, R int) *TreeNode {

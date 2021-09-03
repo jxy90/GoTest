@@ -6,11 +6,11 @@ import (
 )
 
 func Test_intToRoman(t *testing.T) {
-	println(intToRoman(3))
-	println(intToRoman(4))
-	println(intToRoman(9))
-	println(intToRoman(58))
-	println(intToRoman(1994))
+	fmt.Println(intToRoman(3))
+	fmt.Println(intToRoman(4))
+	fmt.Println(intToRoman(9))
+	fmt.Println(intToRoman(58))
+	fmt.Println(intToRoman(1994))
 }
 
 //var memo1 = map[string]int{

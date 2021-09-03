@@ -17,12 +17,12 @@ type Articles struct {
 func Test_Partition(t *testing.T) {
 	engine, err := xorm.NewEngine("mysql", "root:123456@tcp(localhost:3306)/test?charset=utf8&parseTime=True&loc=UTC&multiStatements=true")
 	if err != nil {
-		println(err)
+		fmt.Println(err)
 		return
 	}
 	//err = engine.Sync(Articles{})
 	//if err != nil {
-	//	println(err)
+	//	fmt.Println(err)
 	//	return
 	//}
 	abcs := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -40,10 +40,10 @@ func Test_Partition(t *testing.T) {
 			for p := 0; p < 10; p++ {
 				count, err := engine.Insert(users)
 				if err != nil {
-					println(fmt.Sprintf("插入失败%v", err))
+					fmt.Println(fmt.Sprintf("插入失败%v", err))
 					return
 				}
-				println(fmt.Sprintf("插入 : %v", count))
+				fmt.Println(fmt.Sprintf("插入 : %v", count))
 			}
 		}
 	}

@@ -38,7 +38,7 @@ func Test_moveZeroes(t *testing.T) {
 	nums := []int{0, 0, 1}
 	moveZeroes3(nums)
 	for i := range nums {
-		println(nums[i])
+		fmt.Println(nums[i])
 	}
 }
 

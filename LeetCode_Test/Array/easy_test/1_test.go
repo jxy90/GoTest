@@ -16,5 +16,5 @@ func twoSum(nums []int, target int) []int {
 func Test_twoSum(t *testing.T) {
 	nums := []int{1, 2, 3}
 	target := 3
-	println(twoSum(nums, target))
+	fmt.Println(twoSum(nums, target))
 }

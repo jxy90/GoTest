@@ -6,7 +6,7 @@ import (
 )
 
 func Test_slidingPuzzle(t *testing.T) {
-	println(slidingPuzzle([][]int{{1, 2, 3}, {4, 0, 5}}))
+	fmt.Println(slidingPuzzle([][]int{{1, 2, 3}, {4, 0, 5}}))
 }
 
 var neighbors = [6][]int{{1, 3}, {0, 2, 4}, {1, 5}, {0, 4}, {1, 3, 5}, {2, 4}}

@@ -14,7 +14,7 @@ func Test_LFUCache(t *testing.T) {
 			obj.Get(params[i][0])
 		}
 	}
-	println(1)
+	fmt.Println(1)
 }
 
 type DoubleLinkNodeList struct {

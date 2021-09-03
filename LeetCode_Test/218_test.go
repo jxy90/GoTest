@@ -3,8 +3,8 @@ package LeetCode_Test
 import "testing"
 
 func Test_getSkyline(t *testing.T) {
-	println(getSkyline([][]int{{0, 2, 3}, {2, 5, 3}}))
-	//println(getSkyline([][]int{{2, 9, 10}, {3, 7, 15}, {5, 12, 12}, {15, 20, 10}, {19, 24, 8}}))
+	fmt.Println(getSkyline([][]int{{0, 2, 3}, {2, 5, 3}}))
+	//fmt.Println(getSkyline([][]int{{2, 9, 10}, {3, 7, 15}, {5, 12, 12}, {15, 20, 10}, {19, 24, 8}}))
 }
 
 //func getSkyline(buildings [][]int) [][]int {

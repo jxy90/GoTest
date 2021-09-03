@@ -17,7 +17,7 @@ func countPrimes(n int) int {
 		}
 	}
 	for i := range nums {
-		println(nums[i])
+		fmt.Println(nums[i])
 	}
 	return ans
 }
@@ -65,6 +65,6 @@ func countPrimes2(n int) int {
 			ans++
 		}
 	}
-	println(ans)
+	fmt.Println(ans)
 	return ans
 }

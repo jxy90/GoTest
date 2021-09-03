@@ -3,7 +3,7 @@ package easy_test
 import "testing"
 
 func Test_findErrorNums(t *testing.T) {
-	println(findErrorNums([]int{1, 2, 2, 4}))
+	fmt.Println(findErrorNums([]int{1, 2, 2, 4}))
 }
 
 func findErrorNums(nums []int) []int {

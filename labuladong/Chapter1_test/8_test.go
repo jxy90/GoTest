@@ -39,5 +39,5 @@ func maxCoins(nums []int) int {
 
 func Test_maxCoins(t *testing.T) {
 	nums := []int{3, 1, 5, 8}
-	println(maxCoins(nums))
+	fmt.Println(maxCoins(nums))
 }

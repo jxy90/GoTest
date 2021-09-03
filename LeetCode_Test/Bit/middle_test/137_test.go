@@ -3,9 +3,9 @@ package middle_test_test
 import "testing"
 
 func Test_singleNumber(t *testing.T) {
-	//println(singleNumber2([]int{2, 2, 3, 2}))
-	println(singleNumber([]int{-2, -2, 1, 1, 4, 1, 4, 4, -4, -2}))
-	println(singleNumber2([]int{-2, -2, 1, 1, 4, 1, 4, 4, -4, -2}))
+	//fmt.Println(singleNumber2([]int{2, 2, 3, 2}))
+	fmt.Println(singleNumber([]int{-2, -2, 1, 1, 4, 1, 4, 4, -4, -2}))
+	fmt.Println(singleNumber2([]int{-2, -2, 1, 1, 4, 1, 4, 4, -4, -2}))
 }
 
 func singleNumber(nums []int) int {

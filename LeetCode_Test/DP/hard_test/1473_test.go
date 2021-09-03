@@ -13,7 +13,7 @@ func Test_minCost(t *testing.T) {
 	//3
 	houses := []int{0, 0, 0, 0, 0}
 	costs := [][]int{{1, 10}, {10, 1}, {10, 1}, {1, 10}, {5, 1}}
-	//println(minCost(houses, costs, 5, 2, 3))
+	//fmt.Println(minCost(houses, costs, 5, 2, 3))
 	//[0,0,0,1]
 	//[[1,5],[4,1],[1,3],[4,4]]
 	//4
@@ -21,7 +21,7 @@ func Test_minCost(t *testing.T) {
 	//4
 	houses = []int{0, 0, 0, 1}
 	costs = [][]int{{1, 5}, {4, 1}, {1, 3}, {4, 4}}
-	println(minCost(houses, costs, 4, 2, 4))
+	fmt.Println(minCost(houses, costs, 4, 2, 4))
 }
 
 //dp[i][j][k] 第i个房子涂j颜色 k个街区

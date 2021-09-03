@@ -3,11 +3,11 @@ package middle_test
 import "testing"
 
 func Test_checkSubarraySum(t *testing.T) {
-	println(checkSubarraySum([]int{23, 2, 4, 6, 6}, 7))
-	println(checkSubarraySum([]int{1, 0}, 2))
-	println(checkSubarraySum([]int{5, 0, 0, 0}, 3))
-	println(checkSubarraySum([]int{23, 2, 6, 4, 7}, 13))
-	println(checkSubarraySum([]int{23, 2, 4, 6, 7}, 6))
+	fmt.Println(checkSubarraySum([]int{23, 2, 4, 6, 6}, 7))
+	fmt.Println(checkSubarraySum([]int{1, 0}, 2))
+	fmt.Println(checkSubarraySum([]int{5, 0, 0, 0}, 3))
+	fmt.Println(checkSubarraySum([]int{23, 2, 6, 4, 7}, 13))
+	fmt.Println(checkSubarraySum([]int{23, 2, 4, 6, 7}, 6))
 }
 
 func checkSubarraySum(nums []int, k int) bool {

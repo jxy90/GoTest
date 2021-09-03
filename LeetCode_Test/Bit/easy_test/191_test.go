@@ -3,9 +3,9 @@ package easy_test
 import "testing"
 
 func Test_hammingWeight(t *testing.T) {
-	println(hammingWeight(1))
-	println(hammingWeight(16))
-	println(hammingWeight(218))
+	fmt.Println(hammingWeight(1))
+	fmt.Println(hammingWeight(16))
+	fmt.Println(hammingWeight(218))
 }
 func hammingWeight(num uint32) int {
 	count := 0

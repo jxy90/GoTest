@@ -6,7 +6,7 @@ import (
 )
 
 func Test_reverseStr(t *testing.T) {
-	println(reverseStr("abcdef", 2))
+	fmt.Println(reverseStr("abcdef", 2))
 }
 
 func reverseStr(s string, k int) string {

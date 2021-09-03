@@ -111,11 +111,11 @@ func isScrambleValidate(s1 string, s2 string) bool {
 }
 
 func Test_isScramble(t *testing.T) {
-	println(isScramble("great", "rgeat"))
-	println(isScramble("abcde", "caebd"))
-	println(isScramble("a", "a"))
-	println(isScramble("aa", "aa"))
-	println(isScramble("aa", "ab"))
-	println(isScramble("ba", "ab"))
-	println(isScramble("abcdd", "dbdac"))
+	fmt.Println(isScramble("great", "rgeat"))
+	fmt.Println(isScramble("abcde", "caebd"))
+	fmt.Println(isScramble("a", "a"))
+	fmt.Println(isScramble("aa", "aa"))
+	fmt.Println(isScramble("aa", "ab"))
+	fmt.Println(isScramble("ba", "ab"))
+	fmt.Println(isScramble("abcdd", "dbdac"))
 }

@@ -5,11 +5,11 @@ import (
 )
 
 func Test_minDays(t *testing.T) {
-	println(minDays([]int{1, 10, 3, 10, 2}, 3, 1))
-	println(minDays([]int{1, 10, 3, 10, 2}, 3, 2))
-	println(minDays([]int{7, 7, 7, 7, 12, 7, 7}, 2, 3))
-	println(minDays([]int{1000000000, 1000000000}, 1, 1))
-	println(minDays([]int{1, 10, 2, 9, 3, 8, 4, 7, 5, 6}, 4, 2))
+	fmt.Println(minDays([]int{1, 10, 3, 10, 2}, 3, 1))
+	fmt.Println(minDays([]int{1, 10, 3, 10, 2}, 3, 2))
+	fmt.Println(minDays([]int{7, 7, 7, 7, 12, 7, 7}, 2, 3))
+	fmt.Println(minDays([]int{1000000000, 1000000000}, 1, 1))
+	fmt.Println(minDays([]int{1, 10, 2, 9, 3, 8, 4, 7, 5, 6}, 4, 2))
 }
 
 func minDays(bloomDay []int, m int, k int) int {

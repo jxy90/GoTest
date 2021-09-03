@@ -8,9 +8,9 @@ import (
 )
 
 func Test_minimumTimeRequired(t *testing.T) {
-	//println(minimumTimeRequired([]int{3, 2, 3}, 3))
-	println(minimumTimeRequired([]int{1, 2, 4, 7, 8}, 2))
-	println(minimumTimeRequired([]int{5, 5, 4, 4, 4}, 2))
+	//fmt.Println(minimumTimeRequired([]int{3, 2, 3}, 3))
+	fmt.Println(minimumTimeRequired([]int{1, 2, 4, 7, 8}, 2))
+	fmt.Println(minimumTimeRequired([]int{5, 5, 4, 4, 4}, 2))
 }
 
 var ans int

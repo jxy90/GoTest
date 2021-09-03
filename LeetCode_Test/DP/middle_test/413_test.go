@@ -3,8 +3,8 @@ package middle_test
 import "testing"
 
 func Test_numberOfArithmeticSlices(t *testing.T) {
-	println(numberOfArithmeticSlices([]int{1, 2, 3, 4}))
-	println(numberOfArithmeticSlices([]int{1}))
+	fmt.Println(numberOfArithmeticSlices([]int{1, 2, 3, 4}))
+	fmt.Println(numberOfArithmeticSlices([]int{1}))
 }
 
 //子数组,找到连续等差最长的一个子数组

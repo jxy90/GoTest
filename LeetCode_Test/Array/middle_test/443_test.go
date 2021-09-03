@@ -5,7 +5,7 @@ import (
 )
 
 func Test_compress(t *testing.T) {
-	println(compress([]byte{'a', 'a', 'b', 'b', 'c', 'c', 'c'}))
+	fmt.Println(compress([]byte{'a', 'a', 'b', 'b', 'c', 'c', 'c'}))
 }
 
 func compress(chars []byte) int {

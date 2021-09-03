@@ -23,9 +23,9 @@ func main() {
 
 		select {
 		case msg := <-c1:
-			println(msg)
+			fmt.Println(msg)
 		case msg := <-c2:
-			println(msg)
+			fmt.Println(msg)
 		}
 	}
 }

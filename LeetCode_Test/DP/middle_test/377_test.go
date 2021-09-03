@@ -5,8 +5,8 @@ import (
 )
 
 func Test_combinationSum4(t *testing.T) {
-	println(largestDivisibleSubset([]int{2, 4}))
-	println(largestDivisibleSubset([]int{1, 2, 3}))
+	fmt.Println(largestDivisibleSubset([]int{2, 4}))
+	fmt.Println(largestDivisibleSubset([]int{1, 2, 3}))
 }
 
 //

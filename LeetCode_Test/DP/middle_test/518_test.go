@@ -3,7 +3,7 @@ package middle_test
 import "testing"
 
 func Test_change(t *testing.T) {
-	println(change(5, []int{1, 2, 5}))
+	fmt.Println(change(5, []int{1, 2, 5}))
 }
 
 func change(amount int, coins []int) int {

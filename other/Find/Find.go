@@ -22,7 +22,7 @@ func main() {
 	workerCount = 1
 	go search("/Users/jiangxiaoyu/", true)
 	waitForWorkers()
-	println("matches", matches)
+	fmt.Println("matches", matches)
 	fmt.Println(time.Since(start))
 }
 

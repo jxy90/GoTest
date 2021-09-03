@@ -79,7 +79,7 @@ func coinChangeDP(coins []int, n int) int {
 func Test_coinsChange(t *testing.T) {
 	coins := []int{1, 2, 5}
 	amount := 11
-	println(coinChange(coins, amount))
-	println(coinChangeMemo(coins, amount))
-	println(coinChangeDP(coins, amount))
+	fmt.Println(coinChange(coins, amount))
+	fmt.Println(coinChangeMemo(coins, amount))
+	fmt.Println(coinChangeDP(coins, amount))
 }

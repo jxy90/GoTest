@@ -5,9 +5,9 @@ import (
 )
 
 func Test_sumBase(t *testing.T) {
-	println(sumBase(34, 6))
-	//println(sumBase(10, 10))
-	//println(sumBase(5, 10))
+	fmt.Println(sumBase(34, 6))
+	//fmt.Println(sumBase(10, 10))
+	//fmt.Println(sumBase(5, 10))
 }
 
 func sumBase(n int, k int) int {

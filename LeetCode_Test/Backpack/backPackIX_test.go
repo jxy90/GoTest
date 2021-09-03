@@ -34,7 +34,7 @@ import (
 //
 
 func Test_backpackIX(t *testing.T) {
-	println(backpackIX(10, []int{4, 4, 5}, []float64{0.1, 0.2, 0.3}))
+	fmt.Println(backpackIX(10, []int{4, 4, 5}, []float64{0.1, 0.2, 0.3}))
 }
 
 func backpackIX(n int, prices []int, probability []float64) float64 {

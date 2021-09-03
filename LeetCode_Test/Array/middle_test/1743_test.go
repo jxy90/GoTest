@@ -5,7 +5,7 @@ import (
 )
 
 func Test_restoreArray(t *testing.T) {
-	println(restoreArray([][]int{{1, 2}, {3, 4}, {3, 2}}))
+	fmt.Println(restoreArray([][]int{{1, 2}, {3, 4}, {3, 2}}))
 }
 
 func restoreArray(adjacentPairs [][]int) []int {

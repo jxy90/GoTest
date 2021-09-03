@@ -6,10 +6,10 @@ import (
 )
 
 func Test_numWays(t *testing.T) {
-	println(numWays(3, 2))
-	println(numWays(2, 4))
-	println(numWays(4, 2))
-	println(numWays(47, 38))
+	fmt.Println(numWays(3, 2))
+	fmt.Println(numWays(2, 4))
+	fmt.Println(numWays(4, 2))
+	fmt.Println(numWays(47, 38))
 }
 
 var mod = 1000000000 + 7

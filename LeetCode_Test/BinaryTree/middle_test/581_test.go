@@ -1,13 +1,14 @@
 package middle_test
 
 import (
+	"fmt"
 	"sort"
 	"testing"
 )
 
 func Test_findUnsortedSubarray(t *testing.T) {
-	println(findUnsortedSubarray([]int{2, 6, 4, 8, 10, 9, 15}))
-	println(findUnsortedSubarray([]int{1, 2, 3, 4}))
+	fmt.Println(findUnsortedSubarray([]int{2, 6, 4, 8, 10, 9, 15}))
+	fmt.Println(findUnsortedSubarray([]int{1, 2, 3, 4}))
 }
 
 func findUnsortedSubarray(nums []int) int {

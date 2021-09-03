@@ -7,7 +7,7 @@ import (
 )
 
 func Test_minChanges(t *testing.T) {
-	println(minChanges([]int{1, 2, 0, 3, 0}, 1))
+	fmt.Println(minChanges([]int{1, 2, 0, 3, 0}, 1))
 }
 
 func minChanges(nums []int, k int) int {

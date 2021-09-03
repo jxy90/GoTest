@@ -7,8 +7,8 @@ import (
 )
 
 func Test_strangePrinter(t *testing.T) {
-	println(strangePrinter("aaabbb"))
-	println(strangePrinter("aba"))
+	fmt.Println(strangePrinter("aaabbb"))
+	fmt.Println(strangePrinter("aba"))
 }
 
 func strangePrinter(s string) int {

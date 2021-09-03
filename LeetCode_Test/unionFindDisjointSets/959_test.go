@@ -5,11 +5,11 @@ import (
 )
 
 func Test_regionsBySlashes(t *testing.T) {
-	println(regionsBySlashes([]string{" /", "/ "}))
-	println(regionsBySlashes([]string{" /", "  "}))
-	println(regionsBySlashes([]string{"\\/", "/\\"}))
-	println(regionsBySlashes([]string{"/\\", "\\/"}))
-	println(regionsBySlashes([]string{"//", "/ "}))
+	fmt.Println(regionsBySlashes([]string{" /", "/ "}))
+	fmt.Println(regionsBySlashes([]string{" /", "  "}))
+	fmt.Println(regionsBySlashes([]string{"\\/", "/\\"}))
+	fmt.Println(regionsBySlashes([]string{"/\\", "\\/"}))
+	fmt.Println(regionsBySlashes([]string{"//", "/ "}))
 }
 
 func regionsBySlashes(grid []string) int {

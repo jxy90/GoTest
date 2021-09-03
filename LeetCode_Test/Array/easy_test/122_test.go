@@ -15,6 +15,6 @@ func maxProfit2(prices []int) int {
 
 func Test_maxProfit2(t *testing.T) {
 	array := []int{7, 1, 5, 3, 6, 4}
-	println(maxProfit2(array))
-	//println(maxProfit2New(array))
+	fmt.Println(maxProfit2(array))
+	//fmt.Println(maxProfit2New(array))
 }

@@ -6,7 +6,7 @@ import (
 )
 
 func Test_isCovered(t *testing.T) {
-	println(isCovered([][]int{{1, 2}, {3, 4}, {4, 5}}, 2, 5))
+	fmt.Println(isCovered([][]int{{1, 2}, {3, 4}, {4, 5}}, 2, 5))
 }
 
 //差分

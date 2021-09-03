@@ -7,7 +7,7 @@ func Test_numSubarraysWithSum(t *testing.T) {
 	nums := []int{1, 0, 1, 0, 1}
 	//goal := 0
 	//nums := []int{0, 0, 0, 0, 0}
-	println(numSubarraysWithSum0(nums, goal))
+	fmt.Println(numSubarraysWithSum0(nums, goal))
 }
 
 func numSubarraysWithSum(nums []int, goal int) int {

@@ -9,7 +9,7 @@ func Test_maxLength(t *testing.T) {
 	//array := []string{"un", "iq", "ue"}
 	//array := []string{"cha", "r", "act", "ers"}
 	array := []string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"}
-	println(maxLength(array))
+	fmt.Println(maxLength(array))
 }
 func maxLength(arr []string) (ans int) {
 	masks := []int{}

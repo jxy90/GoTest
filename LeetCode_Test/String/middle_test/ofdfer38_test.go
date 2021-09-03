@@ -5,7 +5,7 @@ import (
 )
 
 func Test_permutation(t *testing.T) {
-	println(permutation("abc"))
+	fmt.Println(permutation("abc"))
 }
 
 func permutation(s string) []string {

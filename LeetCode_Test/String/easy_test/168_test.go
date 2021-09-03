@@ -5,11 +5,11 @@ import (
 )
 
 func Test_convertToTitle(t *testing.T) {
-	println(convertToTitle(1))
-	println(convertToTitle(26))
-	println(convertToTitle(27))
-	println(convertToTitle(28))
-	println(convertToTitle(701))
+	fmt.Println(convertToTitle(1))
+	fmt.Println(convertToTitle(26))
+	fmt.Println(convertToTitle(27))
+	fmt.Println(convertToTitle(28))
+	fmt.Println(convertToTitle(701))
 }
 
 func convertToTitle(columnNumber int) string {

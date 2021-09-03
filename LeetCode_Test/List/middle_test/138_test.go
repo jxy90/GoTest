@@ -8,7 +8,7 @@ func Test_copyRandomList(t *testing.T) {
 	node1.Next = node2
 	node1.Random = node2
 	node2.Random = node2
-	println(copyRandomList(node1))
+	fmt.Println(copyRandomList(node1))
 }
 
 func copyRandomList(head *Node) *Node {

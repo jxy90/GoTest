@@ -6,7 +6,7 @@ import (
 )
 
 func Test_countDigitOne(t *testing.T) {
-	println(countDigitOne(13))
+	fmt.Println(countDigitOne(13))
 }
 
 //计算每一位1出现的次数

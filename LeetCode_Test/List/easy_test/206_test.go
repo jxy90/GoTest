@@ -88,5 +88,5 @@ func Test_reverseBetween(t *testing.T) {
 	}
 	n, m := 2, 4
 	ans := reverseBetween(nums, n, m)
-	println(ans)
+	fmt.Println(ans)
 }

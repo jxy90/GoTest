@@ -22,5 +22,5 @@ func maxSubArray(nums []int) int {
 
 func Test_maxSubArray(t *testing.T) {
 	nums := []int{-2, 1}
-	println(maxSubArray(nums))
+	fmt.Println(maxSubArray(nums))
 }

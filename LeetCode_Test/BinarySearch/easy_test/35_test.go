@@ -5,10 +5,10 @@ import (
 )
 
 func Test_searchInsert(t *testing.T) {
-	println(searchInsert([]int{1, 3, 5, 6}, 5))
-	println(searchInsert([]int{1, 3, 5, 6}, 2))
-	println(searchInsert([]int{1, 3, 5, 6}, 7))
-	println(searchInsert([]int{1, 3, 5, 6}, 0))
+	fmt.Println(searchInsert([]int{1, 3, 5, 6}, 5))
+	fmt.Println(searchInsert([]int{1, 3, 5, 6}, 2))
+	fmt.Println(searchInsert([]int{1, 3, 5, 6}, 7))
+	fmt.Println(searchInsert([]int{1, 3, 5, 6}, 0))
 }
 
 //把问题想象成找到 >=target的位置

@@ -8,9 +8,9 @@ import (
 )
 
 func Test_countOfAtoms(t *testing.T) {
-	//println(countOfAtoms("H2O"))
-	//println(countOfAtoms("Mg(OH)2"))
-	println(countOfAtoms("H11He49NO35B7N46Li20"))
+	//fmt.Println(countOfAtoms("H2O"))
+	//fmt.Println(countOfAtoms("Mg(OH)2"))
+	fmt.Println(countOfAtoms("H11He49NO35B7N46Li20"))
 
 }
 

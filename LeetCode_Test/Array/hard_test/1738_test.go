@@ -5,11 +5,11 @@ import (
 )
 
 func Test_kthLargestValue(t *testing.T) {
-	println(kthLargestValue([][]int{{5, 2}, {1, 6}}, 1))
-	println(kthLargestValue([][]int{{5, 2}, {1, 6}}, 2))
-	println(kthLargestValue([][]int{{5, 2}, {1, 6}}, 3))
-	println(kthLargestValue([][]int{{5, 2}, {1, 6}}, 4))
-	println(kthLargestValue([][]int{{1, 6, 5, 6, 1}, {2, 8, 2, 10, 2}, {4, 3, 5, 10, 0}, {1, 7, 10, 5, 5}, {4, 6, 9, 4, 1}, {6, 6, 4, 0, 1}, {4, 0, 2, 8, 1}, {8, 2, 4, 9, 7}, {3, 10, 10, 4, 7}, {6, 1, 1, 9, 4}, {9, 0, 2, 6, 6}, {0, 10, 3, 2, 5}, {10, 3, 7, 7, 2}}, 30))
+	fmt.Println(kthLargestValue([][]int{{5, 2}, {1, 6}}, 1))
+	fmt.Println(kthLargestValue([][]int{{5, 2}, {1, 6}}, 2))
+	fmt.Println(kthLargestValue([][]int{{5, 2}, {1, 6}}, 3))
+	fmt.Println(kthLargestValue([][]int{{5, 2}, {1, 6}}, 4))
+	fmt.Println(kthLargestValue([][]int{{1, 6, 5, 6, 1}, {2, 8, 2, 10, 2}, {4, 3, 5, 10, 0}, {1, 7, 10, 5, 5}, {4, 6, 9, 4, 1}, {6, 6, 4, 0, 1}, {4, 0, 2, 8, 1}, {8, 2, 4, 9, 7}, {3, 10, 10, 4, 7}, {6, 1, 1, 9, 4}, {9, 0, 2, 6, 6}, {0, 10, 3, 2, 5}, {10, 3, 7, 7, 2}}, 30))
 }
 
 func kthLargestValue(matrix [][]int, k int) int {

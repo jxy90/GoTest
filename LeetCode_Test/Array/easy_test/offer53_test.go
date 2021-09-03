@@ -3,8 +3,8 @@ package easy_test
 import "testing"
 
 func Test_search(t *testing.T) {
-	println(search([]int{1}, 1))
-	println(search([]int{5, 7, 7, 8, 8, 10}, 6))
+	fmt.Println(search([]int{1}, 1))
+	fmt.Println(search([]int{5, 7, 7, 8, 8, 10}, 6))
 }
 
 func search(nums []int, target int) int {

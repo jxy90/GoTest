@@ -11,8 +11,8 @@ import (
 
 //完全背包
 func Test_backPackIV(t *testing.T) {
-	println(backPackIV([]int{2, 3, 6, 7}, 7))
-	println(backPackIV([]int{2, 3, 4, 5}, 7))
+	fmt.Println(backPackIV([]int{2, 3, 6, 7}, 7))
+	fmt.Println(backPackIV([]int{2, 3, 4, 5}, 7))
 }
 
 func backPackIV(nums []int, target int) int {

@@ -5,7 +5,7 @@ import (
 )
 
 func Test_findPaths(t *testing.T) {
-	println(findPaths(2, 2, 2, 0, 0))
+	fmt.Println(findPaths(2, 2, 2, 0, 0))
 }
 
 const mod int = 1e9 + 7

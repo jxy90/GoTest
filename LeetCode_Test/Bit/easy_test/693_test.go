@@ -3,11 +3,11 @@ package easy_test
 import "testing"
 
 func Test_hasAlternatingBits(t *testing.T) {
-	println(hasAlternatingBits(3))
-	println(hasAlternatingBits(10))
-	println(hasAlternatingBits(11))
-	println(hasAlternatingBits(7))
-	println(hasAlternatingBits(5))
+	fmt.Println(hasAlternatingBits(3))
+	fmt.Println(hasAlternatingBits(10))
+	fmt.Println(hasAlternatingBits(11))
+	fmt.Println(hasAlternatingBits(7))
+	fmt.Println(hasAlternatingBits(5))
 }
 
 func hasAlternatingBits(n int) bool {

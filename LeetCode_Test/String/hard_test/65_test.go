@@ -11,8 +11,8 @@ func Test_isNumber(t *testing.T) {
 	tests = []string{"e.7e5", "4..", ".", "abc", "1a", "1e", "e3", "99e2.5", "--6", "-+3", "95a54e53"}
 	for i := range tests {
 		//temp := "2e0"
-		//println(fmt.Sprintf("%-15v string is : %-5v", temp, isNumber(temp)))
-		println(fmt.Sprintf("%-15v string is : %-5v", tests[i], isNumber(tests[i])))
+		//fmt.Println(fmt.Sprintf("%-15v string is : %-5v", temp, isNumber(temp)))
+		fmt.Println(fmt.Sprintf("%-15v string is : %-5v", tests[i], isNumber(tests[i])))
 	}
 }
 

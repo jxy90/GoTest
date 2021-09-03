@@ -5,8 +5,8 @@ import (
 )
 
 func Test_peakIndexInMountainArray(t *testing.T) {
-	println(peakIndexInMountainArray([]int{3, 5, 3, 2, 0}))
-	println(peakIndexInMountainArray([]int{0, 1, 0}))
+	fmt.Println(peakIndexInMountainArray([]int{3, 5, 3, 2, 0}))
+	fmt.Println(peakIndexInMountainArray([]int{0, 1, 0}))
 }
 func peakIndexInMountainArray(arr []int) int {
 	m, n := 1, len(arr)-2

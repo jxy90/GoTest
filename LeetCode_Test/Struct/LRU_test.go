@@ -16,7 +16,7 @@ func Test_LRUCache(t *testing.T) {
 			obj.Get(params[i][0])
 		}
 	}
-	println(obj.tail.value)
+	fmt.Println(obj.tail.value)
 }
 
 type DLinkNode struct {

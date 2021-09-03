@@ -4,9 +4,9 @@ import "testing"
 
 func Test_convertInteger(t *testing.T) {
 	//2
-	println(convertInteger(29, 15))
+	fmt.Println(convertInteger(29, 15))
 	//14
-	println(convertInteger(826966453, -729934991))
+	fmt.Println(convertInteger(826966453, -729934991))
 }
 
 func convertInteger(A int, B int) int {

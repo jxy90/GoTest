@@ -19,5 +19,5 @@ func twoSum167(numbers []int, target int) []int {
 func Test_twoSum167(t *testing.T) {
 	nums := []int{1, 2, 3}
 	target := 3
-	println(twoSum167(nums, target))
+	fmt.Println(twoSum167(nums, target))
 }

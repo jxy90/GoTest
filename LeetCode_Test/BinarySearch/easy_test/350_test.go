@@ -6,7 +6,7 @@ import (
 )
 
 func Test_intersect(t *testing.T) {
-	println(intersect([]int{1, 2, 2, 1}, []int{2, 2}))
+	fmt.Println(intersect([]int{1, 2, 2, 1}, []int{2, 2}))
 }
 
 func intersect(nums1 []int, nums2 []int) []int {

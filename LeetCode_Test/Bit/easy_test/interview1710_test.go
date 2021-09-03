@@ -3,7 +3,7 @@ package easy_test
 import "testing"
 
 func Test_majorityElement(t *testing.T) {
-	println(majorityElement([]int{1, 2, 5, 9, 5, 9, 5, 5, 5}))
+	fmt.Println(majorityElement([]int{1, 2, 5, 9, 5, 9, 5, 5, 5}))
 }
 
 func majorityElement(nums []int) int {

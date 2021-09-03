@@ -5,7 +5,7 @@ import (
 )
 
 func Test_calcEquation(t *testing.T) {
-	//println(numIslands([][]byte{{'1', '1', '1', '1', '0'},
+	//fmt.Println(numIslands([][]byte{{'1', '1', '1', '1', '0'},
 	//	{'1', '1', '0', '1', '0'},
 	//	{'1', '1', '0', '0', '0'},
 	//	{'0', '0', '0', '0', '0'}}))

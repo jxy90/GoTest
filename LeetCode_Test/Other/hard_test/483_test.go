@@ -9,7 +9,7 @@ import (
 )
 
 func Test_smallestGoodBase(t *testing.T) {
-	println(smallestGoodBase("13"))
+	fmt.Println(smallestGoodBase("13"))
 }
 
 func smallestGoodBase(n string) string {

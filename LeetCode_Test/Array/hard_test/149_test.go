@@ -6,7 +6,7 @@ import (
 )
 
 func Test_maxPoints(t *testing.T) {
-	println(maxPoints([][]int{{1, 1}, {2, 2}, {3, 3}}))
+	fmt.Println(maxPoints([][]int{{1, 1}, {2, 2}, {3, 3}}))
 }
 
 func maxPoints(points [][]int) int {

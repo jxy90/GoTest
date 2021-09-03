@@ -16,7 +16,7 @@ func Test_verticalTraversal(t *testing.T) {
 			Right: &TreeNode{Val: 7},
 		},
 	}
-	println(verticalTraversal(root))
+	fmt.Println(verticalTraversal(root))
 }
 
 type data struct{ col, row, val int }

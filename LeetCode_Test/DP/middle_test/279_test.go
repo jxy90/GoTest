@@ -7,8 +7,8 @@ import (
 )
 
 func Test_numSquares(t *testing.T) {
-	println(numSquares(12))
-	println(numSquares(13))
+	fmt.Println(numSquares(12))
+	fmt.Println(numSquares(13))
 }
 
 func numSquares(n int) int {

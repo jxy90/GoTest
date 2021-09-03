@@ -7,8 +7,8 @@ import (
 )
 
 func Test_deleteAndEarn(t *testing.T) {
-	println(deleteAndEarn([]int{3, 4, 2}))
-	println(deleteAndEarn([]int{2, 2, 3, 3, 3, 4}))
+	fmt.Println(deleteAndEarn([]int{3, 4, 2}))
+	fmt.Println(deleteAndEarn([]int{2, 2, 3, 3, 3, 4}))
 }
 
 func deleteAndEarn(nums []int) int {

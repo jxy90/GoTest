@@ -6,7 +6,7 @@ import (
 )
 
 func Test_stoneGame(t *testing.T) {
-	println(stoneGame([]int{5, 3, 4, 5}))
+	fmt.Println(stoneGame([]int{5, 3, 4, 5}))
 }
 
 func stoneGame(piles []int) bool {

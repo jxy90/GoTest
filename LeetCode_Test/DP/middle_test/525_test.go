@@ -6,8 +6,8 @@ import (
 )
 
 func Test_findMaxLength(t *testing.T) {
-	println(findMaxLength([]int{0, 1}))
-	println(findMaxLength([]int{0, 1, 0}))
+	fmt.Println(findMaxLength([]int{0, 1}))
+	fmt.Println(findMaxLength([]int{0, 1, 0}))
 }
 
 func findMaxLength(nums []int) int {

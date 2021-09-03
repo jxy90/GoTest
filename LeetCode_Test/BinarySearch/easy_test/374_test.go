@@ -6,7 +6,7 @@ import (
 
 func Test_guessNumber(t *testing.T) {
 	data := guessNumber(3)
-	println(data)
+	fmt.Println(data)
 }
 
 func guess(num int) int {

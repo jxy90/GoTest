@@ -5,8 +5,8 @@ import (
 )
 
 func Test_search(t *testing.T) {
-	println(search([]int{2, 5, 6, 0, 0, 1, 2}, 0))
-	println(search([]int{2, 5, 6, 0, 0, 1, 2}, 3))
+	fmt.Println(search([]int{2, 5, 6, 0, 0, 1, 2}, 0))
+	fmt.Println(search([]int{2, 5, 6, 0, 0, 1, 2}, 3))
 }
 
 func search(nums []int, target int) bool {

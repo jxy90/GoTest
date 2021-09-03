@@ -3,7 +3,7 @@ package easy_test
 import "github.com/jxy90/GoTest/Utils/CommonUtil"
 
 //func Test_shipWithinDays(t *testing.T) {
-//	println(shipWithinDays([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 5))
+//	fmt.Println(shipWithinDays([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 5))
 //}
 
 func maxSideLength(mat [][]int, threshold int) int {

@@ -5,7 +5,7 @@ import (
 )
 
 func Test_getMaximumGenerated(t *testing.T) {
-	println(getMaximumGenerated(4))
+	fmt.Println(getMaximumGenerated(4))
 }
 
 func getMaximumGenerated(n int) int {

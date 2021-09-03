@@ -3,8 +3,8 @@ package easy_test
 import "testing"
 
 func Test_toHex(t *testing.T) {
-	println(toHex(-1))
-	println(toHex(26))
+	fmt.Println(toHex(-1))
+	fmt.Println(toHex(26))
 }
 func toHex(num int) string {
 	if num == 0 {

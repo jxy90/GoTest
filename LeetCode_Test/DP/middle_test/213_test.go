@@ -32,6 +32,6 @@ func robHelper(nums []int) int {
 }
 
 func Test_rob(t *testing.T) {
-	println(rob([]int{2, 3, 2}))
-	println(rob([]int{1, 2, 3, 1}))
+	fmt.Println(rob([]int{2, 3, 2}))
+	fmt.Println(rob([]int{1, 2, 3, 1}))
 }

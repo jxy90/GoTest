@@ -23,7 +23,7 @@ target 的组合个数。
 //564 · 组合总和 IV
 //https://www.lintcode.com/problem/564/
 func Test_backPackVI(t *testing.T) {
-	println(backPackVI([]int{1, 2, 4}, 4))
+	fmt.Println(backPackVI([]int{1, 2, 4}, 4))
 }
 
 func backPackVI(nums []int, target int) int {

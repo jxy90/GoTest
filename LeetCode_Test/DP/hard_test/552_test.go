@@ -3,7 +3,7 @@ package DP_test
 import "testing"
 
 func Test_checkRecord(t *testing.T) {
-	println(checkRecord(2))
+	fmt.Println(checkRecord(2))
 }
 
 var MOD = 1000000007

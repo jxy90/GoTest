@@ -24,5 +24,5 @@ func LISDP(nums []int) int {
 
 func Test_LIS(t *testing.T) {
 	nums := []int{10, 9, 2, 5, 3, 7, 101, 18}
-	println(LISDP(nums))
+	fmt.Println(LISDP(nums))
 }

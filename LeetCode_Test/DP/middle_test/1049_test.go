@@ -6,10 +6,10 @@ import (
 )
 
 func Test_lastStoneWeightII(t *testing.T) {
-	println(lastStoneWeightII([]int{1, 1, 4, 2, 2}))
-	println(lastStoneWeightII([]int{2, 7, 4, 1, 8, 1}))
-	println(lastStoneWeightII([]int{31, 26, 33, 21, 40}))
-	println(lastStoneWeightII([]int{1, 2}))
+	fmt.Println(lastStoneWeightII([]int{1, 1, 4, 2, 2}))
+	fmt.Println(lastStoneWeightII([]int{2, 7, 4, 1, 8, 1}))
+	fmt.Println(lastStoneWeightII([]int{31, 26, 33, 21, 40}))
+	fmt.Println(lastStoneWeightII([]int{1, 2}))
 }
 
 func lastStoneWeightII(stones []int) int {

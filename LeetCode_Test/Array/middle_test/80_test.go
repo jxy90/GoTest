@@ -3,8 +3,8 @@ package middle_test
 import "testing"
 
 func Test_removeDuplicates(t *testing.T) {
-	println(removeDuplicates([]int{1, 1, 1, 2, 2, 3}))
-	println(removeDuplicates([]int{0, 0, 1, 1, 1, 1, 2, 3, 3}))
+	fmt.Println(removeDuplicates([]int{1, 1, 1, 2, 2, 3}))
+	fmt.Println(removeDuplicates([]int{0, 0, 1, 1, 1, 1, 2, 3, 3}))
 }
 
 func removeDuplicates(nums []int) int {

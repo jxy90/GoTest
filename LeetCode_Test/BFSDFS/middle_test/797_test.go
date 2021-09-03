@@ -5,7 +5,7 @@ import (
 )
 
 func Test_allPathsSourceTarget(t *testing.T) {
-	println(allPathsSourceTarget([][]int{{1, 2}, {3}, {3}, {}}))
+	fmt.Println(allPathsSourceTarget([][]int{{1, 2}, {3}, {3}, {}}))
 }
 
 func allPathsSourceTarget(graph [][]int) [][]int {

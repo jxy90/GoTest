@@ -7,7 +7,7 @@ import (
 )
 
 func Test_maxIceCream(t *testing.T) {
-	println(maxIceCream([]int{1, 3, 2, 4, 1}, 7))
+	fmt.Println(maxIceCream([]int{1, 3, 2, 4, 1}, 7))
 }
 
 func maxIceCream(costs []int, coins int) int {

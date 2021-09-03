@@ -11,7 +11,7 @@ import (
 
 //物品一个,01背包
 func Test_backPack(t *testing.T) {
-	println(backPack(10, []int{3, 4, 8, 5}))
+	fmt.Println(backPack(10, []int{3, 4, 8, 5}))
 }
 
 func backPack(m int, A []int) int {

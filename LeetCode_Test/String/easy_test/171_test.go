@@ -5,10 +5,10 @@ import (
 )
 
 func Test_titleToNumber(t *testing.T) {
-	println(titleToNumber("A"))
-	println(titleToNumber("AB"))
-	println(titleToNumber("ZY"))
-	println(titleToNumber("FXSHRXW"))
+	fmt.Println(titleToNumber("A"))
+	fmt.Println(titleToNumber("AB"))
+	fmt.Println(titleToNumber("ZY"))
+	fmt.Println(titleToNumber("FXSHRXW"))
 }
 
 func titleToNumber(columnTitle string) int {

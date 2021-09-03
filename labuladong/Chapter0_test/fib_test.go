@@ -52,8 +52,8 @@ func fibdp2(n int) int {
 }
 
 func Test_fib(t *testing.T) {
-	println(fib(10))
-	println(fibHis(10))
-	println(fibdp(10))
-	println(fibdp2(10))
+	fmt.Println(fib(10))
+	fmt.Println(fibHis(10))
+	fmt.Println(fibdp(10))
+	fmt.Println(fibdp2(10))
 }

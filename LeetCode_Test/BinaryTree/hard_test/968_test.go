@@ -11,16 +11,16 @@ func Test_minCameraCover(t *testing.T) {
 		Val: 0,
 	}
 	if set[root] == 0 {
-		println(0)
+		fmt.Println(0)
 	}
-	println(2)
+	fmt.Println(2)
 
 	if set[nil] == 0 {
-		println(0)
+		fmt.Println(0)
 	}
 	set[nil] = 1
 	if set[nil] == 1 {
-		println(1)
+		fmt.Println(1)
 	}
 
 }

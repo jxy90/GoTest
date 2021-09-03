@@ -5,7 +5,7 @@ import (
 )
 
 func Test_circularArrayLoop(t *testing.T) {
-	println(circularArrayLoop([]int{2, -1, 1, 2, 2}))
+	fmt.Println(circularArrayLoop([]int{2, -1, 1, 2, 2}))
 }
 func circularArrayLoop(nums []int) bool {
 	n := len(nums)

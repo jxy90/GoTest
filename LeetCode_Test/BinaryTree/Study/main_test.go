@@ -25,7 +25,7 @@ func main() {
 	for _, v := range postorderTraversal(root) {
 		print(v)
 	}
-	println("")
+	fmt.Println("")
 
 	arr := levelOrder(root)
 	for _, v := range arr {
@@ -33,35 +33,35 @@ func main() {
 			print(vv)
 		}
 	}
-	println("level1")
+	fmt.Println("level1")
 	arr2 := levelLpoop(root, 0)
 	for _, v := range arr2 {
 		for _, vv := range v {
 			print(vv)
 		}
 	}
-	println("level2")
+	fmt.Println("level2")
 
-	println(TopDown(root, 0))
-	println(BottomUp(root))
+	fmt.Println(TopDown(root, 0))
+	fmt.Println(BottomUp(root))
 	//对称二叉树
-	println(isSymmetric(root))
+	fmt.Println(isSymmetric(root))
 	//路径和
-	println(hasPathSum(root, 6))
+	fmt.Println(hasPathSum(root, 6))
 
 	//中序遍历 inorder = [9,3,15,20,7]
 	//后序遍历 postorder = [9,15,7,20,3]
 	inorder := []int{9, 3, 15, 20, 7}
 	postorder := []int{9, 15, 7, 20, 3}
 	bt1 := buildTree(inorder, postorder)
-	println(bt1)
+	fmt.Println(bt1)
 
 	//前序遍历 preorder = [3,9,20,15,7]
 	//中序遍历 inorder = [9,3,15,20,7]
 	preorder := []int{3, 9, 20, 15, 7}
 	inorder2 := []int{9, 3, 15, 20, 7}
 	bt2 := buildTree2(preorder, inorder2)
-	println(bt2)
+	fmt.Println(bt2)
 
 	//填充每个节点的下一个右侧节点指针 II
 	bt22 := &Node{Val: 2}
@@ -78,13 +78,13 @@ func main() {
 	bt22.Right.Right.Left = &Node{Val: 8}
 	bt22.Right.Right.Right = &Node{Val: 8}
 	connect2(bt22)
-	println(bt2)
+	fmt.Println(bt2)
 
 	//obj := Constructor()
 	//data := obj.serialize(root)
 	////data2 := obj.serializeLoop2(root)
 	//ans := obj.deserialize(data)
-	//println(data, ans)
+	//fmt.Println(data, ans)
 	//////////////////
 
 	//[1,2,3,nil,nil,4,5]
@@ -110,9 +110,9 @@ func main() {
 		},
 	}
 	serializeStr := Codec3.Serialize(root10)
-	println(serializeStr)
+	fmt.Println(serializeStr)
 	deserializeObj := Codec3.Deserialize(serializeStr)
-	println(deserializeObj)
+	fmt.Println(deserializeObj)
 }
 
 var result2 [][]string

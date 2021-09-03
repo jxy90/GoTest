@@ -3,7 +3,7 @@ package unionFindDisjointSets
 import "testing"
 
 func Test_findRedundantConnection(t *testing.T) {
-	println(findRedundantConnection([][]int{{1, 2}, {1, 3}, {2, 3}}))
+	fmt.Println(findRedundantConnection([][]int{{1, 2}, {1, 3}, {2, 3}}))
 }
 
 func findRedundantConnection(edges [][]int) []int {

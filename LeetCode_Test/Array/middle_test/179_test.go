@@ -57,5 +57,5 @@ func largestNumberCompare(a, b int) bool {
 
 func Test_largestNumber(t *testing.T) {
 	nums := []int{3, 30, 34, 5, 9}
-	println(largestNumber(nums))
+	fmt.Println(largestNumber(nums))
 }

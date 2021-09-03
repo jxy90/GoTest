@@ -87,5 +87,5 @@ func Test_convertBiNode(t *testing.T) {
 	}
 
 	ans := convertBiNode(root)
-	println(ans)
+	fmt.Println(ans)
 }

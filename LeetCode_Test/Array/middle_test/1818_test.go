@@ -9,7 +9,7 @@ import (
 func Test_minAbsoluteSumDiff(t *testing.T) {
 	//[1,10,4,4,2,7]
 	//[9,3,5,1,7,4]
-	println(minAbsoluteSumDiff([]int{1, 10, 4, 4, 2, 7}, []int{9, 3, 5, 1, 7, 4}))
+	fmt.Println(minAbsoluteSumDiff([]int{1, 10, 4, 4, 2, 7}, []int{9, 3, 5, 1, 7, 4}))
 }
 
 func minAbsoluteSumDiff(nums1 []int, nums2 []int) int {

@@ -5,9 +5,9 @@ import (
 )
 
 func Test_numSubmatrixSumTarget(t *testing.T) {
-	println(numSubmatrixSumTarget([][]int{{0, 1, 0}, {1, 1, 1}, {0, 1, 0}}, 0))
-	println(numSubmatrixSumTarget([][]int{{1, -1}, {-1, 1}}, 0))
-	println(numSubmatrixSumTarget([][]int{{987}}, 0))
+	fmt.Println(numSubmatrixSumTarget([][]int{{0, 1, 0}, {1, 1, 1}, {0, 1, 0}}, 0))
+	fmt.Println(numSubmatrixSumTarget([][]int{{1, -1}, {-1, 1}}, 0))
+	fmt.Println(numSubmatrixSumTarget([][]int{{987}}, 0))
 }
 
 func numSubmatrixSumTarget(matrix [][]int, target int) int {
@@ -60,7 +60,7 @@ func numSubmatrixSumTarget0(matrix [][]int, target int) int {
 			for p := i; p <= m; p++ {
 				for q := j; q <= n; q++ {
 					if f[p][q]-f[i-1][q]-f[p][j-1]+f[i-1][j-1] == target {
-						//println(fmt.Sprintf("i:%v j:%v p:%v q:%v", i, j, p, q))
+						//fmt.Println(fmt.Sprintf("i:%v j:%v p:%v q:%v", i, j, p, q))
 						ans++
 					}
 				}

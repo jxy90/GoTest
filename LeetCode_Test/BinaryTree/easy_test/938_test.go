@@ -18,7 +18,7 @@ func TestRangeSumBST(t *testing.T) {
 			},
 		},
 	}
-	println(rangeSumBST(root, 7, 15))
+	fmt.Println(rangeSumBST(root, 7, 15))
 }
 
 func rangeSumBST(root *TreeNode, low int, high int) int {

@@ -6,8 +6,8 @@ import (
 )
 
 func Test_findMaxForm(t *testing.T) {
-	println(findMaxForm([]string{"10", "0001", "111001", "1", "0"}, 5, 3))
-	println(findMaxForm([]string{"10", "0", "1"}, 1, 1))
+	fmt.Println(findMaxForm([]string{"10", "0001", "111001", "1", "0"}, 5, 3))
+	fmt.Println(findMaxForm([]string{"10", "0", "1"}, 1, 1))
 }
 
 func findMaxForm(strs []string, m int, n int) int {

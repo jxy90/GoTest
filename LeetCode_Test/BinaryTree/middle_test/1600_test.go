@@ -1,6 +1,9 @@
 package middle_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_1600(t *testing.T) {
 
@@ -13,10 +16,10 @@ func Test_1600(t *testing.T) {
 	c.Birth("bob", "alex")          // 继承顺序：king > andy > matthew > bob > alex > catherine
 	c.Birth("bob", "asha")          // 继承顺序：king > andy > matthew > bob > alex > asha > catherine
 	data := c.GetInheritanceOrder() // 返回 ["king", "andy", "matthew", "bob", "alex", "asha", "catherine"]
-	println(data)
+	fmt.Println(data)
 	c.Death("bob")                   // 继承顺序：king > andy > matthew > bob（已经去世）> alex > asha > catherine
 	data2 := c.GetInheritanceOrder() // 返回 ["king", "andy", "matthew", "alex", "asha", "catherine"]
-	println(data2)
+	fmt.Println(data2)
 
 }
 

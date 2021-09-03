@@ -3,9 +3,9 @@ package easy_test
 import "testing"
 
 func Test_isPowerOfTwo(t *testing.T) {
-	println(isPowerOfTwo(1))
-	println(isPowerOfTwo(16))
-	println(isPowerOfTwo(218))
+	fmt.Println(isPowerOfTwo(1))
+	fmt.Println(isPowerOfTwo(16))
+	fmt.Println(isPowerOfTwo(218))
 }
 
 func isPowerOfTwo(n int) bool {

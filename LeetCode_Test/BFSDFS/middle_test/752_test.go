@@ -10,7 +10,7 @@ func Test_openLock(t *testing.T) {
 	deadlines = []string{"8887", "8889", "8878", "8898", "8788", "8988", "7888", "9888"}
 	target = "8888"
 	//["8887","8889","8878","8898","8788","8988","7888","9888"]
-	println(openLock(deadlines, target))
+	fmt.Println(openLock(deadlines, target))
 }
 
 func openLock(deadends []string, target string) int {

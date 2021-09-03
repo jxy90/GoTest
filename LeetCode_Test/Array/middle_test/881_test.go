@@ -6,9 +6,9 @@ import (
 )
 
 func Test_numRescueBoats(t *testing.T) {
-	println(numRescueBoats([]int{3, 1, 7}, 7))
-	//println(numRescueBoats([]int{3, 2, 3, 2, 2}, 6))
-	//println(numRescueBoats([]int{3, 2, 2, 1}, 3))
+	fmt.Println(numRescueBoats([]int{3, 1, 7}, 7))
+	//fmt.Println(numRescueBoats([]int{3, 2, 3, 2, 2}, 6))
+	//fmt.Println(numRescueBoats([]int{3, 2, 2, 1}, 3))
 }
 
 func numRescueBoats(people []int, limit int) int {

@@ -31,8 +31,8 @@ func addBinary(a string, b string) string {
 func Test_addBinary(t *testing.T) {
 	a, b := "11", "1"
 	data := addBinary(a, b)
-	println(data)
+	fmt.Println(data)
 	a, b = "1010", "1011"
 	data = addBinary(a, b)
-	println(data)
+	fmt.Println(data)
 }

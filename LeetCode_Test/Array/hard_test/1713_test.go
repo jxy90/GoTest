@@ -7,7 +7,7 @@ import (
 )
 
 func Test_minOperations(t *testing.T) {
-	println(minOperations([]int{5, 1, 3}, []int{9, 4, 2, 3, 4}))
+	fmt.Println(minOperations([]int{5, 1, 3}, []int{9, 4, 2, 3, 4}))
 }
 
 func minOperations(target, arr []int) int {

@@ -3,7 +3,7 @@ package easy_test
 import "testing"
 
 func Test_xorOperation(t *testing.T) {
-	println(xorOperation(5, 0))
+	fmt.Println(xorOperation(5, 0))
 }
 func xorOperation(n int, start int) int {
 	ans := 0

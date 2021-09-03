@@ -5,8 +5,8 @@ import (
 )
 
 func Test_checkRecord(t *testing.T) {
-	println(checkRecord("PPALLP"))
-	println(checkRecord("PPALLL"))
+	fmt.Println(checkRecord("PPALLP"))
+	fmt.Println(checkRecord("PPALLL"))
 }
 
 func checkRecord(s string) bool {

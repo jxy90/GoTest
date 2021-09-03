@@ -5,12 +5,12 @@ import (
 )
 
 func Test_romanToInt(t *testing.T) {
-	//println(romanToInt("III"))
-	//println(romanToInt("IV"))
-	//println(romanToInt("IX"))
-	//println(romanToInt("LVIII"))
-	//println(romanToInt("MCMXCIV"))
-	println(romanToInt("DCXXI"))
+	//fmt.Println(romanToInt("III"))
+	//fmt.Println(romanToInt("IV"))
+	//fmt.Println(romanToInt("IX"))
+	//fmt.Println(romanToInt("LVIII"))
+	//fmt.Println(romanToInt("MCMXCIV"))
+	fmt.Println(romanToInt("DCXXI"))
 }
 
 //var memo1 = map[string]int{

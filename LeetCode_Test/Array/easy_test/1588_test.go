@@ -5,7 +5,7 @@ import (
 )
 
 func Test_sumOddLengthSubarrays(t *testing.T) {
-	println(sumOddLengthSubarrays([]int{1, 4, 2, 5, 3}))
+	fmt.Println(sumOddLengthSubarrays([]int{1, 4, 2, 5, 3}))
 }
 func sumOddLengthSubarrays(arr []int) int {
 	n := len(arr)

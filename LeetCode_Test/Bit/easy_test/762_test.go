@@ -3,7 +3,7 @@ package easy_test
 import "testing"
 
 func Test_countPrimeSetBits(t *testing.T) {
-	println(countPrimeSetBits(6, 10))
+	fmt.Println(countPrimeSetBits(6, 10))
 }
 
 func countPrimeSetBits(left int, right int) int {

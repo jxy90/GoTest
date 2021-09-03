@@ -5,9 +5,9 @@ import (
 )
 
 func Test_findTargetSumWays(t *testing.T) {
-	println(findTargetSumWays([]int{1}, 2))
-	println(findTargetSumWays([]int{1}, 1))
-	println(findTargetSumWays([]int{1, 1, 1, 1, 1}, 3))
+	fmt.Println(findTargetSumWays([]int{1}, 2))
+	fmt.Println(findTargetSumWays([]int{1}, 1))
+	fmt.Println(findTargetSumWays([]int{1, 1, 1, 1, 1}, 3))
 }
 
 func findTargetSumWays(nums []int, target int) int {

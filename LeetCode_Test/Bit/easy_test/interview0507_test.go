@@ -3,7 +3,7 @@ package easy_test
 import "testing"
 
 func Test_exchangeBits(t *testing.T) {
-	println(exchangeBits(826966453))
+	fmt.Println(exchangeBits(826966453))
 }
 
 func exchangeBits(num int) int {

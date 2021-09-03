@@ -41,5 +41,5 @@ func permuteValidate(track []int, num int) bool {
 func Test_permute(*testing.T) {
 	nums := []int{5, 4, 6, 2}
 	data := permute(nums)
-	println(data)
+	fmt.Println(data)
 }

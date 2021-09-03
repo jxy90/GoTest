@@ -15,7 +15,7 @@ func Test_findSecondMinimumValue(t *testing.T) {
 			Val: 3,
 		},
 	}
-	println(findSecondMinimumValue(root))
+	fmt.Println(findSecondMinimumValue(root))
 }
 
 func findSecondMinimumValue(root *TreeNode) int {

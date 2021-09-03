@@ -7,8 +7,8 @@ import (
 )
 
 func Test_maxFrequency(t *testing.T) {
-	println(maxFrequency([]int{1000}, 1000))
-	println(maxFrequency([]int{1, 2, 4}, 5))
+	fmt.Println(maxFrequency([]int{1000}, 1000))
+	fmt.Println(maxFrequency([]int{1, 2, 4}, 5))
 }
 
 func maxFrequency(nums []int, k int) int {

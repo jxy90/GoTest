@@ -29,10 +29,10 @@ func connect2(root *Node) *Node {
 		return nil
 	}
 	if root.Val == 9 {
-		println("---")
+		fmt.Println("---")
 	}
 	if root.Val == 7 {
-		println("---")
+		fmt.Println("---")
 	}
 	if root.Left != nil {
 		if root.Right != nil {

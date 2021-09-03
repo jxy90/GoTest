@@ -6,8 +6,8 @@ import (
 )
 
 func Test_longestConsecutive(t *testing.T) {
-	println(longestConsecutive([]int{100, 4, 200, 1, 3, 2}))
-	println(longestConsecutive([]int{0, 3, 7, 2, 5, 8, 4, 6, 0, 1}))
+	fmt.Println(longestConsecutive([]int{100, 4, 200, 1, 3, 2}))
+	fmt.Println(longestConsecutive([]int{0, 3, 7, 2, 5, 8, 4, 6, 0, 1}))
 }
 
 //循环

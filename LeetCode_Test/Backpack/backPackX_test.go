@@ -23,9 +23,9 @@ import (
 //
 
 func Test_backpackX(t *testing.T) {
-	println(backPackX(900))
-	println(backPackX(800))
-	println(backPackX(1000))
+	fmt.Println(backPackX(900))
+	fmt.Println(backPackX(800))
+	fmt.Println(backPackX(1000))
 }
 
 func backPackX(n int) int {

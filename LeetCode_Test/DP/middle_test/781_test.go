@@ -5,8 +5,8 @@ import (
 )
 
 func Test_numRabbits(t *testing.T) {
-	println(numRabbits([]int{1, 0, 1, 0, 0}))
-	println(numRabbits([]int{1, 1, 2}))
+	fmt.Println(numRabbits([]int{1, 0, 1, 0, 0}))
+	fmt.Println(numRabbits([]int{1, 1, 2}))
 }
 
 //4ms 2.8MB

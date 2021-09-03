@@ -3,7 +3,7 @@ package middle_test_test
 import "testing"
 
 func Test_xorQueries(t *testing.T) {
-	println(xorQueries([]int{1, 3, 4, 8}, [][]int{{0, 1}, {1, 2}, {0, 3}, {3, 3}}))
+	fmt.Println(xorQueries([]int{1, 3, 4, 8}, [][]int{{0, 1}, {1, 2}, {0, 3}, {3, 3}}))
 }
 
 //前缀和

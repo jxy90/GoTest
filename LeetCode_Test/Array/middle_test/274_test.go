@@ -6,8 +6,8 @@ import (
 )
 
 func Test_hIndex(t *testing.T) {
-	println(hIndex([]int{1}))
-	println(hIndex([]int{3, 0, 6, 1, 5}))
+	fmt.Println(hIndex([]int{1}))
+	fmt.Println(hIndex([]int{3, 0, 6, 1, 5}))
 }
 
 func hIndex(citations []int) int {

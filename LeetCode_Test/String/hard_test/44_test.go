@@ -77,9 +77,9 @@ func isMatchHelper(s string, p string, i, j int) bool {
 }
 
 func Test_isMath(t *testing.T) {
-	println(isMatch("a", ""))
-	println(isMatch("aaaa", "***a"))
-	println(isMatch("adceb", "****a*b"))
-	println(isMatch("", "******"))
-	println(isMatch("leetcode", "*e*t?d*"))
+	fmt.Println(isMatch("a", ""))
+	fmt.Println(isMatch("aaaa", "***a"))
+	fmt.Println(isMatch("adceb", "****a*b"))
+	fmt.Println(isMatch("", "******"))
+	fmt.Println(isMatch("leetcode", "*e*t?d*"))
 }

@@ -6,10 +6,10 @@ import (
 )
 
 func Test_judgeSquareSum(t *testing.T) {
-	println(judgeSquareSum(5))
-	println(judgeSquareSum(3))
-	println(judgeSquareSum(4))
-	println(judgeSquareSum(2))
+	fmt.Println(judgeSquareSum(5))
+	fmt.Println(judgeSquareSum(3))
+	fmt.Println(judgeSquareSum(4))
+	fmt.Println(judgeSquareSum(2))
 }
 
 func judgeSquareSum(c int) bool {

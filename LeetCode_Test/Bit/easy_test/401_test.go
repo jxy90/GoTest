@@ -6,7 +6,7 @@ import (
 )
 
 func Test_readBinaryWatchHelper(t *testing.T) {
-	println(readBinaryWatch(4))
+	fmt.Println(readBinaryWatch(4))
 }
 
 //var readBinaryWatchOptions = []int{1, 2, 4, 8, 16, 32, 60, 120, 240, 480}

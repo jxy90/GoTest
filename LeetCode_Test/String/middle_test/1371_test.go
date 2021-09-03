@@ -54,6 +54,6 @@ func Test_findTheLongestSubstring(t *testing.T) {
 	findTheLongestSubstring(str)
 
 	pos := make([]int, 1<<4)
-	println(pos)
+	fmt.Println(pos)
 
 }

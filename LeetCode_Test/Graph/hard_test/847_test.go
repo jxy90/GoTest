@@ -3,7 +3,7 @@ package middle_test_test
 import "testing"
 
 func Test_shortestPathLength(t *testing.T) {
-	println(shortestPathLength([][]int{{1, 2, 3}, {0}, {0}, {0}}))
+	fmt.Println(shortestPathLength([][]int{{1, 2, 3}, {0}, {0}, {0}}))
 }
 
 func shortestPathLength(graph [][]int) int {

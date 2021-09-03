@@ -28,7 +28,7 @@ Leetcode 256.粉刷房子
 
 func Test_minCost(t *testing.T) {
 	costs := [][]int{{17, 2, 17}, {16, 16, 5}, {14, 3, 19}}
-	println(minCost(costs))
+	fmt.Println(minCost(costs))
 }
 
 func minCost(costs [][]int) int {

@@ -86,5 +86,5 @@ func Test110(t *testing.T) {
 	//		Right: nil,
 	//	},
 	//}
-	println(isBalanced(root))
+	fmt.Println(isBalanced(root))
 }

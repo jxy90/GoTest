@@ -61,5 +61,5 @@ func Test_sortList(t *testing.T) {
 		},
 	}
 	data := sortList(node)
-	println(data)
+	fmt.Println(data)
 }

@@ -6,7 +6,7 @@ import (
 )
 
 func Test_triangleNumber(t *testing.T) {
-	println(triangleNumber([]int{2, 2, 3, 4}))
+	fmt.Println(triangleNumber([]int{2, 2, 3, 4}))
 }
 
 func triangleNumber(nums []int) int {

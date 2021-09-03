@@ -6,7 +6,7 @@ import (
 )
 
 func Test_accountsMerge(t *testing.T) {
-	println(accountsMerge([][]string{{"John", "johnsmith@mail.com", "john00@mail.com"}, {"John", "johnnybravo@mail.com"}, {"John", "johnsmith@mail.com", "john_newyork@mail.com"}, {"Mary", "mary@mail.com"}}))
+	fmt.Println(accountsMerge([][]string{{"John", "johnsmith@mail.com", "john00@mail.com"}, {"John", "johnnybravo@mail.com"}, {"John", "johnsmith@mail.com", "john_newyork@mail.com"}, {"Mary", "mary@mail.com"}}))
 }
 
 func accountsMerge(accounts [][]string) (ans [][]string) {

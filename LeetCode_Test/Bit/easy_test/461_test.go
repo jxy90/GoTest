@@ -3,8 +3,8 @@ package easy_test
 import "testing"
 
 func Test_hammingDistance(t *testing.T) {
-	println(hammingDistance(1, 4))
-	println(hammingDistance(93, 73))
+	fmt.Println(hammingDistance(1, 4))
+	fmt.Println(hammingDistance(93, 73))
 }
 
 func hammingDistance(x int, y int) int {

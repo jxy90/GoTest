@@ -5,8 +5,8 @@ import (
 )
 
 func Test_groupAnagrams(t *testing.T) {
-	println(groupAnagrams([]string{"huh", "tit"}))
-	println(groupAnagrams([]string{"eat", "tea", "tan", "ate", "nat", "bat"}))
+	fmt.Println(groupAnagrams([]string{"huh", "tit"}))
+	fmt.Println(groupAnagrams([]string{"eat", "tea", "tan", "ate", "nat", "bat"}))
 }
 
 func groupAnagrams(strs []string) [][]string {

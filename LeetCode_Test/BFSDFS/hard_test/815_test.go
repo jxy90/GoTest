@@ -5,8 +5,8 @@ import (
 )
 
 func Test_numBusesToDestination(t *testing.T) {
-	println(numBusesToDestination([][]int{{1, 2, 7}, {3, 6, 7}}, 1, 6))
-	println(numBusesToDestination([][]int{{2}, {2, 8}}, 8, 2))
+	fmt.Println(numBusesToDestination([][]int{{1, 2, 7}, {3, 6, 7}}, 1, 6))
+	fmt.Println(numBusesToDestination([][]int{{2}, {2, 8}}, 8, 2))
 }
 
 func numBusesToDestination(routes [][]int, S int, T int) int {

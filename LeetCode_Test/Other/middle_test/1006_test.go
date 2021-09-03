@@ -5,8 +5,8 @@ import (
 )
 
 func Test_clumsy(t *testing.T) {
-	println(clumsy(4))
-	println(clumsy(10))
+	fmt.Println(clumsy(4))
+	fmt.Println(clumsy(10))
 }
 
 func clumsy(N int) int {

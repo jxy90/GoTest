@@ -13,7 +13,7 @@ import (
 
 //物品1个,01背包
 func Test_backPackII(t *testing.T) {
-	println(backPackII(10, []int{2, 3, 5, 7}, []int{1, 5, 2, 4}))
+	fmt.Println(backPackII(10, []int{2, 3, 5, 7}, []int{1, 5, 2, 4}))
 }
 
 func backPackII(m int, A []int, V []int) int {

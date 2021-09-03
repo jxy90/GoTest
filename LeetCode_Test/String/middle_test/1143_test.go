@@ -6,7 +6,7 @@ import (
 )
 
 func Test_longestCommonSubsequence(t *testing.T) {
-	println(longestCommonSubsequence("abcde", "ace"))
+	fmt.Println(longestCommonSubsequence("abcde", "ace"))
 }
 
 func longestCommonSubsequence(text1 string, text2 string) int {

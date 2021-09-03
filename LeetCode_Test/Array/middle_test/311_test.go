@@ -7,7 +7,7 @@ import (
 )
 
 func Test_nthSuperUglyNumber(t *testing.T) {
-	println(nthSuperUglyNumber(12, []int{2, 7, 13, 19}))
+	fmt.Println(nthSuperUglyNumber(12, []int{2, 7, 13, 19}))
 }
 
 func nthSuperUglyNumber(n int, primes []int) int {

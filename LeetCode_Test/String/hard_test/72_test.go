@@ -10,8 +10,8 @@ func minDistance(word1 string, word2 string) int {
 	length1, length2 := len(_word1)-1, len(_word2)-1
 
 	_memo = make([][]int, len(_word1), len(_word1))
-	//println(len(_memo))
-	//println(len(word1))
+	//fmt.Println(len(_memo))
+	//fmt.Println(len(word1))
 	for i := 0; i < len(_word1); i++ {
 		_memo[i] = make([]int, len(_word2), len(_word2))
 	}
@@ -49,8 +49,8 @@ func minDistanceDP(i, j int) int {
 func Test_minDistance(t *testing.T) {
 	word1 := "horse"
 	word2 := "ros"
-	println(minDistance(word1, word2))
+	fmt.Println(minDistance(word1, word2))
 	word1 = "intention"
 	word2 = "execution"
-	println(minDistance(word1, word2))
+	fmt.Println(minDistance(word1, word2))
 }

@@ -32,5 +32,5 @@ func Test_convertBST(t *testing.T) {
 		},
 	}
 	data := convertBST(root)
-	println(data)
+	fmt.Println(data)
 }

@@ -7,7 +7,7 @@ import (
 )
 
 func Test_compareVersion(t *testing.T) {
-	println(compareVersion("1.01", "1.001"))
+	fmt.Println(compareVersion("1.01", "1.001"))
 }
 
 func compareVersion(version1, version2 string) int {
