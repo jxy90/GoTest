@@ -1,6 +1,9 @@
 package Struct_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_LFUCache(t *testing.T) {
 	methods := []string{"LFUCache", "put", "put", "get", "put", "get", "get", "put", "get", "get", "get"}

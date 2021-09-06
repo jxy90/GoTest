@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 type Employee struct {
 	Id           int

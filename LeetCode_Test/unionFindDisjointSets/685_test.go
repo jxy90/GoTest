@@ -1,6 +1,7 @@
 package unionFindDisjointSets
 
 import (
+	"fmt"
 	"testing"
 )
 

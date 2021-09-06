@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_convertInteger(t *testing.T) {
 	//2

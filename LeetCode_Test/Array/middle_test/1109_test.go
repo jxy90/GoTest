@@ -1,6 +1,9 @@
 package middle_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_corpFlightBookings(t *testing.T) {
 	fmt.Println(corpFlightBookings([][]int{{1, 2, 10}, {2, 3, 20}, {2, 5, 25}}, 5))

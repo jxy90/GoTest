@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_findComplement(t *testing.T) {
 	fmt.Println(findComplement(2))

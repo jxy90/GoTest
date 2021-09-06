@@ -1,6 +1,7 @@
 package middle_test_test
 
 import (
+	"fmt"
 	"testing"
 )
 

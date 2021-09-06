@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_add(t *testing.T) {
 	fmt.Println(add(1, 2))

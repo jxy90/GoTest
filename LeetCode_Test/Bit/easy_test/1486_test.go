@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_xorOperation(t *testing.T) {
 	fmt.Println(xorOperation(5, 0))

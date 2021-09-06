@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_decode(t *testing.T) {
 	fmt.Println(decode([]int{1, 2, 3}, 1))

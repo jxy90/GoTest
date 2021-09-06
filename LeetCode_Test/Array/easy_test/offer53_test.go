@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_search(t *testing.T) {
 	fmt.Println(search([]int{1}, 1))

@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_hasAlternatingBits(t *testing.T) {
 	fmt.Println(hasAlternatingBits(3))

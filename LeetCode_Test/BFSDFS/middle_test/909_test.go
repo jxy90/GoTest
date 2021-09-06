@@ -1,6 +1,9 @@
 package middle_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_snakesAndLadders(t *testing.T) {
 	board := [][]int{

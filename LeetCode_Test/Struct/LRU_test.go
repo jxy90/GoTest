@@ -1,6 +1,7 @@
 package Struct_test
 
 import (
+	"fmt"
 	"testing"
 )
 

@@ -1,6 +1,9 @@
 package DP_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_numberOfArithmeticSlices(t *testing.T) {
 	//fmt.Println(maxSumSubmatrix([][]int{{1, 0, 1}, {0, -2, 3}}, 2))

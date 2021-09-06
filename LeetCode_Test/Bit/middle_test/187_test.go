@@ -1,6 +1,9 @@
 package middle_test_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_findRepeatedDnaSequences(t *testing.T) {
 	//fmt.Println(findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"))

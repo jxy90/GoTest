@@ -1,6 +1,9 @@
 package middle_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_change(t *testing.T) {
 	fmt.Println(change(5, []int{1, 2, 5}))

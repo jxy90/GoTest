@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func twoSum167(numbers []int, target int) []int {
 	left, right := 0, len(numbers)-1

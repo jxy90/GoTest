@@ -1,6 +1,9 @@
 package middle_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_removeDuplicates(t *testing.T) {
 	fmt.Println(removeDuplicates([]int{1, 1, 1, 2, 2, 3}))

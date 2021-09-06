@@ -1,6 +1,9 @@
 package hard_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_xorGame(t *testing.T) {
 	fmt.Println(xorGame([]int{1, 1, 2}))

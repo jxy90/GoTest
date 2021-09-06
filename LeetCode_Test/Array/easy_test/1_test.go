@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func twoSum(nums []int, target int) []int {
 	set := map[int]int{}

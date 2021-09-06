@@ -1,6 +1,9 @@
 package DP_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_checkRecord(t *testing.T) {
 	fmt.Println(checkRecord(2))

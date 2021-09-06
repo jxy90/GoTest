@@ -2,6 +2,7 @@ package easy_test
 
 import (
 	"bytes"
+	"fmt"
 	"strings"
 	"testing"
 )

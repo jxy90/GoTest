@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_maximum(t *testing.T) {
 	fmt.Println(maximum(1, 2))

@@ -1,6 +1,9 @@
 package hard_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_canCross(t *testing.T) {
 	fmt.Println(canCross2([]int{0, 1, 3, 5, 6, 8, 12, 17}))

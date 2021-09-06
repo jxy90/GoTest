@@ -1,6 +1,9 @@
 package middle_test_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_singleNumber(t *testing.T) {
 	//fmt.Println(singleNumber2([]int{2, 2, 3, 2}))

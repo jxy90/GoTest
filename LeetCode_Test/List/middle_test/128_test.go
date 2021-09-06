@@ -1,6 +1,9 @@
 package middle_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func sortList(head *ListNode) *ListNode {
 	//边界情况

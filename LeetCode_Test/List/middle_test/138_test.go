@@ -1,6 +1,9 @@
 package middle_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_copyRandomList(t *testing.T) {
 	node1 := &Node{Val: 1}

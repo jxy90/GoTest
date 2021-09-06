@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_countPrimeSetBits(t *testing.T) {
 	fmt.Println(countPrimeSetBits(6, 10))

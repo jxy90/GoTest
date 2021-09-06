@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func reverseList(head *ListNode) *ListNode {
 	var pre *ListNode

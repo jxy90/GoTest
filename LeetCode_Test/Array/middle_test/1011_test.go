@@ -1,6 +1,9 @@
 package middle_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func shipWithinDays(weights []int, D int) int {
 	//1 <= D <= weights.length <= 50000

@@ -1,6 +1,9 @@
 package middle_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_checkSubarraySum(t *testing.T) {
 	fmt.Println(checkSubarraySum([]int{23, 2, 4, 6, 6}, 7))

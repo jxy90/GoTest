@@ -1,6 +1,9 @@
 package unionFindDisjointSets
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_findRedundantConnection(t *testing.T) {
 	fmt.Println(findRedundantConnection([][]int{{1, 2}, {1, 3}, {2, 3}}))

@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_hammingDistance(t *testing.T) {
 	fmt.Println(hammingDistance(1, 4))

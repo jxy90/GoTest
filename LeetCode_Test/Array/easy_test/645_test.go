@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_findErrorNums(t *testing.T) {
 	fmt.Println(findErrorNums([]int{1, 2, 2, 4}))

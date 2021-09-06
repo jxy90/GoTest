@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestRangeSumBST(t *testing.T) {
 	root := &TreeNode{

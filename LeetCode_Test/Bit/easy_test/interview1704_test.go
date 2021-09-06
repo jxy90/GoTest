@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_missingNumber2(t *testing.T) {
 	fmt.Println(missingNumber([]int{3, 0, 1}))

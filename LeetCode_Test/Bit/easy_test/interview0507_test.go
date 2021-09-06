@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_exchangeBits(t *testing.T) {
 	fmt.Println(exchangeBits(826966453))

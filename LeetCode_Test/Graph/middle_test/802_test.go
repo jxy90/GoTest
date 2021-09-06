@@ -1,6 +1,9 @@
 package middle_test_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_eventualSafeNodes(t *testing.T) {
 	fmt.Println(eventualSafeNodes([][]int{{1, 2}, {2, 3}, {5}, {0}, {5}, {}, {}}))

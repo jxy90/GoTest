@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_toHex(t *testing.T) {
 	fmt.Println(toHex(-1))

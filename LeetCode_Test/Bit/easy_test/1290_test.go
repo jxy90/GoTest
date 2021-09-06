@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_getDecimalValue(t *testing.T) {
 	fmt.Println(getDecimalValue(&ListNode{

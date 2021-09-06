@@ -1,6 +1,9 @@
 package middle_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_numSubarraysWithSum(t *testing.T) {
 	goal := 2

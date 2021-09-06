@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_insertBits(t *testing.T) {
 	fmt.Println(insertBits(1024, 19, 2, 6))

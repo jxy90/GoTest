@@ -1,6 +1,9 @@
 package middle_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 // 输入一个集合，返回是否能够分割成和相等的两个子集
 func canPartition(nums []int) bool {
