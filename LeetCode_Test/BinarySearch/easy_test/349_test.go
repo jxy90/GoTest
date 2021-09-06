@@ -1,6 +1,7 @@
 package easy_test
 
 import (
+	"fmt"
 	"sort"
 	"testing"
 )
