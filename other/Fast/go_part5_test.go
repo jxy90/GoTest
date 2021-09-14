@@ -3,6 +3,7 @@ package Fast
 import (
 	"encoding/json"
 	"fmt"
+	"math/rand"
 	"strings"
 	"testing"
 )
@@ -75,4 +76,48 @@ func Test23(t *testing.T) {
 	shout(s)
 	fmt.Println("----------")
 	fmt.Println("----------")
+}
+
+type pkq struct {
+}
+type mm struct {
+}
+
+var animaler interface {
+	talk() string
+	eat() string
+}
+
+func (p pkq) talk() string {
+	return "pk pk "
+}
+func (p mm) talk() string {
+	return "miao miao "
+}
+func (p pkq) eat() string {
+	return "pk eat"
+}
+func (p mm) eat() string {
+	return "pk eat"
+}
+func Test25(t *testing.T) {
+	for i := 0; i < 12; i++ {
+		num := rand.Intn(2)
+		num2 := rand.Intn(2)
+		switch num {
+		case 0:
+			animaler = pkq{}
+		case 1:
+			animaler = mm{}
+
+		}
+		str := ""
+		switch num2 {
+		case 0:
+			str = animaler.eat()
+		case 1:
+			str = animaler.talk()
+		}
+		fmt.Println(str)
+	}
 }
