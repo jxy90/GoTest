@@ -83,7 +83,7 @@ type pkq struct {
 type mm struct {
 }
 
-var animaler interface {
+type animaler interface {
 	talk() string
 	eat() string
 }
@@ -101,22 +101,17 @@ func (p mm) eat() string {
 	return "pk eat"
 }
 func Test25(t *testing.T) {
+	animals := []animaler{pkq{}, mm{}}
 	for i := 0; i < 12; i++ {
 		num := rand.Intn(2)
 		num2 := rand.Intn(2)
-		switch num {
-		case 0:
-			animaler = pkq{}
-		case 1:
-			animaler = mm{}
-
-		}
+		animal := animals[num]
 		str := ""
 		switch num2 {
 		case 0:
-			str = animaler.eat()
+			str = animal.eat()
 		case 1:
-			str = animaler.talk()
+			str = animal.talk()
 		}
 		fmt.Println(str)
 	}
