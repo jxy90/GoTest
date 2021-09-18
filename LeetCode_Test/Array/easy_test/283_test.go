@@ -5,6 +5,14 @@ import (
 	"testing"
 )
 
+func Test_moveZeroes(t *testing.T) {
+	//nums := []int{0, 1, 0, 3, 12}
+	nums := []int{0, 0, 1}
+	moveZeroes3(nums)
+	for i := range nums {
+		fmt.Println(nums[i])
+	}
+}
 func moveZeroes(nums []int) {
 	count := 0 //0的数量
 	index := 0 //0的起始位置
@@ -31,15 +39,6 @@ func moveZeroes(nums []int) {
 		if index+count == len(nums) {
 			break
 		}
-	}
-}
-
-func Test_moveZeroes(t *testing.T) {
-	//nums := []int{0, 1, 0, 3, 12}
-	nums := []int{0, 0, 1}
-	moveZeroes3(nums)
-	for i := range nums {
-		fmt.Println(nums[i])
 	}
 }
 
