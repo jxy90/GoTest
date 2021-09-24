@@ -10,3 +10,10 @@ type Node struct {
 	Next   *Node
 	Random *Node
 }
+
+type NodeWC struct {
+	Val   int
+	Prev  *NodeWC
+	Next  *NodeWC
+	Child *NodeWC
+}
