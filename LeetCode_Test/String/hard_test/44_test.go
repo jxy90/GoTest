@@ -6,6 +6,14 @@ import (
 	"testing"
 )
 
+func Test_isMath(t *testing.T) {
+	fmt.Println(isMatch("a", ""))
+	fmt.Println(isMatch("aaaa", "***a"))
+	fmt.Println(isMatch("adceb", "****a*b"))
+	fmt.Println(isMatch("", "******"))
+	fmt.Println(isMatch("leetcode", "*e*t?d*"))
+}
+
 func isMatch(s string, p string) bool {
 	slen := len(s)
 	plen := len(p)
@@ -75,12 +83,4 @@ func isMatchHelper(s string, p string, i, j int) bool {
 		}
 	}
 	return false
-}
-
-func Test_isMath(t *testing.T) {
-	fmt.Println(isMatch("a", ""))
-	fmt.Println(isMatch("aaaa", "***a"))
-	fmt.Println(isMatch("adceb", "****a*b"))
-	fmt.Println(isMatch("", "******"))
-	fmt.Println(isMatch("leetcode", "*e*t?d*"))
 }
