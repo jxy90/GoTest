@@ -13,10 +13,11 @@ func Test_findComplement(t *testing.T) {
 
 func findComplement(num int) int {
 	ans := 0
+	number := num
 	index := 0
-	for num != 0 {
-		ans = ans + (num&1^1)<<index
-		num >>= 1
+	for number != 0 {
+		ans += (number&1 ^ 1) << index
+		number >>= 1
 		index++
 	}
 	return ans
