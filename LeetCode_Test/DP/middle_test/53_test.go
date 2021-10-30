@@ -6,6 +6,11 @@ import (
 	"testing"
 )
 
+func Test_maxSubArray(t *testing.T) {
+	nums := []int{-2, 1}
+	fmt.Println(maxSubArray(nums))
+}
+
 func maxSubArray(nums []int) int {
 	if len(nums) == 0 {
 		return 0
@@ -19,9 +24,4 @@ func maxSubArray(nums []int) int {
 		res = CommonUtil.Max(res, v)
 	}
 	return res
-}
-
-func Test_maxSubArray(t *testing.T) {
-	nums := []int{-2, 1}
-	fmt.Println(maxSubArray(nums))
 }

@@ -30,6 +30,7 @@ func main() {
 	fmt.Println("最终的结果为", rec)
 	fmt.Println("最终的结果为", rec2)
 	fmt.Println("hello test")
+	fmt.Println('.' - 'a')
 
 	a := new(A)
 	b := A{}
