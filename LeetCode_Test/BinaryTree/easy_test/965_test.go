@@ -1,6 +1,9 @@
 package easy_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func isUniValTree(root *TreeNode) bool {
 	if root == nil {

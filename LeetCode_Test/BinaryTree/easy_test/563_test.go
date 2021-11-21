@@ -6,9 +6,38 @@ import (
 	"testing"
 )
 
-var tilt int
+func Test_findTilt(t *testing.T) {
+	root := &TreeNode{
+		Val: 1,
+		Left: &TreeNode{
+			Val: 2,
+		},
+		Right: &TreeNode{
+			Val: 3,
+		},
+	}
+	data := findTilt(root)
+	fmt.Println(data)
+}
 
 func findTilt(root *TreeNode) int {
+	tilt = 0
+	findTiltHelper(root)
+	return tilt
+}
+func findTiltHelper(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	left := findTiltHelper(root.Left)
+	right := findTiltHelper(root.Right)
+	tilt += int(math.Abs(float64(left) - float64(right)))
+	return right + left + root.Val
+}
+
+var tilt int
+
+func findTilt0(root *TreeNode) int {
 	tilt = 0
 	findTiltDFS(root)
 	return tilt
@@ -35,17 +64,3 @@ func findTiltDFS(root *TreeNode) int {
 //		tilt += int(math.Abs(float64(root.Left.Val) - float64(root.Right.Val)))
 //	}
 //}
-
-func Test_findTilt(t *testing.T) {
-	root := &TreeNode{
-		Val: 1,
-		Left: &TreeNode{
-			Val: 2,
-		},
-		//Right: &TreeNode{
-		//	Val: 3,
-		//},
-	}
-	data := findTilt(root)
-	fmt.Println(data)
-}
