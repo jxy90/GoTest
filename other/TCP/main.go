@@ -8,12 +8,12 @@ import (
 )
 
 func main() {
-	AsyncPool()
+	AsyncPool0()
 }
 
 func worker(ports chan int, result chan int) {
 	for port := range ports {
-		address := fmt.Sprintf("10.202.101.23:%d", port)
+		address := fmt.Sprintf("192.168.0.1:%d", port)
 		conn, err := net.Dial("tcp", address)
 		if err != nil {
 			//fmt.Printf("%v Closed! \n", address)
@@ -58,6 +58,48 @@ func AsyncPool() {
 	fmt.Println(openPorts)
 	fmt.Println(closePorts)
 }
+
+func AsyncPool0() {
+	ports := make(chan int, 100)
+	results := make(chan int)
+	var wg sync.WaitGroup
+	for i := 0; i < 100; i++ {
+		go worker0(ports, results, &wg)
+	}
+	go func() {
+		for i := 0; i < 150; i++ {
+			//wg.Add(1)
+			ports <- i
+		}
+	}()
+	nums := make([]int, 0)
+	for i := 0; i < 150; i++ {
+		result := <-results
+		if result != 0 {
+			nums = append(nums, result)
+		}
+	}
+	//wg.Wait()
+	fmt.Println(nums)
+}
+
+func worker0(ports, result chan int, wg *sync.WaitGroup) {
+	for port := range ports {
+		address := fmt.Sprintf("192.168.0.1:%v", port)
+		conn, err := net.Dial("tcp", address)
+		if err != nil {
+			result <- 0
+			//fmt.Printf("%v Error! \n", address)
+			//wg.Done()
+			continue
+		}
+		result <- port
+		conn.Close()
+		//fmt.Printf("%v Open! \n", address)
+		//wg.Done()
+	}
+}
+
 func Async() {
 	var wg sync.WaitGroup
 	for i := 21; i < 120; i++ {
@@ -77,6 +119,7 @@ func Async() {
 	}
 	wg.Wait()
 }
+
 func Sync() {
 	for i := 21; i < 120; i++ {
 		address := fmt.Sprintf("20.194.168.28:%d", i)
