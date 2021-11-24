@@ -8,12 +8,12 @@ import (
 )
 
 func main() {
-	AsyncPool0()
+	AsyncPool()
 }
 
 func worker(ports chan int, result chan int) {
 	for port := range ports {
-		address := fmt.Sprintf("192.168.0.1:%d", port)
+		address := fmt.Sprintf("10,202,101,31:%d", port)
 		conn, err := net.Dial("tcp", address)
 		if err != nil {
 			//fmt.Printf("%v Closed! \n", address)
@@ -32,17 +32,17 @@ func worker(ports chan int, result chan int) {
 func AsyncPool() {
 	//var wg sync.WaitGroup
 	ports := make(chan int, 100)
-	results := make(chan int)
+	results := make(chan int, 10)
 	var openPorts, closePorts []int
 	for i := 0; i < 100; i++ {
 		go worker(ports, results)
 	}
 	go func() {
-		for i := 21; i < 1000; i++ {
+		for i := 21; i < 100; i++ {
 			ports <- i
 		}
 	}()
-	for i := 21; i < 1000; i++ {
+	for i := 21; i < 100; i++ {
 		port := <-results
 		if port == 0 {
 			closePorts = append(closePorts, port)
