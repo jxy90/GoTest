@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	AsyncPool()
+	AsyncPool0()
 }
 
 func worker(ports chan int, result chan int) {

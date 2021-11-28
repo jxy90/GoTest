@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"sort"
+	"sync"
 )
 
 func sum(a int, b int) int {
@@ -16,23 +16,32 @@ type A struct {
 }
 
 func main() {
-	//data := []int{10, 25, 11, 24, 17, 26}
-	//i := sort.Search(len(data), func(i int) bool {
-	//	return data[i] >= 23
-	//})
-	//fmt.Println("最终的结果为", i)
-	//data := []int{10, 22, 11, 22, 17, 26}
-	data := []int{1, 10, 4, 4, 2, 7}
-	rec := append(sort.IntSlice(nil), data...)
-	rec.Sort()
-	rec2 := sort.IntSlice(data)
-	rec2.Sort()
-	fmt.Println("最终的结果为", rec)
-	fmt.Println("最终的结果为", rec2)
-	fmt.Println("hello test")
-	fmt.Println('.' - 'a')
-
-	a := new(A)
-	b := A{}
-	fmt.Printf("a:%v b:%v", a, b)
+	cat, dog, fish := make(chan bool), make(chan bool), make(chan bool)
+	finish := make(chan bool)
+	wg := sync.WaitGroup{}
+	go func() {
+		for <-cat {
+			fmt.Println("cat")
+			dog <- true
+		}
+	}()
+	go func() {
+		for <-dog {
+			fmt.Println("dog")
+			fish <- true
+		}
+	}()
+	go func() {
+		for <-fish {
+			fmt.Println("fish")
+			finish <- true
+			wg.Done()
+		}
+	}()
+	for i := 0; i < 10; i++ {
+		wg.Add(1)
+		cat <- true
+		<-finish
+	}
+	wg.Wait()
 }

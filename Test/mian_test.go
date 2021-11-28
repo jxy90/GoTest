@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"math"
+	"sync"
 	"testing"
 )
 
@@ -70,6 +70,21 @@ func myPowHelper(x float64, n int) float64 {
 	}
 }
 func Test_myPow(t *testing.T) {
-	fmt.Println(myPow(0.00001, 2147483647))
-	fmt.Println(math.Pow(0.00001, 2147483647))
+	//fmt.Println(myPow(0.00001, 2147483647))
+	//fmt.Println(math.Pow(0.00001, 2147483647))
+	channel()
+}
+
+func channel() {
+	c := make(chan bool)
+	wg := sync.WaitGroup{}
+	wg.Add(1)
+	go func() {
+		for {
+			fmt.Println(<-c)
+			wg.Done()
+		}
+	}()
+	c <- true
+	wg.Wait()
 }
