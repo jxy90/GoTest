@@ -1,6 +1,9 @@
 package Chapter0_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func solveNQueens(n int) [][]string {
 	solveNQueensRes = make([][]string, 0, 0)
