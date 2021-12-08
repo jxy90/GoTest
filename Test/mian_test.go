@@ -33,6 +33,10 @@ func Test_mySqrt(t *testing.T) {
 	fmt.Println(mySqrt(4))
 }
 
+func sum(a, b int) int {
+	return a + b
+}
+
 /*func myPow(x float64, n int) float64 {
 	if n < 0 {
 		x = 1 / x
