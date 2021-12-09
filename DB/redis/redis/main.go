@@ -1,4 +1,4 @@
-package redis
+package main
 
 import (
 	"fmt"
@@ -77,10 +77,12 @@ func main() {
 	rdb := NewRedisClient(1)
 	defer rdb.Close()
 
+	//String(rdb)
+	//Hash(rdb)
+	//Set(rdb)
+	ZSet(rdb)
 	//HyperLogLog(rdb)
-	//ZSet(rdb)
 	//PipeLine(rdb)
-
 }
 
 func HyperLogLog(rdb *redis.Client) {
@@ -118,14 +120,14 @@ func ZSet(rdb *redis.Client) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	Val, err := rdb.Get("zset:k1").Result()
+	Val, err := rdb.ZCard("zset:k1").Result()
 	if err != redis.Nil {
 		fmt.Println(err)
 	} else if err != nil {
 		fmt.Println(err)
 	}
 	fmt.Printf("zset set:k1:%v \r\n", Val)
-	Val, err = rdb.Get("zset:not exit").Result()
+	Val, err = rdb.ZCard("zset:not exit").Result()
 	if err != redis.Nil {
 		fmt.Println(err)
 	} else if err != nil {
@@ -196,4 +198,10 @@ func Hash(rdb *redis.Client) {
 		fmt.Println(err)
 	}
 	fmt.Println(result)
+	res, err := rdb.HMGet("website", "baidu").Result()
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(res)
+
 }
