@@ -5,7 +5,7 @@ type MapSum struct {
 	array []string
 }
 
-func Constructor() MapSum {
+func ConstructorMapSum() MapSum {
 	return MapSum{
 		cache: map[string]int{},
 		array: make([]string, 0),

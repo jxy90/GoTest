@@ -3,9 +3,12 @@ package main
 import (
 	"fmt"
 	"runtime"
+	"strings"
 )
 
 func main() {
 	runtime.GOMAXPROCS(3)
-	fmt.Println(runtime.NumGoroutine())
+	str := "ADFasdf"
+	str = strings.ToLower(str)
+	fmt.Println(str)
 }

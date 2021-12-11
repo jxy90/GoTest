@@ -12,7 +12,7 @@ type TimeMap struct {
 }
 
 /** Initialize your data structure here. */
-func Constructor() TimeMap {
+func ConstructorTimeMap() TimeMap {
 	return TimeMap{map[string][]Node{}}
 }
 
@@ -33,7 +33,7 @@ func (this *TimeMap) Get(key string, timestamp int) string {
 
 /**
  * Your TimeMap object will be instantiated and called as such:
- * obj := Constructor();
+ * obj := ConstructorMapSum();
  * obj.Set(key,value,timestamp);
  * param_2 := obj.Get(key,timestamp);
  */
