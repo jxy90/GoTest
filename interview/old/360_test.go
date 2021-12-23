@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func Test(t *testing.T) {
+func Test_360(t *testing.T) {
 	fmt.Println(permuteUnique([]int{1, 1, 2}))
 	fmt.Println(permuteUnique([]int{1, 2, 3}))
 }

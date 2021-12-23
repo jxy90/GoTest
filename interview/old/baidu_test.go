@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func Test(t *testing.T) {
+func Test_baidu(t *testing.T) {
 	//root := &TreeNode{
 	//	Val:   0,
 	//	Right: nil,
