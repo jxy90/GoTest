@@ -2,46 +2,49 @@ package old
 
 import (
 	"fmt"
+	"github.com/jxy90/GoTest/Utils/CommonUtil"
 	"testing"
 )
 
 func Test(t *testing.T) {
-	root := &TreeNode{
-		Val:   0,
-		Right: nil,
-		Left:  nil,
-	}
+	//root := &TreeNode{
+	//	Val:   0,
+	//	Right: nil,
+	//	Left:  nil,
+	//}
+	////topToDown(root)
+	//root = &TreeNode{
+	//	Val: 0,
+	//	Right: &TreeNode{
+	//		Val: 2,
+	//		Right: &TreeNode{
+	//			Val:   6,
+	//			Right: nil,
+	//			Left:  nil,
+	//		},
+	//		Left: &TreeNode{
+	//			Val:   5,
+	//			Right: nil,
+	//			Left:  nil,
+	//		},
+	//	},
+	//	Left: &TreeNode{
+	//		Val: 1,
+	//		Right: &TreeNode{
+	//			Val:   4,
+	//			Right: nil,
+	//			Left:  nil,
+	//		},
+	//		Left: &TreeNode{
+	//			Val:   3,
+	//			Right: nil,
+	//			Left:  nil,
+	//		},
+	//	},
+	//}
 	//topToDown(root)
-	root = &TreeNode{
-		Val: 0,
-		Right: &TreeNode{
-			Val: 2,
-			Right: &TreeNode{
-				Val:   6,
-				Right: nil,
-				Left:  nil,
-			},
-			Left: &TreeNode{
-				Val:   5,
-				Right: nil,
-				Left:  nil,
-			},
-		},
-		Left: &TreeNode{
-			Val: 1,
-			Right: &TreeNode{
-				Val:   4,
-				Right: nil,
-				Left:  nil,
-			},
-			Left: &TreeNode{
-				Val:   3,
-				Right: nil,
-				Left:  nil,
-			},
-		},
-	}
-	topToDown(root)
+
+	fmt.Println(maxLength("abcde", "bcd"))
 }
 
 type TreeNode struct {
@@ -87,8 +90,27 @@ func topToDown(root *TreeNode) {
 //abcdef
 //babcd
 
-func max() {
-	//si:=[:]
+func maxLength(s1, s2 string) int {
+	m, n := len(s1), len(s2)
+	f := make([][]int, m+1)
+	for i := range f {
+		f[i] = make([]int, n+1)
+	}
+	ans := 0
+	for i := 1; i <= m; i++ {
+		for j := 1; j <= n; j++ {
+			if s1[i-1] == s2[j-1] {
+				f[i][j] = f[i-1][j-1] + 1
+				ans = CommonUtil.Max(ans, f[i][j])
+			} else {
+				f[i][j] = 0
+			}
+		}
+	}
+	for i := range f {
+		fmt.Println(f[i])
+	}
+	return ans
 }
 
 type Node struct {
