@@ -2,13 +2,21 @@ package main
 
 import (
 	"fmt"
-	"runtime"
-	"strings"
+	"sync"
+	"time"
 )
 
 func main() {
-	runtime.GOMAXPROCS(3)
-	str := "ADFasdf"
-	str = strings.ToLower(str)
-	fmt.Println(str)
+	once := &sync.Once{}
+	//wg := &sync.WaitGroup{}
+
+	for i := 0; i < 4; i++ {
+		i := i
+		go func() {
+			once.Do(func() {
+				fmt.Printf("first %d\n", i)
+			})
+		}()
+	}
+	time.Sleep(time.Second)
 }
