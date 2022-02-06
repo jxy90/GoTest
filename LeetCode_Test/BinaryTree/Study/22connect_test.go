@@ -1,5 +1,7 @@
 package main_test
 
+import "fmt"
+
 //https://leetcode-cn.com/explore/learn/card/data-structure-binary-tree/4/conclusion/17/
 //https://www.jianshu.com/p/2a7747f56b3a	-参考解法2
 type Node struct {
