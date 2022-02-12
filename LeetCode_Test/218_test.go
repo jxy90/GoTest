@@ -1,6 +1,9 @@
 package LeetCode_Test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_getSkyline(t *testing.T) {
 	fmt.Println(getSkyline([][]int{{0, 2, 3}, {2, 5, 3}}))
