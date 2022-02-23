@@ -5,6 +5,12 @@ import (
 	"testing"
 )
 
+func Test_longestCommonPrefix(t *testing.T) {
+	strs := []string{"flower", "flow", "flight"}
+	data := longestCommonPrefix(strs)
+	fmt.Println(data)
+}
+
 func longestCommonPrefix(strs []string) string {
 	if len(strs) == 0 {
 		return ""
@@ -21,10 +27,4 @@ func longestCommonPrefix(strs []string) string {
 		}
 	}
 	return strs[0]
-}
-
-func Test_longestCommonPrefix(t *testing.T) {
-	strs := []string{"flower", "flow", "flight"}
-	data := longestCommonPrefix(strs)
-	fmt.Println(data)
 }
