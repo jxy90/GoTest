@@ -1,4 +1,4 @@
-package easy_test
+package offerI_test
 
 import "container/list"
 

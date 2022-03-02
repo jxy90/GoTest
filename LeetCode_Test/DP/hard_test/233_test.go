@@ -1,4 +1,4 @@
-package DP_test
+package hard_test
 
 import (
 	"fmt"

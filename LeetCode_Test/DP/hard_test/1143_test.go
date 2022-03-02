@@ -1,4 +1,4 @@
-package DP_test
+package hard_test
 
 import "github.com/jxy90/GoTest/Utils/CommonUtil"
 
