@@ -18,6 +18,9 @@ func Test_gjds(t *testing.T) {
 	fmt.Println(findNumber([]int{1, 2, 3, 4, 5}))
 	fmt.Println(findNumber([]int{1, 2, 3, 5, 4}))
 	fmt.Println(findNumber([]int{1, 2, 4, 3, 5}))
+	fmt.Println(findNumber([]int{1, 2, 4, 5, 3}))
+	fmt.Println(findNumber([]int{1, 2, 5, 3, 4}))
+	fmt.Println(findNumber([]int{1, 5, 4, 3, 2}))
 }
 
 func findNumber(nums []int) []int {
