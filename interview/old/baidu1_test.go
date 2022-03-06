@@ -89,6 +89,27 @@ func topToDown(root *TreeNode) {
 //s1,s2最长公共子串
 //abcdef
 //babcd
+func longestCommonSubsequence(text1 string, text2 string) int {
+	//f[i][j]表示text1的i位置和text2的j位置,最长公共子串的长度
+	m, n := len(text1), len(text2)
+	f := make([][]int, m+1)
+	for i := range f {
+		f[i] = make([]int, n+1)
+	}
+	ans := 0
+	for i := 1; i <= m; i++ {
+		for j := 1; j <= n; j++ {
+			if text1[i-1] == text1[j-1] {
+				f[i][j] = f[i-1][j-1] + 1
+				ans = CommonUtil.Max(ans, f[i][j])
+			}
+		}
+	}
+	for i := range f {
+		fmt.Println(f[i])
+	}
+	return f[m][n]
+}
 
 func maxLength(s1, s2 string) int {
 	m, n := len(s1), len(s2)
