@@ -12,23 +12,16 @@ func Test_0(t *testing.T) {
 	wg := sync.WaitGroup{}
 	wg.Add(2)
 	go func() {
-		for i := 0; i < 10; i++ {
-
+		for i := 0; i < 10; i += 2 {
 			c1 <- 1
-
-			if i%2 == 0 {
-				fmt.Print(i)
-			}
+			fmt.Println(i)
 		}
 		wg.Done()
 	}()
 	go func() {
-		for i := 0; i < 10; i++ {
-
+		for i := 1; i < 10; i += 2 {
 			<-c1
-			if i%2 == 1 {
-				fmt.Print(i)
-			}
+			fmt.Println(i)
 		}
 		wg.Done()
 	}()
