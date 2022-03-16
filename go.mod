@@ -1,6 +1,6 @@
 module github.com/jxy90/GoTest
 
-go 1.14
+go 1.18
 
 require (
 	github.com/go-redis/cache/v7 v7.0.2
