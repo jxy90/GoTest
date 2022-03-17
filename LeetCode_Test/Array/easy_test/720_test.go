@@ -1,30 +1,32 @@
 package easy_test
 
 import (
-	"fmt"
+	"log"
 	"sort"
 	"testing"
 )
 
-func Test_longestWord(t *testing.T) {
-	fmt.Println(longestWord([]string{"w", "wo", "wor", "worl", "world"}))
+func Test_720(t *testing.T) {
+	//fmt.Println("123")
+	log.Println(longestWord([]string{"a", "banana", "app", "appl", "ap", "apply", "apple"}))
 }
 
-func longestWord(words []string) string {
-	set := map[string]bool{}
-	sort.Strings(words)
-	//fmt.Println(words)
-	ans := ""
-	for _, word := range words {
-		set[word] = true
-		flag := true
-		for i := 1; i < len(word); i++ {
-			if !set[word[:i]] {
-				flag = false
-				break
-			}
+func longestWord(words []string) (ans string) {
+	sort.Slice(words, func(i, j int) bool {
+		x, y := words[i], words[j]
+		if len(x) < len(y) {
+			return true
+		} else if len(x) == len(y) {
+			return x > y
 		}
-		if flag && len(ans) < len(word) && (len(ans) == len(word) && ans > word) {
+		return false
+	})
+	cache := make(map[string]bool, len(words)+1)
+	cache[""] = true
+	max := 0
+	for _, word := range words {
+		if _, ok := cache[word[:len(word)-1]]; ok && len(word) > max {
+			cache[word] = true
 			ans = word
 		}
 	}
