@@ -19,7 +19,7 @@ type AllOne struct {
 	nodes map[string]*list.Element
 }
 
-func Constructor() AllOne {
+func ConstructorAllOne() AllOne {
 	return AllOne{list.New(), map[string]*list.Element{}}
 }
 func (l *AllOne) Inc(key string) {
