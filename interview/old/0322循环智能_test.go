@@ -46,6 +46,20 @@ func FindKthLargeNumberHelper(data []int, k, start, end int) {
 }
 
 //3.反转链表
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
+func reverseList(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil {
+		return head
+	}
+	newHead := reverseList(head.Next)
+	newHead.Next = head
+	head.Next = nil
+	return newHead
+}
 
 //4.两个单词最少操作数
 
