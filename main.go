@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 )
 
@@ -45,6 +46,27 @@ func main() {
 	//fmt.Println(s1)
 	//fmt.Println(m1)
 	//fmt.Println(p1)
+
+	item := &GuardRuleInput{
+		AlerterType:      1,
+		TargetMax:        0,
+		TargetMin:        0,
+		CoolDownDuration: 0,
+		Duration:         0,
+		Interval:         0,
+		AreaList:         nil,
+		Limit:            0,
+		Enabled:          0,
+	}
+
+	fmt.Println(item)
+	res, err := json.Marshal(item)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(res)
+	fmt.Println(string(res))
+
 }
 
 func change(s1 []int, m1 map[string]int, people *People) {
