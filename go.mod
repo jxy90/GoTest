@@ -14,6 +14,7 @@ require (
 )
 
 require (
+	github.com/emirpasic/gods v1.18.1 // indirect
 	github.com/golang/protobuf v1.3.2 // indirect
 	github.com/vmihailenco/tagparser v0.1.0 // indirect
 	golang.org/x/net v0.0.0-20190923162816-aa69164e4478 // indirect
