@@ -1,0 +1,15 @@
+syntax = "proto3";
+package account;
+// 指定包名
+//package pb;
+option go_package = "../account/;account";   //两个参数一个是生成地址，一个是包名
+message Profile {
+  oneof avatar {
+    string image_url = 1;
+    bytes image_data = 2;
+  }
+}
+
+
+//执行
+//protoc --go_out ./ ./*.proto
