@@ -1,6 +1,7 @@
 package Chapter1_test
 
 import (
+	"fmt"
 	"github.com/jxy90/GoTest/Utils/CommonUtil"
 	"testing"
 )
