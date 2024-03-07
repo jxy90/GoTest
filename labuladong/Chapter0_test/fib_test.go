@@ -1,6 +1,9 @@
 package Chapter0_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 //1.暴力递归
 func fib(n int) int {

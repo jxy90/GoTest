@@ -1,6 +1,7 @@
 package Chapter1
 
 import (
+	"fmt"
 	"github.com/jxy90/GoTest/Utils/CommonUtil"
 	"math"
 	"strconv"

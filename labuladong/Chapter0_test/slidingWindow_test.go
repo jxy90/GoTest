@@ -1,6 +1,7 @@
 package Chapter0_test
 
 import (
+	"fmt"
 	"math"
 	"testing"
 )
