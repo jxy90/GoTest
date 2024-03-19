@@ -16,8 +16,8 @@ func Test_1(t *testing.T) {
 //节点的右子树只包含大于当前节点的数。
 //所有左子树和右子树自身必须也是二叉搜索树。
 //		  5
-//   3         6
-//1    4     2   7
+//   3         7
+//1    4     2   8
 
 func Test_CheckTree(t *testing.T) {
 	root := &TreeNode{
@@ -32,12 +32,12 @@ func Test_CheckTree(t *testing.T) {
 			},
 		},
 		Right: &TreeNode{
-			Val: 6,
+			Val: 7,
 			Left: &TreeNode{
 				Val: 2,
 			},
 			Right: &TreeNode{
-				Val: 7,
+				Val: 8,
 			},
 		},
 	}
