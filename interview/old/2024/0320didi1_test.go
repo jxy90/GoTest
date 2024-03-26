@@ -9,13 +9,26 @@ import (
 	"time"
 )
 
+func Test_024(t *testing.T) {
+	main1()
+
+	// 1.0 > 0.1
+	// 1.1 > 1.0
+	// 1.01 == 1.1
+	// 1.0.0 == 1.0
+	//println(compareVersion("1.0", "0.1"))
+	//println(compareVersion("1.1", "1.0"))
+	//println(compareVersion("1.01", "1.1"))
+	//println(compareVersion("1.0.0", "1.0"))
+	//println(compareVersion("0.1", "1.0"))
+}
+
 // 要求：
 // 1. 只能编辑 foo 函数
 // 2. foo 必须要调用 slow 函数
 // 3. foo 函数在 ctx 超时后必须立刻返回
 // 4. 【加分项】如果 slow 结束的比 ctx 快，也立刻返回
-
-func Test_024(t *testing.T) {
+func main1() {
 	rand.Seed(time.Now().UnixNano())
 	ctx := context.Background()
 	ctx, cancel := context.WithTimeout(ctx, time.Second)
@@ -27,17 +40,19 @@ func Test_024(t *testing.T) {
 // 您需要实现 foo 函数，要求 foo 在 ctx 超时后立即返回
 // foo 必须调用 slow 函数
 func foo(ctx context.Context) {
-	ch := make(chan struct{}, 0)
+	ch := make(chan struct{}, 1)
+	defer func() {
+		close(ch)
+		ch = nil
+	}()
 	go func() {
 		slow()
 		ch <- struct{}{}
 	}()
-
 	select {
-	case <-ctx.Done():
-		ch <- struct{}{}
-		return
 	case <-ch:
+		return
+	case <-ctx.Done():
 		return
 	}
 }
