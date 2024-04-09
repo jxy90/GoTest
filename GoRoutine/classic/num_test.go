@@ -13,39 +13,26 @@ func Test10(t *testing.T) {
 
 func print10() {
 	wg := sync.WaitGroup{}
-	wg.Add(1)
-	ch1 := make(chan int)
-	ch2 := make(chan int)
-	defer func() {
-		close(ch1)
-		close(ch2)
-		ch1 = nil
-		ch2 = nil
+	wg.Add(2)
+	ch1 := make(chan struct{})
+	ch2 := make(chan struct{})
+	go func() {
+		defer wg.Done()
+		for i := 1; i <= 10; i += 2 {
+			<-ch1
+			print(i)
+			ch2 <- struct{}{}
+		}
+		<-ch1
 	}()
 	go func() {
-		for {
-			select {
-			case val := <-ch1:
-				if val > 10 {
-					wg.Done()
-					break
-				}
-				print(val)
-				ch2 <- val + 1
-			}
+		defer wg.Done()
+		for i := 2; i <= 10; i += 2 {
+			<-ch2
+			print(i)
+			ch1 <- struct{}{}
 		}
 	}()
-	go func() {
-		for {
-			select {
-			case val := <-ch2:
-
-				print(val)
-				ch1 <- val + 1
-			}
-		}
-	}()
-
-	ch1 <- 1
+	ch1 <- struct{}{}
 	wg.Wait()
 }
