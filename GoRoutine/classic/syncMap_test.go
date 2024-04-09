@@ -53,7 +53,7 @@ type entry struct {
 func (m *Map) Write(key string, val interface{}) {
 	m.Locker.Lock()
 	defer m.Locker.Unlock()
-	item, ok := m.Cache[key]
+	e, ok := m.Cache[key]
 	if !ok {
 		m.Cache[key] = &entry{
 			value:   val,
@@ -61,27 +61,24 @@ func (m *Map) Write(key string, val interface{}) {
 		}
 		return
 	}
-	item.value = val
-	if !item.isExist {
-		if item.ch != nil {
-			close(item.ch)
-			item.ch = nil
+	e.value = val
+	if !e.isExist {
+		e.isExist = true
+		if e.ch != nil {
+			close(e.ch)
+			e.ch = nil
 		}
 	}
-	return
 }
 
 func (m *Map) Read(key string, timeout time.Duration) interface{} {
 	m.Locker.RLock()
-	if e, ok := m.Cache[key]; ok && e.isExist {
+	e, ok := m.Cache[key]
+	if ok && e.isExist {
 		m.Locker.RUnlock()
 		return e.value
-	} else if !ok {
+	} else if ok {
 		m.Locker.RUnlock()
-		m.Locker.Lock()
-		e = &entry{ch: make(chan struct{}), isExist: false}
-		m.Cache[key] = e
-		m.Locker.Unlock()
 		log.Println("协程阻塞 -> ", key)
 		select {
 		case <-e.ch:
@@ -92,6 +89,12 @@ func (m *Map) Read(key string, timeout time.Duration) interface{} {
 		}
 	} else {
 		m.Locker.RUnlock()
+		m.Locker.Lock()
+		e = &entry{
+			ch: make(chan struct{}),
+		}
+		m.Cache[key] = e
+		m.Locker.Unlock()
 		log.Println("协程阻塞 -> ", key)
 		select {
 		case <-e.ch:
