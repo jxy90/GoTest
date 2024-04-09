@@ -5,6 +5,7 @@ go 1.18
 require (
 	github.com/emirpasic/gods v1.18.1
 	github.com/gin-gonic/gin v1.8.1
+	github.com/go-playground/assert/v2 v2.0.1
 	github.com/go-redis/cache/v7 v7.0.2
 	github.com/go-redis/redis/v7 v7.2.0
 	github.com/go-sql-driver/mysql v1.4.1
@@ -13,6 +14,7 @@ require (
 	github.com/marusama/cyclicbarrier v1.1.0
 	github.com/vmihailenco/msgpack/v4 v4.2.0
 	golang.org/x/exp v0.0.0-20190121172915-509febef88a4
+	google.golang.org/protobuf v1.28.0
 )
 
 require (
@@ -35,7 +37,6 @@ require (
 	golang.org/x/sys v0.0.0-20210806184541-e5e7981a1069 // indirect
 	golang.org/x/text v0.3.6 // indirect
 	google.golang.org/appengine v1.6.1 // indirect
-	google.golang.org/protobuf v1.28.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	xorm.io/builder v0.3.6 // indirect
 	xorm.io/core v0.7.2-0.20190928055935-90aeac8d08eb // indirect

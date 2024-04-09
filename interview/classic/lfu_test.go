@@ -2,6 +2,7 @@ package classic
 
 import "testing"
 
+//https://leetcode.cn/problems/lfu-cache/description/?envType=list&envId=xcwvuni
 func Test_LFU(t *testing.T) {
 	//lfu := Constructor(2)
 	//lfu.Put(1, 1)
