@@ -50,4 +50,5 @@ func printNumLetter() {
 
 	number <- struct{}{}
 	wg.Wait()
+	println()
 }
