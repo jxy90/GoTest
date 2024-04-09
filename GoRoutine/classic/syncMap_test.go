@@ -28,6 +28,7 @@ func Test_Map(t *testing.T) {
 	for i := 0; i < 10; i++ {
 		go func(val int) {
 			mapval.Write(fmt.Sprint(val), val)
+			log.Println("写入值为->", val)
 		}(i)
 	}
 
