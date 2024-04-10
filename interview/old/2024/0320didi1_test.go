@@ -40,19 +40,18 @@ func main1() {
 // 您需要实现 foo 函数，要求 foo 在 ctx 超时后立即返回
 // foo 必须调用 slow 函数
 func foo(ctx context.Context) {
-	ch := make(chan struct{}, 1)
-	defer func() {
+	ch := make(chan struct{})
+	go func() {
+		slow()
 		close(ch)
 		ch = nil
 	}()
-	go func() {
-		slow()
-		ch <- struct{}{}
-	}()
 	select {
-	case <-ch:
-		return
 	case <-ctx.Done():
+		fmt.Println("time out")
+		return
+	case v, ok := <-ch:
+		fmt.Println("slow", v, ok)
 		return
 	}
 }
