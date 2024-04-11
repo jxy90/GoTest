@@ -12,6 +12,7 @@ func Test_JO(t *testing.T) {
 	fmt.Println(nums)
 }
 
+//奇偶混杂的数组，最后返回奇数在前,并且保证顺序不变
 func helper(nums []int) {
 	for i := 0; i < len(nums)-1; i++ {
 		for j := i + 1; j < len(nums)-1; j++ {
